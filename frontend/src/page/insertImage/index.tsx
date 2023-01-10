@@ -24,6 +24,7 @@ const InsertImage = () => {
     }
   };
 
+  //파일이 바뀔떄마다 preview데이터를 바꿔주는 훅
   useEffect(() => {
     if (imagefile) {
       const reader = new FileReader();
