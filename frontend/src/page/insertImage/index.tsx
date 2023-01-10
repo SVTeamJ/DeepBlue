@@ -1,6 +1,8 @@
 import Nav from '@/components/nav';
 import React, { useEffect, useRef, useState } from 'react';
-import download from '../../assets/download.png';
+import download from '@/assets/download.png';
+import smallFish from '@/assets/smallFish.png';
+import seaweeds from '@/assets/seaweeds.png';
 import './index.scss';
 const InsertImage = () => {
   const imageRef = useRef<HTMLInputElement>(null);
