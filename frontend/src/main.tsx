@@ -8,7 +8,7 @@ import App from './App';
 import './index.css';
 import { worker } from './mocks/worker';
 import { getClient } from './queryClient';
-
+import reset from './reset.scss';
 if (import.meta) {
   worker.start();
 }
