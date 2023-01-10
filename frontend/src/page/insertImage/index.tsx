@@ -62,6 +62,15 @@ const InsertImage = () => {
           ></input>
         </div>
       </div>
+      <div className="insert_fishImg">
+        <img src={smallFish}></img>
+      </div>
+      <div className="insert_fishImg2">
+        <img src={smallFish}></img>
+      </div>
+      <div className="insert_seaweedsImg">
+        <img src={seaweeds}></img>
+      </div>
     </div>
   );
 };
