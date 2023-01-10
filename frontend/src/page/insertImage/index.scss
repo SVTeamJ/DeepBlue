@@ -1,0 +1,50 @@
+.img-view {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #4da8bc 0%, #306c79 100%);
+}
+
+.insertImage-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.insert_box {
+  width: 35rem;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 70%;
+}
+
+.insert_picture {
+  max-width: 65%;
+  width: 30rem;
+  height: 20rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(157, 255, 255, 0.3);
+  border: 3.5px dashed #000000;
+  border-radius: 20px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.insert_picture-img {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1.5rem;
+}
