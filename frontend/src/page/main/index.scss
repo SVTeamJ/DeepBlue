@@ -86,3 +86,42 @@
     opacity: 50;
     bottom: 0;
 }
+
+@keyframes ani_fisher_man {//강태공 애니메이션을 위한 css
+    0% {
+        bottom: -15vw;
+    }
+    50% {
+        bottom: -14vw;
+    }
+    to {
+        bottom: -13vw;
+    } 
+}
+
+@keyframes ani_gull {// 갈매기 애니메이션을 위한 css
+    0% {
+        margin-top: 5vw;
+        margin-left: 5vw;
+    }
+    50% {
+        margin-top: 4vw;
+        margin-left: 4vw;
+    }
+    to {
+        margin-top: 3vw;
+        margin-left: 3vw;
+    } 
+}
+
+@keyframes ani_sun {// 태양 애니메이션을 위한 css
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.1);
+    }
+    to {
+        filter: brightness(1.2);
+    } 
+}

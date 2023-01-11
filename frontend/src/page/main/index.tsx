@@ -20,7 +20,7 @@ const Main = () => {
           <button className='insert_jbutton1'>낚시하러가기</button>
           <button className='insert_jbutton2'>내가 잡은 물고기 보기</button>
           <button className='insert_jbutton2'>물때 확인하기</button>
-          <button className='insert_jbutton2'>랭킹보기</button>
+          <button className='insert_jbutton2'>랭킹 보기</button>
 
         </div>
         <Wave className='insert_wave1' fill="#68E1FD"
