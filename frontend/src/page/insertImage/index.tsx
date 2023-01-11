@@ -1,9 +1,10 @@
 import Nav from '@/components/nav';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import download from '@/assets/download.png';
 import smallFish from '@/assets/smallFish.png';
 import seaweeds from '@/assets/seaweeds.png';
 import './index.scss';
+import { useDropzone } from 'react-dropzone';
 const InsertImage = () => {
   const imageRef = useRef<HTMLInputElement>(null);
   const [imagefile, setImageFile] = useState<File>();
@@ -35,12 +36,27 @@ const InsertImage = () => {
     }
   }, [imagefile]);
 
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    setImageFile(acceptedFiles[0]);
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    accept: {
+      'image/*': [],
+    },
+    onDrop,
+  });
+
   return (
     <div className="img-view">
       <Nav />
       <div className="insertImage-view">
         <div className="insert_box">
-          <div onClick={openFile} className="insert_picture">
+          <div
+            {...getRootProps()}
+            onClick={openFile}
+            className="insert_picture"
+          >
             {preview && (
               <div>
                 <img className="insert_picture-previewImg" src={preview}></img>
@@ -54,6 +70,7 @@ const InsertImage = () => {
             )}
           </div>
           <input
+            {...getInputProps()}
             onChange={raiseImg}
             ref={imageRef}
             type="file"
