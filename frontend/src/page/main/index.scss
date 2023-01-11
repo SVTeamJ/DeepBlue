@@ -62,3 +62,27 @@
     bottom: 40%;
     right: 20%
 }
+
+.insert_wave1{//파도 효과를 위한 css
+    width: 20vw;
+    height: 9vw;
+    position:absolute;
+    bottom: 0;
+    opacity: 50;
+}
+
+.insert_wave2{//파도 효과를 위한 css
+    width: 10vw;
+    height: 7vw;
+    position:absolute;
+    bottom: 0;
+    opacity: 50;
+}
+
+.insert_wave3{//파도 효과를 위한 css
+    width: 10vw;
+    height: 4vw;
+    position:absolute;
+    opacity: 50;
+    bottom: 0;
+}
