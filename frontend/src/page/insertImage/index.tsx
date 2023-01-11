@@ -61,7 +61,9 @@ const InsertImage = () => {
             className="hidden"
           ></input>
         </div>
+        <div className="insert_search">검색</div>
       </div>
+
       <div className="insert_fishImg">
         <img src={smallFish}></img>
       </div>
