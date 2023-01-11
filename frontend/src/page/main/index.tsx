@@ -8,38 +8,22 @@ import './index.scss';
 
 const Main = () => {
 
-  <Wave fill="#f79902"
-        paused={false}
-        options={{
-          height: 20,
-          amplitude: 50,
-          speed: 0.45,
-          points: 3
-        }}                                                                                                                                                                                           
-  />
-
-
-
   return (
     <div>
       <div className="main_background">
-
-        <div className='display w-full h flex flex-row justify-between'>
+        <div className='display w-full flex flex-row justify-between'>
           <img className="insert_gull" src={gull}></img>
-          <img className="insert_gull" src={sun}></img>
+          <img className="insert_sun" src={sun}></img>
         </div>
-        <div className='f'>
-          <button className='insert_jbutton1'>1dddd</button>
-          <button className='insert_jbutton2'>2ddd</button>
+        <div className=''>
+          <div className='insert_title'>강태공 이야기</div>//
+          <button className='insert_jbutton1'>낚시하러가기</button>
+          <button className='insert_jbutton2'>내가 잡은 물고기 보기</button>
+          <button className='insert_jbutton2'>물때 확인하기</button>
+          <button className='insert_jbutton2'>랭킹 보기</button>
         </div>
         <img className='insert_fisher_man' src={fisher_man}></img>
-        <Wave className='insert_wave'>
-
-        </Wave>
       </div>
-
-
-
       <InsertImage />
     </div>
   );
