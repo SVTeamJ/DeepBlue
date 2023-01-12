@@ -58,9 +58,21 @@
 }
 
 .insert_button_map{
+    display: flex;
+    width: 50%;
+    gap :20px;
     flex-wrap: wrap;
-    //justify-self: center;
-    //align-self: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.insert_jbutton{
+    width : 362px;
+    height: 66.21px;
+    background-color: #283F9F;
+    border: 3.65138px solid #5C7CFA;
+    border-radius: 7.30275px;
+    padding : 14.6055px 29.211px;
 }
 
 .insert_wave1{//파도 효과를 위한 css

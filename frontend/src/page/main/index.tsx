@@ -20,8 +20,11 @@ const Main = () => {
           <img className="insert_sun" src={sun}></img>
           <div className='insert_button_map'>
             <div>강태공 이야기</div>
-            <button >낚시하러가기</button>
-          </div> 
+            <div className='insert_jbutton'> 낚시하러가기 </div>
+            <div className='insert_jbutton'> 낚시하러가기 </div>
+            <div className='insert_jbutton'> 낚시하러가기 </div>
+            <div className='insert_jbutton'> 낚시하러가기 </div>
+          </div>
         </div>
         <Wave className='insert_wave1' fill="#68E1FD"
         paused={false}
@@ -30,7 +33,7 @@ const Main = () => {
             amplitude: 40,
             speed: 0.10,
             points: 3
-          }}                                                                                                                                                                                           
+          }}                                        
         />
         <Wave className='insert_wave2' fill="#53B4CA"
         paused={false}
@@ -41,17 +44,17 @@ const Main = () => {
             points: 3
           }}
         />
-        <Wave className='insert_wave3' fill="#4DA8BC"
+        <Wave className='insert_wave3' fill="#4DA8BC" 
         paused={false}
           options={{
             height: 40,
             amplitude: 40,
             speed: 0.3,
             points: 5
-          }} 
+          }}
         />
       </div>
-      <InsertImage />
+      <InsertImage/>
     </div>
   );
 };
