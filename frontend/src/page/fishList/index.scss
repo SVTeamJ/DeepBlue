@@ -1,75 +1,80 @@
 @import '@/media.scss';
 .fishList_view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(180deg, #4da8bc 0%, #306c79 100%);
   width: 100%;
   height: auto;
   min-height: 100vh;
 }
 
-.fishList_view-encyclopedia-box {
-  width: 60%;
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  background-repeat: no-repeat;
-  animation: showEncyclopedia 1s;
-  background-color: #cfa971;
-  border: 4px solid #d19844;
-  border-radius: 1rem;
-}
-
-.fishList_view-encyclopedia-title {
+.fishList_view-title {
   display: flex;
   justify-content: space-between;
-  width: 90%;
-  height: 80px;
   align-items: center;
+  width: 90%;
   margin: 0 auto;
-
-  & > div:nth-child(1) {
-    font-size: 2.5rem;
-  }
+  height: 100px;
+  font-size: 2.5rem;
 }
 
-.fishList_view-encyclopedia-input {
-  display: flex;
-  transform: translateX(50px);
-  & > input {
-    border-radius: 1rem;
-    padding: 0.8rem;
-    padding-right: 3.5rem;
-  }
-  & > button {
-    width: 50px;
-    height: 50px;
-    transform: translateX(-50px);
+.fishList_gotoMain {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  &:hover {
+    scale: 1.15;
   }
 }
 
 .fishList_view-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+  gap: 40px;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 4.5rem;
+  animation: showEncyclopedia 1s;
 
   @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.fishList_view-encyclopedia-box-card {
+.fishList_view-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 20rem;
+  height: 14rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.fishList_card-img {
-  background-image: url('http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg');
+
+.fishList_view-img {
   width: 100%;
-  height: 150px;
+  height: 100%;
+  background-image: url('http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg');
   background-position: center;
-  background-color: red;
   background-size: cover;
 }
 
-.fishList_card-type {
+.fishList_view-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 @keyframes showEncyclopedia {

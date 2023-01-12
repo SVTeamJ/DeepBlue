@@ -5,7 +5,9 @@ import glassPreview from '../../assets/glassPreview.png';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
 const FishList = () => {
+  const navigator = useNavigate();
   const { data } = useQuery<fishInform[]>(['FISHLIST'], () =>
     restFetcher({
       method: 'GET',
@@ -19,28 +21,28 @@ const FishList = () => {
   //     console.log(result);
   //   })();
   // }, []);
+  const gotoMain = () => {
+    navigator('/');
+  };
   return (
     <div className="fishList_view">
-      <div className="fishList_view-encyclopedia-box">
-        <div className="fishList_view-encyclopedia-title">
-          <div>도감</div>
-          <div className="fishList_view-encyclopedia-input">
-            <input></input>
-            <button>
-              <img src={glassPreview}></img>
-            </button>
-          </div>
-        </div>
-        <div className="fishList_view-grid">
-          {data?.map((item: fishInform) => {
-            return (
-              <div className="fishList_view-encyclopedia-box-card">
-                <div className="fishList_card-img"></div>
-                <div className="fishList_card-type">{item.fish_type}</div>
-              </div>
-            );
-          })}
-        </div>
+      <div className="fishList_view-title">
+        <div>로고</div>
+        <div>물고기 도감</div>
+        <div></div>
+      </div>
+      <div onClick={gotoMain} className="fishList_gotoMain">
+        돌아가기
+      </div>
+      <div className="fishList_view-grid">
+        {data?.map((item) => {
+          return (
+            <div className="fishList_view-card">
+              <div className="fishList_view-img"></div>
+              <div className="fishList_view-name">{item.fish_type}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
