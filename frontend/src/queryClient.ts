@@ -57,4 +57,6 @@ export const restFetcher = async ({
   }
 };
 
-export const QueryKeys = {};
+export const QueryKeys = {
+  FISHLIST: 'FISHLIST',
+};
