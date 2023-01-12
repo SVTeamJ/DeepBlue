@@ -8,11 +8,9 @@ class UserBase(BaseModel):
 
 class User(UserBase):
     id: int
-    user_type: int
     name: str
-    gender: str
-    age_range: str
-    phone_num: str
+    username: str
+    password: str
     token: str
     is_active: bool
 
@@ -20,10 +18,8 @@ class User(UserBase):
 
 class UserCreate(UserBase):
     name: str
-    gender: str
-    age_range: str
-    phone_num: str
-    user_type: bool
+    username : str
+    password: str
     token: str
 
 
