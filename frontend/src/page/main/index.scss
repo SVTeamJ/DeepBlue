@@ -1,38 +1,47 @@
 @import '../../media.scss';
 
-.insert_title{
-    font-size: 60px;
-    width: 30vw;
-    height: auto;
-    position:absolute;
-    bottom: 60%;
-    right: 10%
-}
 .main_background{// 배경 지정을 위한 CSS
     width: 100%;
     height: 100vh;
+    max-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: #D4f5fe;
-    position: relative;
-    overflow: hidden;
     margin: 0;
     padding: 0;
 }
 
+.main_left_background{
+    width: 50%;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+.main_right_background{
+    width: 50%;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
 .insert_gull{ //갈매기 위치 지정을 위한 css
-    width: 10vw;
+    width: 12vw;
     height: auto;
     margin-top: 5vw;
     margin-left: 5vw;
     align-self: flex-start;
-    animation:ani_gull 2s ease-in Infinite Alternate;
+    //justify-self: flex-start;
+    animation:ani_gull 3s ease-in Infinite Alternate;
 }
 
 .insert_sun{//태양 위치 조정을 위한 css
-    width: 10vw;
-    height: auto;
     align-self: flex-end;
+    justify-self: flex-end;
     animation:ani_sun 2s ease-in Infinite Alternate;
 }
 
@@ -40,50 +49,41 @@
     width: 30vw;
     height: auto;
     position: absolute;
-    bottom: -15vw;
+    //bottom: -15vw;
     right: 50%;
-    overflow: hidden;
+    z-index: 99;
+    transform: translate(0px,20px);
     animation:ani_fisher_man 2s ease-in Infinite Alternate;
     
 }
 
-.insert_jbutton1{//버튼 위치 조정을 위한 css
-    width: 20vw;
-    height: auto;
-    position:absolute;
-    bottom: 50%;
-    right: 20%
-}
-
-.insert_jbutton2{//버튼 위치 조정을 위한 css
-    width: 20vw;
-    height: auto;
-    position:absolute;
-    bottom: 40%;
-    right: 20%
+.insert_button_map{
+    flex-wrap: wrap;
+    //justify-self: center;
+    //align-self: center;
 }
 
 .insert_wave1{//파도 효과를 위한 css
     width: 20vw;
-    height: 9vw;
+    height: 20%;//%로 수정
     position:absolute;
     bottom: 0;
-    opacity: 50;
+    opacity: 80%;
 }
 
 .insert_wave2{//파도 효과를 위한 css
     width: 10vw;
-    height: 7vw;
+    height: 18%;
     position:absolute;
     bottom: 0;
-    opacity: 50;
+    opacity: 80%;
 }
 
 .insert_wave3{//파도 효과를 위한 css
     width: 10vw;
-    height: 4vw;
+    height: 15%;
     position:absolute;
-    opacity: 50;
+    opacity: 80%;
     bottom: 0;
 }
 
@@ -104,13 +104,13 @@
         margin-top: 5vw;
         margin-left: 5vw;
     }
-    50% {
-        margin-top: 4vw;
-        margin-left: 4vw;
+    75% {
+        margin-top: 0vw;
+        margin-left: 0vw;
     }
-    to {
-        margin-top: 3vw;
-        margin-left: 3vw;
+    to {//100%
+        margin-top: -10vw;
+        margin-left: -10vw;
     } 
 }
 
@@ -119,9 +119,9 @@
         filter: brightness(1);
     }
     50% {
-        filter: brightness(1.1);
+        filter: brightness(2);
     }
     to {
-        filter: brightness(1.2);
+        filter: brightness(3);
     } 
 }
