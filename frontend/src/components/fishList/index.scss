@@ -12,6 +12,29 @@
 
 .fishList_view-encyclopedia-box {
   width: 80vw;
-  height: 70vh;
+  height: 75vh;
   background-color: #af5800;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: showEncyclopedia 1s;
+}
+
+.fishList_view-encyclopedia {
+  width: 70vw;
+  height: 65vh;
+  background-color: #884503;
+}
+
+@keyframes showEncyclopedia {
+  0% {
+    opacity: 0.2;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
