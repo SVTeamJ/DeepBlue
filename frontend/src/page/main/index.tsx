@@ -19,11 +19,11 @@ const Main = () => {
         <div className='main_right_background'>
           <img className="insert_sun" src={sun}></img>
           <div className='insert_button_map'>
-            <div>강태공 이야기</div>
+            <div className='insert_title'>강태공 이야기</div>
             <div className='insert_jbutton'> 낚시하러가기 </div>
-            <div className='insert_jbutton'> 낚시하러가기 </div>
-            <div className='insert_jbutton'> 낚시하러가기 </div>
-            <div className='insert_jbutton'> 낚시하러가기 </div>
+            <div className='insert_jbutton'> 내가 잡은 물고기 보기 </div>
+            <div className='insert_jbutton'> 물때 확인 하기 </div>
+            <div className='insert_jbutton'> 랭킹 보기 </div>
           </div>
         </div>
         <Wave className='insert_wave1' fill="#68E1FD"

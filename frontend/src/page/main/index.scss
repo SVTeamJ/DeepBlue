@@ -29,19 +29,20 @@
     margin: 0;
     padding: 0;
 }
+
 .insert_gull{ //갈매기 위치 지정을 위한 css
     width: 12vw;
     height: auto;
     margin-top: 5vw;
     margin-left: 5vw;
     align-self: flex-start;
-    //justify-self: flex-start;
     animation:ani_gull 3s ease-in Infinite Alternate;
 }
 
 .insert_sun{//태양 위치 조정을 위한 css
+    width: 9vw;
+    height: 9vw;
     align-self: flex-end;
-    justify-self: flex-end;
     animation:ani_sun 2s ease-in Infinite Alternate;
 }
 
@@ -52,7 +53,6 @@
     //bottom: -15vw;
     right: 50%;
     z-index: 99;
-    transform: translate(0px,20px);
     animation:ani_fisher_man 2s ease-in Infinite Alternate;
     
 }
@@ -60,19 +60,26 @@
 .insert_button_map{
     display: flex;
     width: 50%;
-    gap :20px;
+    gap :1vw;
     flex-wrap: wrap;
     justify-content: center;
+    justify-self: center;
     align-self: center;
+    align-items: center;
 }
 
-.insert_jbutton{
-    width : 362px;
-    height: 66.21px;
+.insert_title{
+    font-size: 3em;
+}
+
+.insert_jbutton{//66 = 8vh
+    width : 100%;
+    height: 8vh;
     background-color: #283F9F;
-    border: 3.65138px solid #5C7CFA;
-    border-radius: 7.30275px;
-    padding : 14.6055px 29.211px;
+    border: 0.5vh solid #5C7CFA;
+    border-radius: 1vh;
+    line-height: 7vh;
+    text-align: center;
 }
 
 .insert_wave1{//파도 효과를 위한 css
