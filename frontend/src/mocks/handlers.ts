@@ -7,7 +7,7 @@ import { rest } from 'msw';
  img 
  */
 
-interface fishInform {
+export interface fishInform {
   fish_type: string;
   toxicyty: string;
   image: string;
@@ -28,6 +28,8 @@ const fishList: fishInform[] = [
 
 export const handlers = [
   rest.get('/api/v1/fishList/all', (req, res, ctx) => {
+    console.log('호출됨');
+    console.log(fishList);
     return res(ctx.status(200), ctx.json(fishList));
   }),
 ];
