@@ -24,6 +24,46 @@ const fishList: fishInform[] = [
     closed_season: '3월 22일 ~ 6월 33일',
     description: '이건 갈치입니다',
   },
+  {
+    fish_type: '갈치',
+    toxicyty: 'yes',
+    image:
+      'http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg',
+    closed_season: '3월 22일 ~ 6월 33일',
+    description: '이건 갈치입니다',
+  },
+  {
+    fish_type: '갈치',
+    toxicyty: 'yes',
+    image:
+      'http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg',
+    closed_season: '3월 22일 ~ 6월 33일',
+    description: '이건 갈치입니다',
+  },
+  {
+    fish_type: '갈치',
+    toxicyty: 'yes',
+    image:
+      'http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg',
+    closed_season: '3월 22일 ~ 6월 33일',
+    description: '이건 갈치입니다',
+  },
+  {
+    fish_type: '갈치',
+    toxicyty: 'yes',
+    image:
+      'http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg',
+    closed_season: '3월 22일 ~ 6월 33일',
+    description: '이건 갈치입니다',
+  },
+  {
+    fish_type: '갈치',
+    toxicyty: 'yes',
+    image:
+      'http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg',
+    closed_season: '3월 22일 ~ 6월 33일',
+    description: '이건 갈치입니다',
+  },
 ];
 
 export const handlers = [

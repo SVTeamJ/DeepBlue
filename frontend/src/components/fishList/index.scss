@@ -5,27 +5,34 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: gray;
+  background-color: whitesmoke;
   width: 100%;
   height: 100vh;
 }
 
 .fishList_view-encyclopedia-box {
   width: 80vw;
-  height: 75vh;
-  background-color: #af5800;
-
+  height: 80vh;
+  background-repeat: no-repeat;
+  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-
   animation: showEncyclopedia 1s;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  align-items: start;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
-.fishList_view-encyclopedia {
-  width: 70vw;
-  height: 65vh;
-  background-color: #884503;
+.fishList_view-encyclopedia-box-card {
+  padding: 15px;
+  border: 1px solid black;
+  background-color: red;
+  & > div > img {
+    width: 100%;
+  }
 }
 
 @keyframes showEncyclopedia {

@@ -21,11 +21,16 @@ const FishList = () => {
   return (
     <div className="fishList_view">
       <div className="fishList_view-encyclopedia-box">
-        <div className="fishList_view-encyclopedia">
-          {data?.map((item: fishInform) => {
-            return <div>{item.description}</div>;
-          })}
-        </div>
+        {data?.map((item: fishInform) => {
+          return (
+            <div className="fishList_view-encyclopedia-box-card">
+              <div>
+                <img src={item.image}></img>
+              </div>
+              <div>{item.description}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
