@@ -124,9 +124,11 @@
   border-radius: 50%;
   background-color: gray;
   cursor: pointer;
+  font-size: 1.5rem;
   &:hover {
     opacity: 0.9;
-    background-color: red;
+    background-color: #0e1733;
+    color: white;
   }
 }
 
