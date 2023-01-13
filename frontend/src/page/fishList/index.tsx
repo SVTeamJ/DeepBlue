@@ -41,6 +41,13 @@ const FishList = () => {
   const gotoMain = () => {
     navigator('/');
   };
+
+  const gotoTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <div className="fishList_view">
       <div className="fishList_view-nav">
@@ -60,7 +67,7 @@ const FishList = () => {
         <h1>내가 잡은 물고기 보기</h1>
         <p>이곳에서 여러분이 잡은 물고기의 정보를 모두 볼 수 있어요!</p>
       </div>
-      <div onClick={gotoMain} className="fishList_gotoMain"></div>
+      <div onClick={gotoTop} className="fishList_gotoMain"></div>
       <div className="fishList_view-grid">
         {data?.map((item, index) => {
           return (

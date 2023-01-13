@@ -128,13 +128,16 @@
   font-size: 1.2rem;
   position: fixed;
   background-color: white;
-  width: 3rem;
-  height: 3rem;
-  border: 2.5px solid #0e1733;
+  width: 2.5rem;
+  height: 2.5rem;
 
   border-radius: 50%;
   bottom: 30px;
   right: 30px;
+
+  background-image: url('../../assets/up-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 
   cursor: pointer;
   &:hover {
