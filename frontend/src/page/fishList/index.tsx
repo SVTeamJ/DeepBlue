@@ -45,10 +45,17 @@ const FishList = () => {
   };
   return (
     <div className="fishList_view">
+      <div className="fishList_view-nav">
+        <div>
+          <div>태공씨의 하루</div>
+        </div>
+        <div>
+          <input></input>
+        </div>
+      </div>
       <div className="fishList_view-title">
-        <div>로고</div>
-        <div>물고기 도감</div>
-        <div></div>
+        <h1>내가 잡은 물고기 보기</h1>
+        <p>이곳에서 여러분이 잡은 물고기의 정보를 모두 볼 수 있어요!</p>
       </div>
       <div onClick={gotoMain} className="fishList_gotoMain">
         돌아가기
@@ -61,7 +68,6 @@ const FishList = () => {
               className="fishList_view-card"
             >
               <div className="fishList_view-img"></div>
-              <div className="fishList_view-name">{item.fish_type}</div>
             </div>
           );
         })}
