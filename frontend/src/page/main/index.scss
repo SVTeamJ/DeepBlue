@@ -7,8 +7,6 @@
     display: flex;
     flex-direction: row;
     background: #D4f5fe;
-    margin: 0;
-    padding: 0;
 }
 
 .main_left_background{
@@ -16,9 +14,6 @@
     height: 100vh;
     max-height: 100vh;
     display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
 }
 .main_right_background{
     width: 50%;
@@ -26,65 +21,78 @@
     max-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-}
-
-.insert_gull{ //갈매기 위치 지정을 위한 css
-    width: 12vw;
-    height: auto;
-    margin-top: 5vw;
-    margin-left: 5vw;
-    align-self: flex-start;
-    animation:ani_gull 3s ease-in Infinite Alternate;
-}
-
-.insert_sun{//태양 위치 조정을 위한 css
-    width: 9vw;
-    height: 9vw;
-    align-self: flex-end;
-    animation:ani_sun 2s ease-in Infinite Alternate;
+    align-items: flex-end;
 }
 
 .insert_fisher_man{//강태공 위치 조정을 위한 css
     width: 30vw;
     height: auto;
     position: absolute;
-    //bottom: -15vw;
     right: 50%;
     z-index: 99;
     animation:ani_fisher_man 2s ease-in Infinite Alternate;
     
 }
 
-.insert_button_map{
+.insert_right_center_background{
     display: flex;
     width: 50%;
-    gap :1vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-self: center;
+    height: 100%;
+    flex-direction: row;
+    //justify-content: center;
+    align-self: center;//나중에 반응형
+
+}
+
+.insert_foundation{
+    width: 100%;
+    height: 20%;
+    align-self: flex-end;
+    background-color: green;
+}
+
+.insert_login_page{
     align-self: center;
+    width: 450px;
+    height: 367px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
-.insert_title{
-    font-size: 3em;
+.insert_login_and_signin{
+    display: grid;
+    width: 100%;
+    height: 3.125rem;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    background-color: aqua;
 }
 
-.insert_jbutton{//66 = 8vh
-    width : 100%;
-    height: 8vh;
-    background-color: #283F9F;
-    border: 0.5vh solid #5C7CFA;
-    border-radius: 1vh;
-    line-height: 7vh;
-    text-align: center;
+.insert_login{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+}
+.insert_signin{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
 }
 
 .insert_wave1{//파도 효과를 위한 css
     width: 20vw;
-    height: 20%;//%로 수정
+    height: 20%;
     position:absolute;
     bottom: 0;
     opacity: 80%;
@@ -127,20 +135,8 @@
         margin-top: 0vw;
         margin-left: 0vw;
     }
-    to {//100%
+    100% {
         margin-top: -10vw;
         margin-left: -10vw;
-    } 
-}
-
-@keyframes ani_sun {// 태양 애니메이션을 위한 css
-    0% {
-        filter: brightness(1);
-    }
-    50% {
-        filter: brightness(2);
-    }
-    to {
-        filter: brightness(3);
     } 
 }
