@@ -44,14 +44,16 @@ const FishList = () => {
   return (
     <div className="fishList_view">
       <div className="fishList_view-nav">
-        <div onClick={gotoMain} className="fishList_view-nav-logo">
-          <img src={logo}></img>
-          <div>태공씨의 하루</div>
-        </div>
-        <div className="fishList_view-nav-search">
-          <div></div>
-          <input placeholder="찾고싶은 물고기를 입력해주세요 !"></input>
-          <button>검색</button>
+        <div>
+          <div onClick={gotoMain} className="fishList_view-nav-logo">
+            <img src={logo}></img>
+            <div>태공씨의 하루</div>
+          </div>
+          <div className="fishList_view-nav-search">
+            <div></div>
+            <input placeholder="찾고싶은 물고기를 입력해주세요 !"></input>
+            <button>검색</button>
+          </div>
         </div>
       </div>
       <div className="fishList_view-title">
