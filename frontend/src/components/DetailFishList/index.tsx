@@ -37,18 +37,24 @@ const DetaiFish = ({
           }}
         ></div>
         <div className="DetailPage_inform-input">
-          <h1>물고기 이름: {fish_type}</h1>
+          <h1>{fish_type}</h1>
           <div className="DetailPage_line"></div>
-          <div>서식 기간:{closed_season}</div>
-          <div>
-            <p>이거... 먹을 수 있는건가요?</p>
+          <div className="DetailPage_inform-closed_season">
+            <h1>서식기간</h1>
+            <p>{closed_season}</p>
+          </div>
+          <div className="DetailPage_inform-toxicyty">
+            <h1>이거... 먹을 수 있는건가요?</h1>
             <p>
               {toxicyty == 'yes'
                 ? '네 맛있게드세요.'
                 : '아니요 ! 먹으면 안돼요!'}
             </p>
           </div>
-          <div className="DetailPage_description">{description}</div>
+          <div className="DetailPage_description">
+            <h1>설명</h1>
+            <p> {description}</p>
+          </div>
         </div>
         <span onClick={(e) => closeModal(e)} className="DetailPage_closed">
           X

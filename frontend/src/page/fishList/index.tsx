@@ -30,9 +30,6 @@ const FishList = () => {
     setModal(true);
   };
 
-  useEffect(() => {
-    console.log(currentModalInform);
-  }, [currentModalInform]);
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   (async () => {
