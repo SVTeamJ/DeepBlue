@@ -33,7 +33,7 @@ const DetaiFish = ({
           className="DetailPage_inform-img"
           style={{
             backgroundImage: `url(${image})`,
-            backgroundSize: 'contain',
+            backgroundSize: 'cover',
           }}
         ></div>
         <div className="DetailPage_inform-input">
