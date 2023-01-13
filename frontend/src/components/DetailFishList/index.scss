@@ -1,0 +1,99 @@
+@import '@/media.scss';
+.DetailPage {
+  color: black;
+  background-color: rgba(217, 217, 217, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.DetailPage_inform {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80vw;
+  height: 80%;
+  min-height: 250px;
+  background-color: white;
+  border-radius: 2rem;
+  align-items: center;
+  animation: showEncyclopedia 1s;
+  & > div:nth-child(1) {
+    width: 100%;
+    height: 30%;
+  }
+  & > div:nth-child(2) {
+    width: 100%;
+    height: 70%;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    & > div {
+      width: 45%;
+      height: 100%;
+    }
+  }
+}
+
+.DetailPage_inform-img {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg');
+}
+
+.DetailPage_inform-input {
+  display: flex;
+  flex-direction: column;
+  & h1 {
+    font-size: 3rem;
+  }
+}
+
+.DetailPage_description {
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  flex-grow: 1;
+}
+
+.DetailPage_line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.DetailPage_closed {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -15px;
+  right: -15px;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+    background-color: red;
+  }
+}
+
+@keyframes showEncyclopedia {
+  0% {
+    opacity: 0.2;
+    transform: translateY(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

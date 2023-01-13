@@ -11,7 +11,7 @@ export const routes = [
     children: [
       { path: '/', element: <Main />, index: true },
       { path: '/result', element: <Result />, index: true },
-      { path: '/fishList', element: <FishList />, index: true },
+      { path: '/fishList', element: <FishList></FishList>, index: true },
     ],
   },
 ];

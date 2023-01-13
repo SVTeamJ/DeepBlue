@@ -6,14 +6,33 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
+import DetailFishList from '@/components/DetailFishList';
 const FishList = () => {
   const navigator = useNavigate();
+  const [modal, setModal] = useState(false);
+  const [currentModalInform, setCurrentModalInform] = useState({
+    fish_type: '',
+    toxicyty: '',
+    image: '',
+    closed_season: '',
+    description: '',
+  });
+
   const { data } = useQuery<fishInform[]>(['FISHLIST'], () =>
     restFetcher({
       method: 'GET',
       path: '/api/v1/fishList/all',
     }),
   );
+
+  const showDetailFish = (item: fishInform) => {
+    setCurrentModalInform(() => item);
+    setModal(true);
+  };
+
+  useEffect(() => {
+    console.log(currentModalInform);
+  }, [currentModalInform]);
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   (async () => {
@@ -35,15 +54,25 @@ const FishList = () => {
         돌아가기
       </div>
       <div className="fishList_view-grid">
-        {data?.map((item) => {
+        {data?.map((item, index) => {
           return (
-            <div className="fishList_view-card">
+            <div
+              onClick={() => showDetailFish(item)}
+              className="fishList_view-card"
+            >
               <div className="fishList_view-img"></div>
               <div className="fishList_view-name">{item.fish_type}</div>
             </div>
           );
         })}
       </div>
+      {modal ? (
+        <DetailFishList
+          modal={modal}
+          setModal={setModal}
+          {...currentModalInform}
+        ></DetailFishList>
+      ) : null}
     </div>
   );
 };
