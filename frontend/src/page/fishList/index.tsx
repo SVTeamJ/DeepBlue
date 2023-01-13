@@ -44,7 +44,7 @@ const FishList = () => {
   return (
     <div className="fishList_view">
       <div className="fishList_view-nav">
-        <div className="fishList_view-nav-logo">
+        <div onClick={gotoMain} className="fishList_view-nav-logo">
           <img src={logo}></img>
           <div>태공씨의 하루</div>
         </div>
