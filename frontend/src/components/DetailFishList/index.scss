@@ -19,9 +19,11 @@
   height: 80%;
   min-height: 250px;
   background-color: white;
-  border-radius: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
   align-items: center;
-  animation: showEncyclopedia 1s;
+  animation: showEncyclopedia 0.5s;
   & > div:nth-child(1) {
     width: 100%;
     height: 30%;
@@ -89,8 +91,8 @@
 
 @keyframes showEncyclopedia {
   0% {
-    opacity: 0.2;
-    transform: translateY(-150px);
+    opacity: 0.3;
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
