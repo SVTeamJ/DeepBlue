@@ -9,12 +9,64 @@
 
 .fishList_view-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 90%;
+  position: fixed;
+  width: 100%;
+  background-color: #4da8bc;
   margin: 0 auto;
   height: 80px;
   font-size: 2.5rem;
+  z-index: 9;
+}
+
+.fishList_view-nav-search {
+  position: relative;
+  right: 20px;
+  top: 5px;
+  transform: translateY(-15px);
+  & > div {
+    background-image: url('../../assets/glassPreview.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 20px;
+    left: 5px;
+    z-index: 5;
+  }
+
+  & > input {
+    width: 18rem;
+    height: 3rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    padding-left: 3rem;
+    border: 2px solid #0e1733;
+  }
+
+  & > button {
+    width: 5rem;
+    height: 3rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    color: white;
+    background-color: white;
+    border: 2px solid #0e1733;
+    color: #0e1733;
+    border-radius: 1rem;
+
+    &:hover {
+      scale: 1.05;
+    }
+
+    &:active {
+      position: relative;
+      top: -1px;
+    }
+  }
 }
 
 .fishList_view-title {
