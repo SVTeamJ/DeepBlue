@@ -7,6 +7,7 @@ import axios from 'axios';
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
+import logo from '../../assets/logo.png';
 const FishList = () => {
   const navigator = useNavigate();
   const [modal, setModal] = useState(false);
@@ -43,7 +44,8 @@ const FishList = () => {
   return (
     <div className="fishList_view">
       <div className="fishList_view-nav">
-        <div>
+        <div className="fishList_view-nav-logo">
+          <img src={logo}></img>
           <div>태공씨의 하루</div>
         </div>
         <div className="fishList_view-nav-search">

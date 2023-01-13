@@ -20,6 +20,15 @@
   z-index: 9;
 }
 
+.fishList_view-nav-logo {
+  display: flex;
+  align-items: center;
+  & > img {
+    width: 4rem;
+    height: 4.5rem;
+  }
+}
+
 .fishList_view-nav-search {
   position: relative;
   right: 20px;
