@@ -29,12 +29,25 @@ const DetaiFish = ({
   return (
     <div onClick={(e) => closeModal(e)} className="DetailPage">
       <div className="DetailPage_inform">
-        <div className="DetailPage_inform-img"></div>
+        <div
+          className="DetailPage_inform-img"
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'contain',
+          }}
+        ></div>
         <div className="DetailPage_inform-input">
           <h1>물고기 이름: {fish_type}</h1>
           <div className="DetailPage_line"></div>
           <div>서식 기간:{closed_season}</div>
-          <div>먹을수있는건가요? {toxicyty}</div>
+          <div>
+            <p>이거... 먹을 수 있는건가요?</p>
+            <p>
+              {toxicyty == 'yes'
+                ? '네 맛있게드세요.'
+                : '아니요 ! 먹으면 안돼요!'}
+            </p>
+          </div>
           <div className="DetailPage_description">{description}</div>
         </div>
         <span onClick={(e) => closeModal(e)} className="DetailPage_closed">

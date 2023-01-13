@@ -44,10 +44,11 @@
 }
 
 .DetailPage_inform-img {
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('http://health.chosun.com/site/data/img_dir/2015/10/23/2015102301141_0.jpg');
+  min-width: 50%;
+  min-height: 50%;
 }
 
 .DetailPage_inform-input {

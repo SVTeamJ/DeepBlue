@@ -67,7 +67,12 @@ const FishList = () => {
               onClick={() => showDetailFish(item)}
               className="fishList_view-card"
             >
-              <div className="fishList_view-img"></div>
+              <div
+                style={{
+                  backgroundImage: `url(${item.image})`,
+                }}
+                className="fishList_view-img"
+              ></div>
             </div>
           );
         })}
