@@ -17,7 +17,7 @@ const Login = () => {
           </div>
         </div>
         <div className='login_right_background'>
-          <button className='mobile_welcome' >Welcome!</button>
+          {/*<button className='mobile_welcome' >Welcome!</button>*/}
           <Is_login_check/>
         </div>
       </div>
