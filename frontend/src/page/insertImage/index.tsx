@@ -1,10 +1,10 @@
-import Nav from '@/components/nav';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import download from '@/assets/download.png';
 import smallFish from '@/assets/smallFish.png';
 import seaweeds from '@/assets/seaweeds.png';
 import './index.scss';
 import { useDropzone } from 'react-dropzone';
+import OldNav from '@/components/oldnav';
 const InsertImage = () => {
   const imageRef = useRef<HTMLInputElement>(null);
   const [imagefile, setImageFile] = useState<File>();
@@ -49,7 +49,7 @@ const InsertImage = () => {
 
   return (
     <div className="img-view">
-      <Nav />
+      <OldNav />
       <div className="insertImage-view">
         <div className="insert_box">
           <div
