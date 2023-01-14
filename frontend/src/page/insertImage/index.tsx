@@ -49,7 +49,6 @@ const InsertImage = () => {
 
   return (
     <div className="img-view">
-      <Nav />
       <div className="insertImage-view">
         <div className="insert_box">
           <div
