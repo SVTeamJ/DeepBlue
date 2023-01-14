@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
+  overflow: hidden;
   top: 0;
 }
 
@@ -30,6 +31,7 @@
   @include tablet {
     display: flex;
     flex-direction: row;
+    overflow: hidden;
   }
 }
 
@@ -60,6 +62,7 @@
   padding-right: 3rem;
   border-radius: 1rem;
   min-width: 90%;
+  min-height: 300px;
   & > h1 {
     font-size: 3rem;
     font-weight: bold;

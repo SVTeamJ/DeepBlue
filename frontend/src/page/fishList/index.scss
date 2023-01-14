@@ -18,15 +18,20 @@
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   margin: 0 auto;
-  height: 3rem;
+  height: 50px;
   font-size: 2.5rem;
   z-index: 9;
   filter: blur(0.2px);
 
   & > div {
-    width: 85%;
+    width: 95%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
+
+    @include desktop {
+      width: 80%;
+    }
   }
 }
 
@@ -39,18 +44,16 @@
     height: 3rem;
   }
   & > div {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
 .fishList_view-nav-search {
+  height: 100%;
   position: relative;
-  right: 20px;
-  top: 5px;
-  transform: translateY(-10px);
-
+  display: flex;
+  align-items: center;
   @include tablet {
-    transform: translateY(-15px);
   }
   & > div {
     background-image: url('../../assets/glassPreview.png');
@@ -58,19 +61,15 @@
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    width: 1.2rem;
-    height: 1.2rem;
-    top: 17px;
+    width: 1rem;
+    height: 1rem;
     left: 5px;
     z-index: 5;
-    @include tablet {
-      top: 30px;
-    }
   }
 
   & > input {
-    width: 15rem;
-    height: 2.5rem;
+    width: 18rem;
+    height: 30px;
     border-radius: 0.5rem;
     font-size: 0.00002rem;
     padding-left: 1.7rem;
@@ -78,22 +77,22 @@
     ::placeholder {
       font-size: 0.2rem;
     }
+    @include desktop {
+      width: 12rem;
+    }
   }
 
   & > button {
-    width: 3rem;
-    height: 2.3rem;
-    font-size: 1rem;
+    width: 3.5rem;
+    height: 30px;
+    font-size: 0.8rem;
     margin-left: 0.5rem;
+    margin-right: 0.5rem;
     color: white;
     background-color: white;
     border: 2px solid #0e1733;
     color: #0e1733;
     border-radius: 0.5rem;
-
-    @include tablet {
-      transform: translateY(2px);
-    }
 
     &:hover {
       scale: 1.05;
@@ -102,6 +101,9 @@
     &:active {
       position: relative;
       top: -1px;
+    }
+    @include desktop {
+      width: 2.5rem;
     }
   }
 }
