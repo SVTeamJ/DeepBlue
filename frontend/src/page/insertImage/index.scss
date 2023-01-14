@@ -25,10 +25,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
   border-radius: 20px;
   max-width: 70%;
-
+  background: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
   @include tablet {
     height: 25rem;
   }
@@ -43,7 +45,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(157, 255, 255, 0.3);
+  background: white;
   border: 3.5px dashed #000000;
   border-radius: 20px;
 
@@ -87,6 +89,10 @@
   margin-top: 10px;
   background-color: rgb(219, 249, 249);
   border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 
   &:hover {
     scale: 1.05;
