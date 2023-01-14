@@ -44,49 +44,37 @@
 
 }
 
-.insert_foundation{
-    width: 100%;
-    height: 20%;
-    align-self: flex-end;
-    background-color: green;
-}
-
-.insert_login_page{
+.insert_login_layout{
     align-self: center;
     width: 450px;
     height: 367px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
 
-.insert_login_and_signin{
+.insert_switch_login{
     display: grid;
     width: 100%;
     height: 3.125rem;
-    align-items: center;
+    //align-items: center;
     grid-template-columns: 1fr 1fr;
     background-color: aqua;
 }
 
-.insert_login{
-    display: flex;
+.switch_button{
+    display: login;
     width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    background-color: yellow;
+
 }
-.insert_signin{
-    display: flex;
+
+
+.insert_login_page{
     width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    height: 90%;
     background-color: green;
 }
 
