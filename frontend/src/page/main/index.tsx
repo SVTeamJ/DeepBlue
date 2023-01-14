@@ -1,6 +1,5 @@
 import React from 'react';
-import InsertImage from '../insertImage';
-
+import InsertImage from '../insetImage';
 const Main = () => {
   return (
     <div>

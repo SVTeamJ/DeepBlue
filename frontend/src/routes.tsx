@@ -3,7 +3,7 @@ import GlobalLayout from './page/_layout';
 
 const Main = lazy(() => import('./page/main'));
 const Result = lazy(() => import('./page/result'));
-
+const FishList = lazy(() => import('./page/fishList'));
 export const routes = [
   {
     path: '/',
@@ -11,6 +11,7 @@ export const routes = [
     children: [
       { path: '/', element: <Main />, index: true },
       { path: '/result', element: <Result />, index: true },
+      { path: '/fishList', element: <FishList></FishList>, index: true },
     ],
   },
 ];
