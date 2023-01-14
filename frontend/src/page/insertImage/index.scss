@@ -25,12 +25,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
   max-width: 70%;
   background: #ffffff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
     inset 4px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
+  border-radius: 20px;
   @include tablet {
     height: 25rem;
   }
@@ -88,7 +87,6 @@
   height: 3.5rem;
   margin-top: 10px;
   background-color: rgb(219, 249, 249);
-  border-radius: 1rem;
   background: #ffffff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
     inset 4px 4px 4px rgba(0, 0, 0, 0.25);
