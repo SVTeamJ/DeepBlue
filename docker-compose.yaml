@@ -12,11 +12,14 @@ services:
 
   mysql:
     container_name: taegong_mysql
-    image: mysql:8.0-oracle
+    #    image: mysql:8.0-oracle
+    build:
+      context: ./db
+      dockerfile: Dockerfile
     volumes:
       - mysql_data_dev:/mysql
-    env_file:
-      - ./.env
+    #    env_file:
+    #      - ./.env
     networks:
       - mynet
     ports:
