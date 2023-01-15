@@ -5,7 +5,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #4da8bc 0%, #306c79 100%);
+  background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
   position: relative;
 }
 
@@ -25,10 +25,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
-  border-radius: 20px;
   max-width: 70%;
-
+  background: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
   @include tablet {
     height: 25rem;
   }
@@ -43,7 +44,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(157, 255, 255, 0.3);
+  background: white;
   border: 3.5px dashed #000000;
   border-radius: 20px;
 
@@ -86,7 +87,10 @@
   height: 3.5rem;
   margin-top: 10px;
   background-color: rgb(219, 249, 249);
-  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 
   &:hover {
     scale: 1.05;

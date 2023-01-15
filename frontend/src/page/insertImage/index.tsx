@@ -49,7 +49,6 @@ const InsertImage = () => {
 
   return (
     <div className="img-view">
-      <Nav />
       <div className="insertImage-view">
         <div className="insert_box">
           <div
@@ -81,7 +80,7 @@ const InsertImage = () => {
         <div className="insert_search">검색</div>
       </div>
 
-      <div className="insert_fishImg">
+      {/* <div className="insert_fishImg">
         <img src={smallFish}></img>
       </div>
       <div className="insert_fishImg2">
@@ -89,7 +88,7 @@ const InsertImage = () => {
       </div>
       <div className="insert_seaweedsImg">
         <img src={seaweeds}></img>
-      </div>
+      </div> */}
     </div>
   );
 };
