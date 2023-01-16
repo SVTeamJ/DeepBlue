@@ -28,4 +28,9 @@ def upgrade() -> None:
 
 
 def downgrade() -> None:
-    pass
+    """
+    롤백 할때 fish table에 is_active 컬럼 삭제
+    :return:
+    """
+    op.drop_column('fish', 'is_active')
+
