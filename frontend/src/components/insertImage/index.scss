@@ -1,27 +1,10 @@
 @import '../../media.scss';
 
-.img-view {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
-  position: relative;
-}
-
-.insertImage-view {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .insert_box {
   width: 35rem;
   height: 22.5rem;
   display: flex;
+  color: black !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -30,6 +13,8 @@
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
     inset 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 32px;
   @include tablet {
     height: 25rem;
   }
@@ -82,7 +67,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 6rem;
   height: 3.5rem;
   margin-top: 10px;
@@ -91,7 +75,9 @@
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
     inset 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-
+  color: black;
+  margin: 0 auto;
+  margin-top: 12px;
   &:hover {
     scale: 1.05;
   }
@@ -99,52 +85,5 @@
   &:active {
     position: relative;
     top: -1px;
-  }
-}
-
-/////// 여기부터는 position으로 이미지를 레이아웃할떄 쓴 css
-.insert_fishImg {
-  position: absolute;
-  width: 8rem;
-  height: 14rem;
-  left: 5px;
-  top: 50%;
-
-  & img {
-    width: 100%;
-    height: 100%;
-  }
-
-  @include tablet {
-    left: calc(30px + 3%);
-  }
-}
-
-.insert_fishImg2 {
-  position: absolute;
-  width: 8rem;
-  height: 14rem;
-  right: 5px;
-  top: 30%;
-
-  & img {
-    width: 100%;
-    height: 100%;
-  }
-  @include tablet {
-    right: calc(30px + 3%);
-  }
-}
-
-.insert_seaweedsImg {
-  width: 14rem;
-  height: 14rem;
-
-  position: absolute;
-  right: 15%;
-  bottom: 0;
-  & img {
-    width: 100%;
-    height: 100%;
   }
 }

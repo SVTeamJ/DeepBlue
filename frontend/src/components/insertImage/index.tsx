@@ -48,48 +48,32 @@ const InsertImage = () => {
   });
 
   return (
-    <div className="img-view">
-      <div className="insertImage-view">
-        <div className="insert_box">
-          <div
-            {...getRootProps()}
-            onClick={openFile}
-            className="insert_picture"
-          >
-            {preview && (
-              <div>
-                <img className="insert_picture-previewImg" src={preview}></img>
-              </div>
-            )}
-            {!preview && (
-              <>
-                <img className="insert_picture-img" src={download} />
-                <p>이곳을 클릭하거나 사진을 올려주세요 !</p>
-              </>
-            )}
-          </div>
-          <input
-            {...getInputProps()}
-            onChange={raiseImg}
-            ref={imageRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-          ></input>
+    <>
+      <div className="insert_box">
+        <div {...getRootProps()} onClick={openFile} className="insert_picture">
+          {preview && (
+            <div>
+              <img className="insert_picture-previewImg" src={preview}></img>
+            </div>
+          )}
+          {!preview && (
+            <>
+              <img className="insert_picture-img" src={download} />
+              <p>이곳을 클릭하거나 사진을 올려주세요 !</p>
+            </>
+          )}
         </div>
-        <div className="insert_search">검색</div>
+        <input
+          {...getInputProps()}
+          onChange={raiseImg}
+          ref={imageRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+        ></input>
       </div>
-
-      {/* <div className="insert_fishImg">
-        <img src={smallFish}></img>
-      </div>
-      <div className="insert_fishImg2">
-        <img src={smallFish}></img>
-      </div>
-      <div className="insert_seaweedsImg">
-        <img src={seaweeds}></img>
-      </div> */}
-    </div>
+      <div className="insert_search">검색</div>
+    </>
   );
 };
 

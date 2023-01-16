@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import Nav from '@/components/nav';
+import InsertImage from '@/components/insertImage';
 
 const Main = () => {
   return (
@@ -15,7 +16,9 @@ const Main = () => {
               <br /> we'll show you about fish informations.
             </p>
           </div>
-          <div className="main_insertPicture"></div>
+          <div className="main_insertPicture">
+            <InsertImage />
+          </div>
         </div>
         <div className="main_exam-pictures"></div>
       </div>
