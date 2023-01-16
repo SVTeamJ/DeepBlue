@@ -17,7 +17,7 @@ const Nav = () => {
     <div className="nav">
       <div onClick={gotoMain} className="nav-logo">
         <img src={logo} />
-        <span>Deep &nbsp;</span>
+        <span>Deep </span>
         <span> Blue</span>
       </div>
       <div className="nav-list">

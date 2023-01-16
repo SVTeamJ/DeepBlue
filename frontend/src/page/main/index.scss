@@ -76,7 +76,7 @@
   & > img:nth-child(4) {
     animation: showIntroduce 0.5s 2.7s alternate forwards;
   }
-
+  margin-bottom: 24px;
   @include tablet {
     grid-template-columns: repeat(4, 1fr);
     & > img {
