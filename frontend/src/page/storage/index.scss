@@ -3,99 +3,9 @@
   // background: linear-gradient(180deg, #4da8bc 0%, #306c79 100%);
   width: 100%;
   height: auto;
-  min-height: 120vh;
+  min-height: 100vh;
   position: relative;
   background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
-}
-
-.fishList_view-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  // background-color: #abe7f4;
-  background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-  margin: 0 auto;
-  height: 50px;
-  font-size: 2.5rem;
-  z-index: 9;
-  filter: blur(0.2px);
-
-  & > div {
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.fishList_view-nav-logo {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  & > img {
-    width: 3rem;
-    height: 3rem;
-  }
-  & > div {
-    font-size: 1.5rem;
-  }
-}
-
-.fishList_view-nav-search {
-  position: relative;
-  display: flex;
-  align-items: center;
-  & > div {
-    background-image: url('../../assets/glassPreview.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 5px;
-    z-index: 5;
-    @include tablet {
-    }
-  }
-
-  & > input {
-    width: 180px;
-    height: 35px;
-    border-radius: 0.5rem;
-    font-size: 0.00002rem;
-    padding-left: 30px;
-    border: 2px solid #0e1733;
-    ::placeholder {
-      font-size: 0.2rem;
-    }
-    @include tablet {
-      width: 200px;
-    }
-  }
-
-  & > button {
-    width: 40px;
-    height: 35px;
-    font-size: 1rem;
-    margin-left: 0.5rem;
-    color: white;
-    background-color: white;
-    border: 2px solid #0e1733;
-    color: #0e1733;
-    border-radius: 0.5rem;
-
-    &:hover {
-      scale: 1.05;
-    }
-
-    &:active {
-      position: relative;
-      top: -1px;
-    }
-  }
 }
 
 .fishList_view-title {
@@ -138,9 +48,9 @@
 
 .fishList_view-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   place-items: center;
-  gap: 40px;
+  gap: 10px;
   margin: 0 auto;
   width: 70%;
   margin-top: 2rem;
@@ -148,19 +58,23 @@
   padding-bottom: 5rem;
 
   @include tablet {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    gap: 40px;
   }
 
   @include desktop {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    width: 70%;
+    gap: 40px;
   }
 }
 
 .fishList_view-card {
   border-radius: 1rem;
   overflow: hidden;
-  width: 17rem;
-  height: 12rem;
+  width: 8rem;
+  height: 5rem;
 
   display: flex;
   flex-direction: column;
@@ -168,6 +82,16 @@
   justify-content: center;
   box-shadow: inset 3.51304px 3.51304px 3.51304px rgba(0, 0, 0, 0.25);
   filter: drop-shadow(3.51304px 3.51304px 3.51304px rgba(0, 0, 0, 0.25));
+
+  @include tablet {
+    width: 12rem;
+    height: 9rem;
+  }
+
+  @include desktop {
+    width: 12rem;
+    height: 9rem;
+  }
 }
 
 .fishList_view-img {
