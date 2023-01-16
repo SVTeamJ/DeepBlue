@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import InsertImage from './page/insertImage';
+import InsertImage from './components/insertImage';
 import GlobalLayout from './page/_layout';
 
 const Main = lazy(() => import('./page/main'));
