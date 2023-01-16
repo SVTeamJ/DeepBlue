@@ -2,7 +2,8 @@ import React, { lazy } from 'react';
 import InsertImage from './page/insertImage';
 import GlobalLayout from './page/_layout';
 
-const Main = lazy(() => import('./page/main'));
+const Main = lazy(()=> import('./page/main'));
+const Login = lazy(() => import('./page/login'));
 const Result = lazy(() => import('./page/result'));
 const FishList = lazy(() => import('./page/fishList'));
 export const routes = [
@@ -14,6 +15,7 @@ export const routes = [
       { path: '/insert', element: <InsertImage></InsertImage>, index: true },
       { path: '/result', element: <Result />, index: true },
       { path: '/fishList', element: <FishList></FishList>, index: true },
+      {path: '/login', element: <Login></Login>,index:true},
     ],
   },
 ];
