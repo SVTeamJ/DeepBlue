@@ -1,5 +1,55 @@
 .main_background {
+  padding-top: 50px;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
+  color: white;
   background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
+}
+
+.main_center {
+  width: 100%;
+}
+
+.main_introduce {
+  padding-bottom: 10px;
+  text-align: center;
+  margin-top: 32px;
+  & > h1 {
+    font-size: 18px;
+    font-weight: bold;
+    animation: showIntroduce 0.5s 0.5s alternate forwards;
+    opacity: 0;
+  }
+
+  & > p {
+    animation: showIntroduce2 0.5s 0.9s alternate forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes showIntroduce {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes showIntroduce2 {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
 }
