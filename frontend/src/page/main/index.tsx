@@ -2,12 +2,16 @@ import React from 'react';
 import './index.scss';
 import Nav from '@/components/nav';
 import InsertImage from '@/components/insertImage';
+import shark from '../../assets/shark.jpg';
+import crucian from '../../assets/crucian.jpg';
+import turtle from '../../assets/turtle.jpg';
+import jellyfish from '../../assets/jellyfish.jpg';
 
 const Main = () => {
   return (
     <div>
-      <Nav></Nav>
       <div className="main_background">
+        <Nav></Nav>
         <div className="main_center">
           <div className="main_introduce">
             <h1>Upload fish Photo!</h1>
@@ -20,7 +24,12 @@ const Main = () => {
             <InsertImage />
           </div>
         </div>
-        <div className="main_exam-pictures"></div>
+        <div className="main_exam-pictures">
+          <img src={shark}></img>
+          <img src={crucian}></img>
+          <img src={turtle}></img>
+          <img src={jellyfish}></img>
+        </div>
       </div>
     </div>
   );

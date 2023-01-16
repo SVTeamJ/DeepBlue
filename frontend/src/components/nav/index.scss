@@ -1,9 +1,5 @@
 @import '@/media.scss';
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   width: 95%;
   height: 50px;
   color: white;
@@ -12,6 +8,8 @@
   align-items: center;
   justify-content: space-around;
   background-color: transparent;
+  z-index: 9;
+
   @include tablet {
     width: 70%;
 

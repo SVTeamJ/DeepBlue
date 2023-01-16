@@ -1,5 +1,5 @@
+@import '@/media.scss';
 .main_background {
-  padding-top: 50px;
   width: 100vw;
   height: 120vh;
   color: white;
@@ -8,6 +8,12 @@
 
 .main_center {
   width: 100%;
+  margin-bottom: 32px;
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .main_introduce {
@@ -25,10 +31,61 @@
     animation: showIntroduce2 0.5s 0.9s alternate forwards;
     opacity: 0;
   }
+  @include tablet {
+    width: 45%;
+    transform: translateY(-50px);
+    & > h1 {
+      font-size: 48px;
+    }
+    & > p {
+      font-size: 24px;
+    }
+  }
 }
 
 .main_insertPicture {
   overflow: hidden;
+  @include tablet {
+    width: 40%;
+  }
+}
+
+.main_exam-pictures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 90%;
+  place-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+
+  & > img {
+    height: 200px;
+    width: 100%;
+    opacity: 0;
+  }
+  & > img:nth-child(1) {
+    animation: showIntroduce 0.5s 1.7s alternate forwards;
+  }
+  & > img:nth-child(2) {
+    animation: showIntroduce 0.5s 2s alternate forwards;
+  }
+  & > img:nth-child(3) {
+    animation: showIntroduce 0.5s 2.3s alternate forwards;
+  }
+  & > img:nth-child(4) {
+    animation: showIntroduce 0.5s 2.7s alternate forwards;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+    & > img {
+      height: 300px;
+      width: 100%;
+      opacity: 0;
+    }
+    margin-bottom: 64px;
+  }
 }
 
 @keyframes showIntroduce {
