@@ -13,7 +13,7 @@
 .main_introduce {
   padding-bottom: 10px;
   text-align: center;
-  margin-top: 32px;
+  margin-top: 24px;
   & > h1 {
     font-size: 18px;
     font-weight: bold;
@@ -25,6 +25,10 @@
     animation: showIntroduce2 0.5s 0.9s alternate forwards;
     opacity: 0;
   }
+}
+
+.main_insertPicture {
+  overflow: hidden;
 }
 
 @keyframes showIntroduce {
