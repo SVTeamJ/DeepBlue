@@ -51,10 +51,7 @@ const Storage = () => {
   };
   return (
     <div className="fishList_view">
-      <div className="fishList_nav">
-        <Nav />
-      </div>
-
+      <Nav />
       <div className="fishList_view-title">
         <h1>내가 잡은 물고기 보기</h1>
         <p>이곳에서 여러분이 잡은 물고기의 정보를 모두 볼 수 있어요!</p>
