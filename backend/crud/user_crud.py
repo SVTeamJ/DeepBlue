@@ -1,4 +1,4 @@
-from models import User
+from model import User
 from schemas import user_schema
 from fastapi import Response, HTTPException
 from sqlalchemy.orm import Session
