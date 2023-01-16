@@ -16,18 +16,6 @@ import { toUSVString } from 'util';
 import Is_login_check from './islogjn';
 
 const Main = () => {
-  const goToBottom = () => {
-    window.scrollTo({
-      left: 0,
-      top: document.body.scrollHeight,
-      behavior: 'smooth',
-    });
-  };
-
-
-
-
-
   return (
     <div>
       <div className="main_background">
