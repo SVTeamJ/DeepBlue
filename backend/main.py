@@ -25,3 +25,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(api_router, prefix="/api")
+
+
+# python example data mapper pattern
+

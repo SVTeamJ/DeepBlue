@@ -5,7 +5,6 @@ from sqlalchemy.sql import text, func
 from database import Base
 from sqlalchemy import func
 
-
 class Fish(Base):
     __tablename__ = "fish"
     id = Column(Integer, primary_key=True, index=True)
@@ -18,6 +17,7 @@ class Fish(Base):
     updated_at = Column(
         TIMESTAMP, server_default=text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     )
+    is_active = Column(Boolean, nullable=False, default=True)
 
 
 
