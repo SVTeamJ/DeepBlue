@@ -1,5 +1,9 @@
 @import '@/media.scss';
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 95%;
   height: 50px;
   color: white;
@@ -9,6 +13,8 @@
   justify-content: space-around;
   @include tablet {
     width: 70%;
+
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
   }
