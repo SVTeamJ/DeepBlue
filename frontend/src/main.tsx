@@ -8,10 +8,17 @@ import App from './App';
 import './index.css';
 import { worker } from './mocks/worker';
 import { getClient } from './queryClient';
+import * as Sentry from '@sentry/react';
+import { BrowserTracing } from '@sentry/tracing';
 import reset from './reset.scss';
 if (import.meta) {
   worker.start();
 }
+Sentry.init({
+  dsn: `${import.meta.env.VITE_Sentry}`,
+  integrations: [new BrowserTracing()],
+  tracesSampleRate: 1.0,
+});
 
 const queryClient = getClient();
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
