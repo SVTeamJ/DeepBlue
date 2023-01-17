@@ -19,7 +19,7 @@ const Login_page = (props:any) => {
     return(
       <div className="login_page">
         <input
-          placeholder="전화번호 사용자 이름 또는 이메일"
+          placeholder="아이디"
           id = "id"
           className="login"
           onChange={e => {
@@ -37,11 +37,57 @@ const Login_page = (props:any) => {
           }}
           onKeyUp={changeButton}
         />
+        <button>
+          LOGIN
+        </button>
       </div>
     )
   }else{
     return(
-      <div>signin</div>
+      <div className="login_page">
+        <input
+          type="password"
+          placeholder = "이름"
+          id="password"
+          className="login"
+          onChange={e => {
+            setPw(e.target.value);
+          }}
+          onKeyUp={changeButton}
+        />
+        <input
+          placeholder="아이디"
+          id = "id"
+          className="login"
+          onChange={e => {
+            setId(e.target.value);
+          }}
+          //onKeyup={changeButton}
+        />
+        <input
+          type="password"
+          placeholder = "비밀번호"
+          id="password"
+          className="login"
+          onChange={e => {
+            setPw(e.target.value);
+          }}
+          onKeyUp={changeButton}
+        />
+        <input
+          type="password"
+          placeholder = "비밀번호확인"
+          id="password"
+          className="login"
+          onChange={e => {
+            setPw(e.target.value);
+          }}
+          onKeyUp={changeButton}
+        />
+        <button>
+          회원가입
+        </button>
+      </div>
     )
   }
 
