@@ -24,6 +24,11 @@ services:
       - mynet
     ports:
       - 3306:3306
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   backend:
     container_name: taegong_backend
@@ -31,7 +36,7 @@ services:
     environment:
       MYSQL_HOST: "1234"
     entrypoint: /bin/bash
-    command: -c "sleep 10 && uvicorn main:app --host 0.0.0.0 --reload"
+    command: -c "uvicorn main:app --host 0.0.0.0 --reload"
     ports:
       - 8000:8000
     networks:
@@ -39,7 +44,8 @@ services:
     # 작업이 끝나도 종료되지 않게 하는 명령
     tty: true
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
 
 volumes:
   mysql_data_dev: null
