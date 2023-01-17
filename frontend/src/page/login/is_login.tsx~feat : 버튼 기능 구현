@@ -15,7 +15,7 @@ function Is_login_check(){
   return(
     <div className='insert_login_layout'>
       <div className="insert_switch_login">
-        <button onClick={set_signin}>LOGIN</button>{/*버튼 작동함*/}
+        <button className="switch_button" onClick={set_signin}>LOGIN</button>{/*버튼 작동함*/}
         <button onClick={set_login}>SIGNIN</button>{/*버튼 작동함*/}
       </div>
       <Login_page is_login_input={is_login}/>
