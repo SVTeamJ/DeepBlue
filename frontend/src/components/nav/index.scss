@@ -9,6 +9,9 @@
   justify-content: space-around;
   background-color: transparent;
   z-index: 9;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   @include tablet {
     width: 70%;
