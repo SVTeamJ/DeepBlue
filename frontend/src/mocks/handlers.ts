@@ -15,6 +15,14 @@ export interface fishInform {
   description: string;
 }
 
+export interface fishResult {
+  fish_type: string;
+  toxicity: string;
+  open_season: string;
+  closed_season: string;
+  description: string;
+}
+
 const fishList: fishInform[] = [
   {
     fish_type: '갈치',
