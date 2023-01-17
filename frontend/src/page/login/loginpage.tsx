@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import whale from '@/assets/png_whale.png';
 
 const Login_page = (props:any) => {
   const [id, setId] = useState('');
@@ -17,6 +17,7 @@ const Login_page = (props:any) => {
   if(!is_login_page){
     return(
       <div className="login_page">
+        <img className="small_whale" src={whale}></img>
         <div>아이디</div>
         <input
           placeholder="아이디를 입력해주세요"
