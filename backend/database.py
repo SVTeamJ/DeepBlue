@@ -3,13 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 import os
-# SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db" #host.doc
-# 
-# ker.internal 외부에서 도커에 접속하기 위한 주소
-if os.getenv('MYSQL_HOST'):
-    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://taegong:taegong@172.17.0.1:3306/taegong"
-else:
-    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://taegong:taegong@localhost:3306/taegong"
+
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://taegong:taegong@172.17.0.1:3306/taegong"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
