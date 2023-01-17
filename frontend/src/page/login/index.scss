@@ -15,13 +15,15 @@
     max-height: 100vh;
     flex-direction: column;
     display: flex;
+    justify-content: space-between;
 }
 
-.login_logo_background{
+.login_logo_background{//flex 레이아웃을 위한 css
     width: 100%;
-    height: 10%;
+    height: 56px;
     display: flex;
     flex-direction: row;
+    justify-self: flex-start;
 }
 
 .login_right_background{//flex 레이아웃을 위한 css
@@ -39,13 +41,12 @@
     height: 100%;
     flex-direction: row;
     align-self: center;//나중에 반응형
-
 }
 
-.insert_login_layout{
+.insert_login_layout{//로그인,회원가입 창 지정
     align-self: center;
-    width: 450px;
-    height: 367px;
+    width: 500px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,41 +55,42 @@
     border-radius: 20px;
 }
 
-.insert_switch_login{
+.insert_switch_login{//버튼 위치
     display: grid;
     width: 100%;
     height: 3.125rem;
     grid-template-columns: 1fr 1fr;
-    background-color: aqua;
+    background-color: #D7D7D7;
 }
 
-.switch_button{
-    display: login;
-    width: 100%;
-}
-
-.login_logo{
-    width: auto;
-    height: 100%;
+.login_logo{//좌측 상단 로고 CSS
+    width: 56px;
+    height: 56px;
     justify-items: flex-start;
     align-self: flex-start;
 }
 
-.login_web_name{
+.login_web_name{//좌측상단 이름 css
     justify-items: flex-start;
     align-self: flex-start;
     color: white;
-    font-size: 2.75rem;
+    font-size: 36px;
 }
 
-.login_welcome{
+.login_welcome{//좌측 중앙 문장 CSS
     justify-self: center;
     align-self: center;
     color: white;
     font-size:  3rem;
 }
 
-.login_ment{
+.login_welcome_background{//환영 문구 위치 조정
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login_ment{//환영 문구 css
     justify-self: center;
     align-self: center;
     color: white;
@@ -96,16 +98,36 @@
     opacity: 50%;
 }
 
-.login_page{
-    background-color: yellow;
+.login_page{//
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
-.whale_img{
+.login_button{
+    width: 400px;
+    height: 50px;
+    background-color: #053366;
+    border-radius: 20px;
+    color: white;
+}
+
+.login_input{
+    width: 400px;
+    height: 50px;
+    border: 5px black;
+}
+
+.whale_img{//고래 이미지 css
     width: 50%;
     height: auto;
     justify-self: center;
     align-self: center;
+}
+
+.switch_button{
+    border-radius: 20px;
+    background-color: white;
+    border-radius: 20px 20px 0px 0px;
 }
 
