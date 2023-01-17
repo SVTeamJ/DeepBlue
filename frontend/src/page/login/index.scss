@@ -14,6 +14,7 @@
     height: 100vh;
     max-height: 100vh;
     display: flex;
+    
 }
 .login_right_background{//flex 레이아웃을 위한 css
     width: 50%;
@@ -56,4 +57,28 @@
 .switch_button{
     display: login;
     width: 100%;
+}
+
+.login_logo{
+    width: 5%;
+    height: 5%;
+    justify-items: flex-start;
+    align-self: flex-start;
+    background-color: red;
+}
+
+.login_web_name{
+    justify-items: flex-start;
+    align-self: flex-start;
+    background-color: white;
+}
+
+.login_welcome{
+    justify-self: center;
+    align-self: center;
+    background-color: green;
+}
+
+.login_page{
+    
 }

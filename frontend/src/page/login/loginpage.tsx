@@ -17,7 +17,7 @@ const Login_page = (props:any) => {
 
   if(!is_login_page){
     return(
-      <div>
+      <div className="login_page">
         <input
           placeholder="전화번호 사용자 이름 또는 이메일"
           id = "id"
