@@ -32,7 +32,8 @@
     max-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items:center;
+    justify-content: center;
 }
 
 .insert_right_center_background{//flex레이아웃을 위한 css
@@ -47,26 +48,18 @@
     align-self: center;
     width: 100%;
     height: 100%;
-    max-width: 500px;
-    max-height: 400px;
+    max-width: 600px;
+    max-height: 500px;
     min-width: 50px;
     min-height: 50px;
     display: flex;
     flex-direction: column;
+    justify-self: center;
     align-items: center;
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
-
-/*{.insert_switch_login{//버튼 위치
-    display: grid;
-    width: 50%;
-    height: 3.125rem;
-    grid-template-columns: 1fr 1fr;
-    background-color: #D7D7D7;
-}*/
-
 
 .insert_switch_login{
     display: flex;

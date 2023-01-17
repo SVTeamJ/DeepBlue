@@ -21,10 +21,8 @@ const Login = () => {
           </div>
         </div>
         <div className='login_right_background'>
-          <div className='insert_right_center_background'>
-            <div className='insert_login_layout'>
-              <Is_login_check />
-            </div>
+          <div className='insert_login_layout'>
+            <Is_login_check />
           </div>
         </div>
       </div>
