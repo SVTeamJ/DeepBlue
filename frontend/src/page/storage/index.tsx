@@ -8,7 +8,8 @@ import './index.scss';
 import { useNavigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
 import logo from '../../assets/logo.png';
-const FishList = () => {
+import Nav from '@/components/nav';
+const Storage = () => {
   const navigator = useNavigate();
   const [modal, setModal] = useState(false);
   const [currentModalInform, setCurrentModalInform] = useState({
@@ -50,19 +51,7 @@ const FishList = () => {
   };
   return (
     <div className="fishList_view">
-      <div className="fishList_view-nav">
-        <div>
-          <div onClick={gotoMain} className="fishList_view-nav-logo">
-            <img src={logo}></img>
-            <div>태공씨의 하루</div>
-          </div>
-          <div className="fishList_view-nav-search">
-            <div></div>
-            <input placeholder="찾고싶은 물고기를 입력해주세요 !"></input>
-            <button>검색</button>
-          </div>
-        </div>
-      </div>
+      <Nav />
       <div className="fishList_view-title">
         <h1>내가 잡은 물고기 보기</h1>
         <p>이곳에서 여러분이 잡은 물고기의 정보를 모두 볼 수 있어요!</p>
@@ -96,4 +85,4 @@ const FishList = () => {
   );
 };
 
-export default FishList;
+export default Storage;

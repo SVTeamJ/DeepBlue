@@ -20,7 +20,7 @@ const fishList: fishInform[] = [
     fish_type: '갈치',
     toxicyty: 'yes',
     image:
-      'https://i.pinimg.com/564x/1d/33/60/1d3360a2150f72c280d3392e3ff09cf9.jpg',
+      'https://mblogthumb-phinf.pstatic.net/20160711_100/fira_sea_1468227329810rnH0d_JPEG/14217905533_97401254aa_b.jpg?type=w2',
     closed_season: '3월 22일 ~ 6월 33일',
     description: '갈치 아닌데요?',
   },
@@ -33,19 +33,12 @@ const fishList: fishInform[] = [
     description:
       '물고기 또는 어류(魚類)는 척추동물아문에 속하는 동물의 하나이다. 또한 척추동물 중에서 네발동물은 제외된다. 대체적으로 물 속에 살며 아가미로 호흡하며 지느러미로 움직이고 몸 표면이 비늘로 덮여 있는 냉혈동물로 주위 온도에 영향을 받는다.',
   },
+
   {
     fish_type: '갈치',
     toxicyty: 'yes',
     image:
-      'https://i.pinimg.com/564x/1d/33/60/1d3360a2150f72c280d3392e3ff09cf9.jpg',
-    closed_season: '3월 22일 ~ 6월 33일',
-    description:
-      '아가미가 달린 척추동물 무리를 통틀어 일컫는 말. 고유어로는 물고기라고 불린다. 15세기 전후엔 믌고기라 표기했는데 믈+-ㅅ+고기[1]의 형태로 나눠진다. 이후 ㄹ이 사라진 믓고기, ㅅ이 사라진 믈고기 두 형태로 공존했는데 믓고기는 거의 쓰이지 않고 믈고기가 원순모음화[2]를 통해 물고기로 정착하였다. ',
-  },
-  {
-    fish_type: '갈치',
-    toxicyty: 'yes',
-    image: 'http://pds8.egloos.com/pds/200803/04/44/e0080644_47cc8613258f8.jpg',
+      'https://mblogthumb-phinf.pstatic.net/MjAxNzA0MDdfMTA5/MDAxNDkxNTQ1NzY5ODUx.Q_DEzrH-QkFsGDVaoBBbWy3OiEmW3vz_5Hkhr3iQejMg.ZmTbnJBr4AQ3f87v5zZxdV48lx8Bbg3KwsMKMU8nKeYg.PNG.sangaqua7/%EB%AC%BC%EA%B3%A0%EA%B8%B010.png?type=w800',
     closed_season: '3월 22일 ~ 6월 33일',
     description:
       '척추동물 중에서도 가장 먼저 지구상에 생겨난 가장 기초적인 척추동물로, 옛날에는 연골어류, 경골어류로 나누었으나, 경골어류는 분기분류학이 발달하기 전에 붙여진 이름이다. 현재 지구상에 알려진 어류는 모두 62목, 504과, 25,777종이 존재한다. 뼈의 특징에 따라 연골어강, 조기어강, 육기어강으로 분류된다.',
@@ -54,15 +47,7 @@ const fishList: fishInform[] = [
     fish_type: '갈치',
     toxicyty: 'yes',
     image:
-      'https://i.pinimg.com/564x/1d/33/60/1d3360a2150f72c280d3392e3ff09cf9.jpg',
-    closed_season: '3월 22일 ~ 6월 33일',
-    description:
-      '아가미가 달린 척추동물 무리를 통틀어 일컫는 말. 고유어로는 물고기라고 불린다. 15세기 전후엔 믌고기라 표기했는데 믈+-ㅅ+고기[1]의 형태로 나눠진다. 이후 ㄹ이 사라진 믓고기, ㅅ이 사라진 믈고기 두 형태로 공존했는데 믓고기는 거의 쓰이지 않고 믈고기가 원순모음화[2]를 통해 물고기로 정착하였다. ',
-  },
-  {
-    fish_type: '갈치',
-    toxicyty: 'yes',
-    image: 'http://pds8.egloos.com/pds/200803/04/44/e0080644_47cc8613258f8.jpg',
+      'https://mblogthumb-phinf.pstatic.net/MjAxNzA0MDdfMTA5/MDAxNDkxNTQ1NzY5ODUx.Q_DEzrH-QkFsGDVaoBBbWy3OiEmW3vz_5Hkhr3iQejMg.ZmTbnJBr4AQ3f87v5zZxdV48lx8Bbg3KwsMKMU8nKeYg.PNG.sangaqua7/%EB%AC%BC%EA%B3%A0%EA%B8%B010.png?type=w800',
     closed_season: '3월 22일 ~ 6월 33일',
     description:
       '척추동물 중에서도 가장 먼저 지구상에 생겨난 가장 기초적인 척추동물로, 옛날에는 연골어류, 경골어류로 나누었으나, 경골어류는 분기분류학이 발달하기 전에 붙여진 이름이다. 현재 지구상에 알려진 어류는 모두 62목, 504과, 25,777종이 존재한다. 뼈의 특징에 따라 연골어강, 조기어강, 육기어강으로 분류된다.',
@@ -71,15 +56,7 @@ const fishList: fishInform[] = [
     fish_type: '갈치',
     toxicyty: 'yes',
     image:
-      'https://i.pinimg.com/564x/1d/33/60/1d3360a2150f72c280d3392e3ff09cf9.jpg',
-    closed_season: '3월 22일 ~ 6월 33일',
-    description:
-      '아가미가 달린 척추동물 무리를 통틀어 일컫는 말. 고유어로는 물고기라고 불린다. 15세기 전후엔 믌고기라 표기했는데 믈+-ㅅ+고기[1]의 형태로 나눠진다. 이후 ㄹ이 사라진 믓고기, ㅅ이 사라진 믈고기 두 형태로 공존했는데 믓고기는 거의 쓰이지 않고 믈고기가 원순모음화[2]를 통해 물고기로 정착하였다. ',
-  },
-  {
-    fish_type: '갈치',
-    toxicyty: 'yes',
-    image: 'http://pds8.egloos.com/pds/200803/04/44/e0080644_47cc8613258f8.jpg',
+      'https://mblogthumb-phinf.pstatic.net/20160711_100/fira_sea_1468227329810rnH0d_JPEG/14217905533_97401254aa_b.jpg?type=w2',
     closed_season: '3월 22일 ~ 6월 33일',
     description:
       '척추동물 중에서도 가장 먼저 지구상에 생겨난 가장 기초적인 척추동물로, 옛날에는 연골어류, 경골어류로 나누었으나, 경골어류는 분기분류학이 발달하기 전에 붙여진 이름이다. 현재 지구상에 알려진 어류는 모두 62목, 504과, 25,777종이 존재한다. 뼈의 특징에 따라 연골어강, 조기어강, 육기어강으로 분류된다.',
@@ -88,7 +65,7 @@ const fishList: fishInform[] = [
     fish_type: '갈치',
     toxicyty: 'yes',
     image:
-      'https://i.pinimg.com/564x/1d/33/60/1d3360a2150f72c280d3392e3ff09cf9.jpg',
+      'https://mblogthumb-phinf.pstatic.net/20160711_100/fira_sea_1468227329810rnH0d_JPEG/14217905533_97401254aa_b.jpg?type=w2',
     closed_season: '3월 22일 ~ 6월 33일',
     description:
       '아가미가 달린 척추동물 무리를 통틀어 일컫는 말. 고유어로는 물고기라고 불린다. 15세기 전후엔 믌고기라 표기했는데 믈+-ㅅ+고기[1]의 형태로 나눠진다. 이후 ㄹ이 사라진 믓고기, ㅅ이 사라진 믈고기 두 형태로 공존했는데 믓고기는 거의 쓰이지 않고 믈고기가 원순모음화[2]를 통해 물고기로 정착하였다. ',
@@ -96,7 +73,8 @@ const fishList: fishInform[] = [
   {
     fish_type: '갈치',
     toxicyty: 'yes',
-    image: 'http://pds8.egloos.com/pds/200803/04/44/e0080644_47cc8613258f8.jpg',
+    image:
+      'https://mblogthumb-phinf.pstatic.net/MjAxNzA0MDdfMTA5/MDAxNDkxNTQ1NzY5ODUx.Q_DEzrH-QkFsGDVaoBBbWy3OiEmW3vz_5Hkhr3iQejMg.ZmTbnJBr4AQ3f87v5zZxdV48lx8Bbg3KwsMKMU8nKeYg.PNG.sangaqua7/%EB%AC%BC%EA%B3%A0%EA%B8%B010.png?type=w800',
     closed_season: '3월 22일 ~ 6월 33일',
     description:
       '척추동물 중에서도 가장 먼저 지구상에 생겨난 가장 기초적인 척추동물로, 옛날에는 연골어류, 경골어류로 나누었으나, 경골어류는 분기분류학이 발달하기 전에 붙여진 이름이다. 현재 지구상에 알려진 어류는 모두 62목, 504과, 25,777종이 존재한다. 뼈의 특징에 따라 연골어강, 조기어강, 육기어강으로 분류된다.',
@@ -105,7 +83,7 @@ const fishList: fishInform[] = [
     fish_type: '갈치',
     toxicyty: 'yes',
     image:
-      'https://i.pinimg.com/564x/1d/33/60/1d3360a2150f72c280d3392e3ff09cf9.jpg',
+      'https://mblogthumb-phinf.pstatic.net/20160711_100/fira_sea_1468227329810rnH0d_JPEG/14217905533_97401254aa_b.jpg?type=w2',
     closed_season: '3월 22일 ~ 6월 33일',
     description:
       '아가미가 달린 척추동물 무리를 통틀어 일컫는 말. 고유어로는 물고기라고 불린다. 15세기 전후엔 믌고기라 표기했는데 믈+-ㅅ+고기[1]의 형태로 나눠진다. 이후 ㄹ이 사라진 믓고기, ㅅ이 사라진 믈고기 두 형태로 공존했는데 믓고기는 거의 쓰이지 않고 믈고기가 원순모음화[2]를 통해 물고기로 정착하였다. ',
@@ -113,7 +91,8 @@ const fishList: fishInform[] = [
   {
     fish_type: '갈치',
     toxicyty: 'yes',
-    image: 'http://pds8.egloos.com/pds/200803/04/44/e0080644_47cc8613258f8.jpg',
+    image:
+      'https://mblogthumb-phinf.pstatic.net/MjAxNzA0MDdfMTA5/MDAxNDkxNTQ1NzY5ODUx.Q_DEzrH-QkFsGDVaoBBbWy3OiEmW3vz_5Hkhr3iQejMg.ZmTbnJBr4AQ3f87v5zZxdV48lx8Bbg3KwsMKMU8nKeYg.PNG.sangaqua7/%EB%AC%BC%EA%B3%A0%EA%B8%B010.png?type=w800',
     closed_season: '3월 22일 ~ 6월 33일',
     description:
       '척추동물 중에서도 가장 먼저 지구상에 생겨난 가장 기초적인 척추동물로, 옛날에는 연골어류, 경골어류로 나누었으나, 경골어류는 분기분류학이 발달하기 전에 붙여진 이름이다. 현재 지구상에 알려진 어류는 모두 62목, 504과, 25,777종이 존재한다. 뼈의 특징에 따라 연골어강, 조기어강, 육기어강으로 분류된다.',

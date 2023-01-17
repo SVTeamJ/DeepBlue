@@ -1,0 +1,29 @@
+@import '../../media.scss';
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
+  z-index: 99;
+}
+
+.spinner {
+  min-width: 60px;
+  min-height: 60px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-right: 5px solid black;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
