@@ -48,9 +48,8 @@ const Login_page = (props:any) => {
       <div className="login_page">
         <div>이름</div>
         <input
-          type="password"
-          placeholder = "이름을 입력헤주세요"
-          id="password"
+          placeholder = "이름을 입력해주세요"
+          id="name"
           className="login_input"
           onChange={e => {
             setPw(e.target.value);

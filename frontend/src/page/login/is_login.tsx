@@ -1,23 +1,18 @@
 import React,{useState} from "react";
 import Login_page from "./loginpage";
 
-function Is_login_check(){
-  const [is_login,set_is_login] = useState(true);
-  
+function Is_login_check({round=false}){
+  const [is_login,set_is_login] = useState(false);
   const set_login = () =>{
-    set_is_login(true);
-    
+    set_is_login(!is_login);
   }
-  const set_signin = () =>{
-    set_is_login(false);
-  }
-
   return(
-    <div className='insert_login_layout'>
-      <div className="insert_switch_login">
-        <button className="switch_button" onClick={set_signin}>LOGIN</button>{/*버튼 작동함*/}
-        <button onClick={set_login}>SIGNIN</button>{/*버튼 작동함*/}
-      </div>
+    <div className='insert_login_layout' >
+      <label className="switch">
+        <input type="checkbox"/>
+        <span className="slider rounded "onClick={set_login}/>
+
+      </label>
       <Login_page is_login_input={is_login}/>
     </div>
   );
