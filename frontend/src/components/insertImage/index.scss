@@ -1,0 +1,108 @@
+@import '../../media.scss';
+
+.insert_box {
+  width: 35rem;
+  height: 23.5rem;
+  display: flex;
+  color: black !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+  background: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 32px;
+  opacity: 0;
+  animation: showInsertImage 1s 1.3s alternate forwards;
+
+  @include tablet {
+    height: 25rem;
+    max-width: 90%;
+  }
+}
+
+.insert_picture {
+  max-width: 80%;
+  width: 30rem;
+  height: 19.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border: 3.5px dashed #000000;
+  border-radius: 20px;
+
+  & > div {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include tablet {
+    height: 20rem;
+  }
+}
+
+.insert_picture-img {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.insert_picture-previewImg {
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.insert_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 3.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: rgb(219, 249, 249);
+  background: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: black;
+  margin: 0 auto;
+  margin-top: 12px;
+  opacity: 0;
+  animation: showInsertImage 1s 1.7s alternate forwards;
+  &:hover {
+    scale: 1.05;
+  }
+
+  &:active {
+    position: relative;
+    top: -1px;
+  }
+}
+
+@keyframes showInsertImage {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
