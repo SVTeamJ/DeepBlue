@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sentry/react": "^7.31.0",
+    "@sentry/tracing": "^7.31.0",
     "@tanstack/react-query": "4.20.4",
     "@tanstack/react-query-devtools": "4.20.4",
     "autoprefixer": "10.4.13",
