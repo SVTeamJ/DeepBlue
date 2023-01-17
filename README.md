@@ -1,4 +1,4 @@
-# TaeGong-s-life
+# DeepBlue
 
 ## 실행 전
 .env 파일 추가 해주세요

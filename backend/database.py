@@ -7,7 +7,7 @@ import os
 # 
 # ker.internal 외부에서 도커에 접속하기 위한 주소
 if os.getenv('MYSQL_HOST'):
-    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://taegong:taegong@host.docker.internal:3306/taegong"
+    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://taegong:taegong@172.17.0.1:3306/taegong"
 else:
     SQLALCHEMY_DATABASE_URL = "mysql+pymysql://taegong:taegong@localhost:3306/taegong"
 

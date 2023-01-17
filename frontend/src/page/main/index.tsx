@@ -1,11 +1,36 @@
 import React from 'react';
-import InsertImage from '../insertImage';
+import './index.scss';
+import Nav from '@/components/nav';
+import InsertImage from '@/components/insertImage';
+import shark from '../../assets/shark.jpg';
+import crucian from '../../assets/crucian.jpg';
+import turtle from '../../assets/turtle.jpg';
+import jellyfish from '../../assets/jellyfish.jpg';
 
 const Main = () => {
   return (
     <div>
-      <div className="h-screen w-full bg-lime-500">메인페이지입니다</div>
-      <InsertImage />
+      <div className="main_background">
+        <Nav></Nav>
+        <div className="main_center">
+          <div className="main_introduce">
+            <h1>Upload fish Photo!</h1>
+            <p>
+              When you uploading your fish photo,
+              <br /> we'll show you about fish informations.
+            </p>
+          </div>
+          <div className="main_insertPicture">
+            <InsertImage />
+          </div>
+        </div>
+        <div className="main_exam-pictures">
+          <img src={shark}></img>
+          <img src={crucian}></img>
+          <img src={turtle}></img>
+          <img src={jellyfish}></img>
+        </div>
+      </div>
     </div>
   );
 };
