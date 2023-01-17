@@ -14,9 +14,8 @@ import reset from './reset.scss';
 if (import.meta) {
   worker.start();
 }
-
 Sentry.init({
-  dsn: 'https://aaa37d4cc2c242a3a721442b85b43ec2@o4504518618513408.ingest.sentry.io/4504518619496448',
+  dsn: `${import.meta.env.VITE_Sentry}`,
   integrations: [new BrowserTracing()],
   tracesSampleRate: 1.0,
 });
