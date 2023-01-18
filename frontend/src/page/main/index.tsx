@@ -1,3 +1,4 @@
+<<<<<<< develop
 import React from 'react';
 import './index.scss';
 import Nav from '@/components/nav';
@@ -31,6 +32,7 @@ const Main = () => {
           <img src={jellyfish}></img>
         </div>
       </div>
+>>>>>>> feat: 로그인 레이아웃 재설정 및 버튼 대략적인 제작
     </div>
   );
 };
