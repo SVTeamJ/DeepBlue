@@ -59,10 +59,4 @@ traitlets==5.8.0
 typing_extensions==4.4.0
 urllib3==1.26.13
 uvicorn==0.20.0
-<<<<<<< HEAD
 wcwidth==0.2.5
-=======
-passlib==1.7.4
-python-jose==3.3.0
-python-multipart==0.0.5
->>>>>>> #12
