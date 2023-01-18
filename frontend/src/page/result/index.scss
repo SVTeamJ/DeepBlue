@@ -13,7 +13,7 @@
 }
 
 .insert_resultpage {
-  width: 60%;
+  width: 80%;
   height: 60%;
   display: flex;
   background-color: #ffffff;
@@ -29,6 +29,9 @@
   transform: translateX(-50%);
   animation: showResult 0.5s;
   transform-origin: left;
+  @include tablet {
+    width: 60%;
+  }
 }
 
 .insert_bigbox {
@@ -99,12 +102,13 @@
   font-size: 1.1rem;
   font-weight: 900;
   color: #5c7cfa;
+  cursor: pointer;
 }
 
 .insert_resulttitle {
   display: flex;
   width: 100%;
-  height: 10%;
+  height: 5rem;
   justify-content: center;
   color: #ffffff;
   position: relative;
@@ -117,10 +121,10 @@
 .insert_Namebox {
   display: flex;
   width: 100%;
-  height: 20%;
+  height: 5rem;
   color: #000000;
   position: relative;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 900;
   justify-content: center;
 
@@ -136,8 +140,8 @@
   height: 20%;
   color: #000000;
   position: relative;
-  font-size: 0.8rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 600;
   white-space: normal;
   justify-content: center;
 
