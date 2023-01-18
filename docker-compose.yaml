@@ -73,6 +73,10 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
     networks:
       - mynet
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3001:3000
 volumes:
   mysql_data_dev: null
 
