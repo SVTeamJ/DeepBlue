@@ -77,6 +77,17 @@ services:
     image: grafana/grafana
     ports:
       - 3001:3000
+  cadvisor:
+    image: google/cadvisor
+    ports:
+      - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - mynet
 volumes:
   mysql_data_dev: null
 
