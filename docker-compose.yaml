@@ -21,7 +21,7 @@ services:
     tty: true
 
   mysql:
-    container_name: taegong_mysql
+    container_name: deepBlue_mysql
     #    image: mysql:8.0-oracle
     build:
       context: ./db
@@ -41,7 +41,7 @@ services:
       retries: 3
 
   backend:
-    container_name: taegong_backend
+    container_name: deepBlue_backend
     build: ./backend
     entrypoint: /bin/bash
     command: -c "uvicorn main:app --host 0.0.0.0 --reload"
@@ -67,11 +67,10 @@ services:
       - mynet
   prometheus:
     image: prom/prometheus
-    container_name: prometheus
     ports:
       - 9090:9090
     volumes:
-      - ~/.docker-conf/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
     networks:
       - mynet
 volumes:
