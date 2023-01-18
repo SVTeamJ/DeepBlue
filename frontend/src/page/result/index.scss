@@ -1,0 +1,188 @@
+@import '../../media.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+*{
+  font-family: 'Noto Sans Kr' !important;
+}
+
+.insert_resultback {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
+  position: absolute;
+}
+
+.insert_resultpage{
+  width: 60%;
+  height: 60%;
+  display: flex;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  align-items:center;
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+.insert_bigbox{
+  display: flex;
+  width: 100%;
+  height: 85%;
+  flex-direction:column;
+
+  @include tablet{
+    flex-direction:row;
+  }
+}
+
+.insert_smallbox1{
+  display: flex;
+  background-color:none;
+  width:100%;
+  height:50%;
+  position:relative;
+  justify-content: center;
+  align-self: center;
+
+  @include tablet{
+    width:50%;
+    height:100%;
+  }
+}
+
+.insert_smallbox2{
+  display: flex;
+  background-color:none;
+  width:80%;
+  height:50%;
+  position:relative;
+  justify-content: space-evenly;
+  align-self: center;
+  flex-direction: column;
+  
+
+  @include tablet{
+    width:50%;
+    height:100%;
+    justify-content:center;
+  }
+}
+
+.insert_rbottombox{
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color:none;
+  flex-direction: row;
+  justify-content:center;
+  align-items: flex-start;
+  @include tablet{
+    height: 15%;
+  }
+}
+
+.insert_cbutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  gap: 4px;
+  border: 3px solid #5C7CFA;
+  border-radius: 4px;
+  text-align:center;
+  font-size: 1.1rem;
+  font-weight:900;
+  color: #5C7CFA;
+}
+
+.insert_resulttitle{
+  display: flex;
+  width: 100%;
+  height: 10%;
+  justify-content: center;
+  color: #ffffff;
+  position: relative;
+  font-size:2.5rem;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-top:40px;
+}
+
+.insert_Namebox{
+  display: flex;
+  width:100%;
+  height:20%;
+  color: #000000;
+  position: relative;
+  font-size:2rem;
+  font-weight: 900;
+  justify-content: center;
+
+  @include tablet{
+    width:45%;
+    height:20%;
+    justify-content: flex-start;
+  }
+}
+
+.insert_discribeBox{
+  display: flex;
+  height:20%;
+  color: #000000;
+  position: relative;
+  font-size:.8rem;
+  font-weight: 300;
+  white-space:normal;
+  justify-content: center;
+  
+  @include tablet{
+    width:80%;
+    height:20%;
+    justify-content: flex-start;
+  }
+}
+
+.insert_dolpic{
+  display:flex;
+  width:60%;
+  height:80%;
+  align-self:flex-end;
+
+  @include tablet{
+    width:70%;
+    height:70%;
+    align-self:center;
+  }
+}
+
+.insert_table{
+  border-collapse: collapse;
+  border:1px solid #B3B3B3;
+  line-height: 1.5;
+  margin-right: 30%;
+  width:60%;
+  height:10%;
+  padding:10px;
+  display: table;
+  margin-left:auto; 
+  margin-right:auto;
+
+
+  td, th{
+    border: 1px solid #B3B3B3;
+    text-align: center;
+    vertical-align: middle;
+  }
+  @include tablet{
+    width:80%;
+    height:20%;
+    justify-content: flex-start;
+    margin-left:0; 
+    margin-right:0;
+    width:80%;
+  }
+}
