@@ -1,4 +1,5 @@
 from typing import List
+from datetime import timedelta
 
 from schemas import user_schema
 from crud import user_crud
@@ -69,21 +70,32 @@ def user_login(username: str, password: str, db: Session = Depends(get_db)):
     username은 있지만 그 username에 대한 password가 다를경우:
         잘못된 비밀번호임을 알려줌
     제대로 입력했을 경우:
-        로그인 성공
+        access_token 생성
     '''
     user_ = user_crud.get_user_by_username(db, username=username)
     user__=user_crud.get_user_by_username_and_password(db, username=username ,password=password)
     if user_ is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="잘못된 아이디 입니다."
+            detail="잘못된 아이디 입니다.",
+            headers={"WWW-Authenticate": "Bearer"}
         )
     elif user__ is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="잘못된 비밀번호 입니다."
+            detail="잘못된 비밀번호 입니다.",
+            headers={"WWW-Authenticate": "Bearer"}
         )
-    return "로그인 성공!"
+    
+    access_token_expires = timedelta(minutes=user_crud.ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token = user_crud.create_access_token(data = {"sub": username}, expires_delta = access_token_expires)
+    
+    return {
+        "access_token": access_token,
+        "token_type": "Bearer",
+        "username": username
+    }
+
 
 
 @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
