@@ -20,4 +20,5 @@ async def infer(file: UploadFile = File()):
         fish_data = json.load(file)
         for data in fish_data:
             if data["pk"] == result:
+                data["url"] = "https://svj-deepblue.s3.ap-northeast-2.amazonaws.com/" + filename 
                 return data
