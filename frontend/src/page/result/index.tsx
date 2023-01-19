@@ -1,3 +1,4 @@
+import { fishResult } from '@/mocks/handlers';
 import React from 'react';
 import './index.scss';
 import dolImg from '../../assets/image 69.png';
