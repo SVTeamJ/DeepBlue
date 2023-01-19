@@ -1,12 +1,16 @@
+from datetime import datetime, timedelta
 from model import user
 from schemas import user_schema
 
 from fastapi import Response
+from jose import jwt
 from sqlalchemy.orm import Session
 from starlette import status
 
 
 SECRET_KEY = "DeepBlue" # 비밀키
+ACCESS_TOKEN_EXPIRE_MINUTES = 60*24 # Access Token 유효기간 : 하루
+ALGORITHM = "HS256" # jwt 인코딩을 위해 필요한 알고리즘
 
 
 def get_user(db: Session, user_id: int):
@@ -24,7 +28,7 @@ def get_user(db: Session, user_id: int):
     '''
     return db.query(user.User).filter(user.User.id == user_id).first()
 
-후
+
 def get_user_by_username(db: Session, username: str):
     '''
     로그인 유효성 검사를 위해 사용하는 username으로 유저 객체 반환
@@ -125,6 +129,28 @@ def get_password_hash(password):
     비밀키를 이용하여 hash처리된 password
     '''
     return password + SECRET_KEY
+
+
+def create_access_token(data: dict, expires_delta: timedelta | None = None):
+    '''
+    access token 생성
+
+    parameter
+    ---------
+    유효기간
+
+    return
+    ------
+    인코딩 된 jwt
+    '''
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
 
 
 def delete_user_by_id(db: Session, user_id: int):
