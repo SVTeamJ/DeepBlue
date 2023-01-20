@@ -2,7 +2,6 @@ from sqlalchemy import Boolean, Column,Integer, String
 from sqlalchemy.types import TIMESTAMP,DateTime
 from sqlalchemy.sql import text, func
 
-
 from database import Base
 from sqlalchemy import func
 
