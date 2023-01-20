@@ -44,7 +44,7 @@ services:
     container_name: deepBlue_backend
     build: ./backend
     entrypoint: /bin/bash
-    command: -c "uvicorn main:app --host 0.0.0.0 --reload"
+    command: -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --reload"
     ports:
       - 8000:8000
     networks:
