@@ -1,14 +1,9 @@
 from pydantic import BaseModel
 
 class FishBase(BaseModel):
-    
-    
      class Config:
         orm_mode=True
-    
-    
-    
-    
+
 class Fish(FishBase):
     fish_id:int
     description:str
@@ -18,8 +13,6 @@ class Fish(FishBase):
     closed_season:str
     fish_url:str
     is_active:bool
-    
-    
 
 class FishCreate(FishBase):
     fish_id:int
