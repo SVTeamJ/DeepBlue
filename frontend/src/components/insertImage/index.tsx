@@ -7,6 +7,7 @@ import { useDropzone } from 'react-dropzone';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { restFetcher } from '@/queryClient';
+import Loading2 from '../loading2';
 const InsertImage = () => {
   const navigate = useNavigate();
   const imageRef = useRef<HTMLInputElement>(null);
@@ -34,7 +35,7 @@ const InsertImage = () => {
       return;
     }
     const formData = new FormData();
-    formData.append('image', imagefile);
+    formData.append('file', imagefile);
     mutate(formData, {
       onSuccess: (data) =>
         navigate('/result', {
@@ -82,7 +83,7 @@ const InsertImage = () => {
       <div className="insert_box">
         <div {...getRootProps()} onClick={openFile} className="insert_picture">
           {isLoading ? (
-            <Loading />
+            <Loading2 />
           ) : preview ? (
             <div>
               <img className="insert_picture-previewImg" src={preview}></img>
