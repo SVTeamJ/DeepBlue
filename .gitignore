@@ -4,5 +4,6 @@
 .env
 ./.idea
 .idea/
-aws_key.py
+backend/api/endpoints/aws/aws_key.py
+
 
