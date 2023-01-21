@@ -1,290 +1,241 @@
 @import '../../media.scss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 
-*{
+* {
   font-family: 'Noto Sans Kr' !important;
 }
 
 .insert_resultback {
   width: 100vw;
   height: 100vh;
-  min-width: 500px;
-  min-height: 700px;
   background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
-  position: absolute;
 }
 
-.insert_resultpage{
-  width: 60%;
+.insert_resultpage {
+  width: 80%;
   height: 60%;
   display: flex;
-  background-color: #FFFFFF;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   justify-content: center;
   position: relative;
   flex-direction: column;
-  align-items:center;
-  position: absolute; 
-  left: 50%; 
+  align-items: center;
+  position: absolute;
+  left: 50%;
   transform: translateX(-50%);
 }
 
-.insert_linebox{
+.insert_linebox {
   width: 95%;
   height: 90%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   border: 3px solid rgba(153, 153, 153, 0.5);
   border-radius: 30px;
-  background-color:none;
-  position: absolute; 
-  left: 50%; 
+  background-color: none;
+  position: absolute;
+  left: 50%;
   transform: translateX(-50%);
 }
 
-.insert_bigbox{
+.insert_bigbox {
   display: flex;
   width: 100%;
-  height: 85%;
-  flex-direction:column;
+  height: 100%;
+  flex-grow: 1;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
 
-  @include tablet{
-    flex-direction:row;
+  @include tablet {
+    flex-direction: row;
+    margin-top: 0px;
   }
 }
 
-.insert_smallbox1{
+.insert_smallbox1 {
   display: flex;
-  background-color:none;
-  width:100%;
-  height:50%;
-  position:relative;
+  background-color: none;
+  width: 100%;
+  height: 40%;
   justify-content: center;
   align-self: center;
-
-  @include tablet{
-    width:50%;
-    height:100%;
+  overflow-y: hidden;
+  @include tablet {
+    width: 50%;
+    height: 80%;
   }
 }
 
-.insert_smallbox2{
+.insert_smallbox2 {
   display: flex;
-  background-color:none;
-  width:50%;
-  height:70%;
-  position:relative;
-  justify-content: space-evenly;
+  background-color: none;
+  width: 50%;
+  height: 60%;
   align-self: center;
   flex-direction: column;
-  
 
-  @include tablet{
-    width:50%;
-    height:100%;
+  @include tablet {
+    width: 50%;
+    height: 100%;
+    justify-content: flex-start;
   }
 }
-.insert_topBox{
-  display:none;
-  width:100%;
-  height:19%;
+.insert_topBox {
+  display: none;
+  width: 100%;
+  height: 19%;
 
-  @include tablet{
-    display:flex;
+  @include tablet {
+    display: flex;
   }
 }
 
-.insert_rbottombox{
+.insert_rbottombox {
   display: flex;
   width: 100%;
   height: 10%;
-  background-color:none;
+  background-color: none;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  @include tablet{
+  @include tablet {
     height: 15%;
   }
 }
 
-.insert_cbutton{
+.insert_cbutton {
   display: flex;
   justify-content: center;
   align-self: flex-end;
-  margin-bottom:2px;
+  margin-bottom: 2px;
   padding: 3px;
   gap: 4px;
   border-radius: 4px;
-  text-align:center;
+  text-align: center;
   font-size: 1.1rem;
-  font-weight:900;
+  font-weight: 900;
   color: #ffffff;
-  background-color:#6149F8;
-  z-index:2;
-  @include tablet{
-    margin-bottom:10px;
+  background-color: #6149f8;
+  z-index: 2;
+  @include tablet {
+    margin-bottom: 10px;
   }
 }
 
-.insert_resulttitle{
+.insert_resulttitle {
   display: flex;
   width: 100%;
   height: 10%;
   justify-content: center;
   color: #ffffff;
   position: relative;
-  font-size:2.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   vertical-align: middle;
-  margin-top:40px;
+  margin-top: 40px;
 }
 
-.insert_normalBox1{
+.insert_normalBox1 {
   display: flex;
-  width:100%;
-  height:20%;
-  flex-direction:row;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
-.insert_Namebox{
+.insert_Namebox {
   display: flex;
-  width:100%;
-  height:100%;
   color: #000000;
-  position: relative;
-  font-size:2rem;
+  flex-grow: 1;
+  font-size: 2.5rem;
   font-weight: bold;
-  justify-content: flex-start;
-  align-items: flex-end;
-
-  @include tablet{
-    width:35%;
-    height:100%;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-  @include laptop{
-    width:30%;
-    height:100%;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-  @include desktop{
-    width:25%;
-    height:100%;
-    justify-content: flex-start;
-    align-items: flex-end;
+  margin-right: 10px;
+  @include tablet {
+    font-size: 1.5rem;
   }
 }
 
-.insert_smallNamebox{
+.insert_smallNamebox {
   display: flex;
-  width:100%;
-  height:100%;
   color: #000000;
-  position: relative;
-  font-size:0.8rem;
+  font-size: 0.8rem;
   font-weight: lighter;
-  justify-content: flex-start;
-  align-items:flex-end;
-  transform: translateY(-5px);
-
-  @include tablet{
-    width:45%;
-    height:100%;
-    justify-content: flex-start;
-    align-items:flex-end;
-  }
-
-  @include laptop{
-    width:25%;
-    height:100%;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-  @include desktop{
-    width:30%;
-    height:100%;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
 }
 
-
-.insert_discribeBox{
+.insert_discribeBox {
   display: flex;
-  height:30%;
+  height: auto;
   color: #000000;
-  position: relative;
-  font-size:.8rem;
+  font-size: 0.8rem;
   font-weight: 300;
-  white-space:normal;
-  justify-content: center;
-  
-  @include tablet{
-    width:87%;
-    height:30%;
+  white-space: normal;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  @include tablet {
+    width: 87%;
+    height: 20%;
     justify-content: flex-start;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 }
 
-.insert_qnaBox{
+.insert_qnaBox {
   display: flex;
-  width:100%;
-  height:60%;
-  flex-direction:row;
+  width: 100%;
+  height: auto;
+  flex-direction: row;
 }
 
-.insert_questionBox{
+.insert_questionBox {
   display: flex;
   width: 30%;
-  height:100%;
-  word-break:keep-all;
-  white-space : pre-wrap;
-  color:#000000;
+  height: 100%;
+  word-break: keep-all;
+  white-space: pre-wrap;
+  color: #000000;
   font-weight: bold;
-  font-size:1rem;
+  font-size: 1rem;
   position: relative;
   justify-content: flex-start;
   align-items: flex-start;
-  line-height:2;
+  line-height: 2;
 }
 
-.insert_answerBox{
+.insert_answerBox {
   display: flex;
   width: 30%;
-  height:100%;
-  word-break:keep-all;
-  white-space : pre-wrap;
-  color:#000000;
+  height: 100%;
+  word-break: keep-all;
+  white-space: pre-wrap;
+  color: #000000;
   font-weight: lighter;
-  font-size:1rem;
+  font-size: 1rem;
   position: relative;
   justify-content: flex-start;
   align-items: flex-start;
-  line-height:2;
-
+  line-height: 2;
 }
 
-.insert_dolpic{
-  display:flex;
-  width:60%;
-  height:80%;
-  align-self:flex-end;
+.insert_dolpic {
+  display: flex;
+  width: 60%;
+  height: 80%;
+  align-self: flex-end;
 
-  @include tablet{
-    width:70%;
-    height:80%;
-    align-self:center;
-    margin-top:10%;
+  @include tablet {
+    width: 70%;
+    height: 80%;
+    align-self: center;
+    margin-top: 10%;
   }
 }
-
 
 @keyframes showResult {
   0% {
