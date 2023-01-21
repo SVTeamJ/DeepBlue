@@ -34,14 +34,12 @@ export const restFetcher = async ({
   path: string;
   body?: AnyOBJ;
   params?: AnyOBJ;
+  // headers?: AnyOBJ;
 }) => {
   try {
     let url = `${BASE_URL}${path}`;
-    const axiosConfig: AxiosRequestConfig = {
+    let axiosConfig: AxiosRequestConfig = {
       method,
-      headers: {
-        'Content-Type': 'application/json',
-      },
     };
     if (params) {
       const searchParams = new URLSearchParams(params);
@@ -49,6 +47,9 @@ export const restFetcher = async ({
     }
     if (body) axiosConfig.data = body;
 
+    // if (headers) {
+    //   axiosConfig = { ...axiosConfig, headers };
+    // }
     const res = await axios(url, axiosConfig);
     return res.data;
   } catch (err) {

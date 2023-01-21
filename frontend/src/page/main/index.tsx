@@ -2,10 +2,10 @@ import React from 'react';
 import './index.scss';
 import Nav from '@/components/nav';
 import InsertImage from '@/components/insertImage';
-import shark from '../../assets/shark.jpg';
-import crucian from '../../assets/crucian.jpg';
-import turtle from '../../assets/turtle.jpg';
-import jellyfish from '../../assets/jellyfish.jpg';
+import shark from '@/assets/shark.jpg';
+import crucian from '@/assets/crucian.jpg';
+import turtle from '@/assets/turtle.jpg';
+import jellyfish from '@/assets/jellyfish.jpg';
 
 const Main = () => {
   return (
