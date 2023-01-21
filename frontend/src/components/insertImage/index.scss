@@ -84,6 +84,7 @@
   margin: 0 auto;
   margin-top: 12px;
   opacity: 0;
+  cursor: pointer;
   animation: showInsertImage 1s 1.7s alternate forwards;
   &:hover {
     scale: 1.05;

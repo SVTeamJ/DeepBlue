@@ -62,3 +62,4 @@ urllib3==1.26.13
 uvicorn==0.20.0
 wcwidth==0.2.5
 boto3
+
