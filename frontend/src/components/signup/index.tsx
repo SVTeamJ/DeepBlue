@@ -1,7 +1,16 @@
+import { UUid } from '@/atom/atom';
 import { restFetcher } from '@/queryClient';
 import { useMutation } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import './index.scss';
+//유저생성
+export interface User {
+  name: string;
+  username: string;
+  password1: string;
+  password_check: string;
+}
 const SignUpComponents = () => {
   const [userName, setUserName] = useState('');
   const [id, setId] = useState('');
@@ -10,16 +19,10 @@ const SignUpComponents = () => {
 
   const [button, setButton] = useState(true);
 
+  const [userInform, setUserInform] = useRecoilState<User>(UUid);
+
   function changeButton() {
     id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
-  }
-
-  //유저생성
-  interface User {
-    name: string;
-    username: string;
-    password1: string;
-    password_check: string;
   }
 
   const { mutate, isLoading } = useMutation((newUser: User) => {
@@ -40,7 +43,11 @@ const SignUpComponents = () => {
     mutate(newUser, {
       onSuccess: (data) => {
         console.log(data);
+        setUserInform(data);
         alert('회원가입 완료!');
+      },
+      onError: () => {
+        alert('중복된 아이디입니다!');
       },
     });
   };

@@ -1,6 +1,15 @@
+import { restFetcher } from '@/queryClient';
+import { useMutation } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './index.scss';
+import axios from 'axios';
+interface userType {
+  username: string;
+  password: string;
+}
 const LoginComponent = () => {
+  const navigator = useNavigate();
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
@@ -9,6 +18,31 @@ const LoginComponent = () => {
   function changeButton() {
     id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
   }
+
+  const { mutate, isLoading, isError } = useMutation((user: userType) => {
+    return restFetcher({
+      method: 'POST',
+      path: 'http://localhost:8000/api/users/login',
+      params: user,
+    });
+  });
+
+  const loginUser = () => {
+    const user = {
+      username: id,
+      password: pw,
+    };
+    mutate(user, {
+      onSuccess: (data) => {
+        console.log(data);
+        axios.defaults.headers.common[
+          'Authorization'
+        ] = `Bearer ${data.accessToken}`;
+        localStorage.setItem('access_token', data.access_token);
+        navigator('/');
+      },
+    });
+  };
   return (
     <div className="login_page">
       <div className="join_us">LOGIN</div>
@@ -38,7 +72,9 @@ const LoginComponent = () => {
           onKeyUp={changeButton}
         />
       </div>
-      <button className="login_button">로그인</button>
+      <button onClick={loginUser} className="login_button">
+        로그인
+      </button>
     </div>
   );
 };
