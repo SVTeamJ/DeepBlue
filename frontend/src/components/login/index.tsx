@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './index.scss';
 const LoginComponent = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
@@ -17,7 +17,7 @@ const LoginComponent = () => {
         <input
           placeholder="아이디를 입력해주세요"
           id="id"
-          className="login_input"
+          className="login_page_input"
           onChange={(e) => {
             setId(e.target.value);
           }}
@@ -31,7 +31,7 @@ const LoginComponent = () => {
           type="password"
           placeholder="비밀번호를 입력해주세요"
           id="password"
-          className="login_input"
+          className="login_page_input"
           onChange={(e) => {
             setPw(e.target.value);
           }}

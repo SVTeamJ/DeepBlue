@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Login_page from './loginpage';
 import './index.scss';
 function Is_login_check({ round = false }) {
-  const [is_login, set_is_login] = useState(false);
+  const [is_login, set_is_login] = useState(true);
 
   const set_toggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (e.currentTarget.innerHTML == '로그인') {

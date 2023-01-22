@@ -13,13 +13,42 @@
   display: flex;
   width: 100%;
   height: 100%;
+
+  & > div {
+    width: 80%;
+  }
+  @include tablet {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    & > div {
+      width: 50%;
+    }
+  }
 }
 
 .login_explanation {
   display: none;
+  color: white;
   @include tablet {
     display: flex;
     flex-direction: column;
+    & > h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    & > p {
+      font-size: 2rem;
+      text-align: center;
+      color: white;
+      opacity: 0.5;
+    }
+    & > img {
+      width: 30rem;
+      height: 30rem;
+      margin: 0 auto;
+      animation: move_whale 5s infinite alternate forwards;
+    }
   }
 }
 
@@ -27,16 +56,26 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 100px;
-  width: 90%;
+  margin-top: 50px;
+  width: 100%;
+
+  @include tablet {
+    width: 100%;
+    margin-top: 0;
+  }
 }
 
 ////Is_login_check
 .insert_login_layout {
   height: 450px;
-  width: 80%;
+  width: 100%;
   background-color: white;
   border-radius: 1rem;
+
+  @include tablet {
+    height: 600px;
+    width: 70%;
+  }
 }
 
 .insert_switch_login {
