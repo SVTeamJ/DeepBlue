@@ -10,6 +10,7 @@ export interface User {
   username: string;
   password1: string;
   password_check: string;
+  id: string;
 }
 const SignUpComponents = () => {
   const [userName, setUserName] = useState('');
