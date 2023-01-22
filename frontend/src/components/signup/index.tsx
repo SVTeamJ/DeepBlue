@@ -5,13 +5,17 @@ import React, { useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import './index.scss';
 //유저생성
-export interface User {
+export interface User extends createUser {
+  id: string;
+}
+
+interface createUser {
   name: string;
   username: string;
   password1: string;
   password_check: string;
-  id: string;
 }
+
 const SignUpComponents = () => {
   const [userName, setUserName] = useState('');
   const [id, setId] = useState('');
@@ -26,7 +30,7 @@ const SignUpComponents = () => {
     id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
   }
 
-  const { mutate, isLoading } = useMutation((newUser: User) => {
+  const { mutate, isLoading } = useMutation((newUser: createUser) => {
     return restFetcher({
       method: 'POST',
       path: 'http://localhost:8000/api/users/signup',

@@ -33,7 +33,7 @@ const Storage = () => {
     }),
   );
 
-  if (!token && !data) {
+  if (!token) {
     return <Navigate replace to="/" />;
   }
   console.log(data);
