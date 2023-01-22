@@ -73,8 +73,11 @@
   border-radius: 1rem;
 
   @include tablet {
-    height: 600px;
+    height: 500px;
     width: 70%;
+  }
+  @include laptop {
+    height: 600px;
   }
 }
 
