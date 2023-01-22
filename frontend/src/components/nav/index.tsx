@@ -13,6 +13,12 @@ const Nav = () => {
   const gotoMain = () => {
     navigator('/');
   };
+
+  const goLogout = () => {
+    alert('로그아웃되었습니다!');
+    localStorage.removeItem('access_token');
+  };
+  let token = localStorage.getItem('access_token');
   return (
     <div className="nav">
       <div onClick={gotoMain} className="nav-logo">
@@ -27,9 +33,15 @@ const Nav = () => {
         <Link to="/storage" className={storage ? 'focus' : 'not'}>
           Storage
         </Link>
-        <Link to="/login" className={login ? 'focus' : 'not'}>
-          Login
-        </Link>
+        {!token ? (
+          <Link to="/login" className={login ? 'focus' : 'not'}>
+            Login
+          </Link>
+        ) : (
+          <Link to="/" onClick={goLogout} className={'not'}>
+            Logout
+          </Link>
+        )}
       </div>
     </div>
   );
