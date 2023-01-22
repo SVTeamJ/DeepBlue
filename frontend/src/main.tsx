@@ -11,6 +11,7 @@ import { getClient } from './queryClient';
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
 import reset from './reset.scss';
+import axios from 'axios';
 // if (import.meta.env.DEV) {
 //   worker.start();
 // }
@@ -19,7 +20,7 @@ Sentry.init({
   integrations: [new BrowserTracing()],
   tracesSampleRate: 1.0,
 });
-
+axios.defaults.withCredentials = true;
 const queryClient = getClient();
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
