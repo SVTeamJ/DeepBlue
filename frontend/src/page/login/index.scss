@@ -31,6 +31,7 @@
   display: none;
   color: white;
   @include tablet {
+    height: 80%;
     display: flex;
     flex-direction: column;
     & > h1 {
@@ -44,8 +45,8 @@
       opacity: 0.5;
     }
     & > img {
-      width: 30rem;
-      height: 30rem;
+      width: 25rem;
+      height: 25rem;
       margin: 0 auto;
       animation: move_whale 5s infinite alternate forwards;
     }

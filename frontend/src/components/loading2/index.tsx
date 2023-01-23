@@ -2,8 +2,8 @@ import React from 'react';
 import './index.scss';
 const Loading2 = () => {
   return (
-    <div className="loading">
-      <div className="spinner"></div>
+    <div className="loading2">
+      <div className="spinner2"></div>
     </div>
   );
 };
