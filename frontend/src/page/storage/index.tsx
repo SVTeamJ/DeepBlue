@@ -34,7 +34,14 @@ const Storage = () => {
   );
 
   if (!token) {
-    return <Navigate replace to="/" />;
+    (async () => {
+      alert('로그인이 필요한 서비스입니다.');
+    })();
+    return (
+      <>
+        <Navigate replace to="/" />
+      </>
+    );
   }
   console.log(data);
 

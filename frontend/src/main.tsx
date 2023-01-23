@@ -23,14 +23,12 @@ Sentry.init({
 axios.defaults.withCredentials = true;
 const queryClient = getClient();
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          <App />
-          <ReactQueryDevtools initialIsOpen={true} />
-        </QueryClientProvider>
-      </BrowserRouter>
-    </RecoilRoot>
-  </React.StrictMode>,
+  <RecoilRoot>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <App />
+        <ReactQueryDevtools initialIsOpen={true} />
+      </QueryClientProvider>
+    </BrowserRouter>
+  </RecoilRoot>,
 );
