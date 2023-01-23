@@ -1,17 +1,43 @@
 .signup_page {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 28px 40px;
+  padding-top: 0;
 }
 
+.join_us{
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+
+.user_input{
+  width: 100%;
+}
+
+.signup_page_text{
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+
 .signup_page_input {
-  width: 80%;
-  border-radius: 1rem;
-  height: 50px;
-  padding: 1rem;
+  width: 100%;
+  height: 40px;
   border: 1.5px solid #d8d8d8;
+  border-radius: 20px;
+  font-size: 1rem;
+  text-indent: 4%;
 }
 
 .signup_page_button {
-  width: 25rem;
-  height: 3.5rem;
+  width: 100%;
+  height: 30px;
   background-color: #053366;
   border-radius: 20px;
   color: white;

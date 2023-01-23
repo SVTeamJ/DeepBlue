@@ -46,7 +46,7 @@ const LoginComponent = () => {
   return (
     <div className="login_page">
       <div className="join_us">LOGIN</div>
-      <div>
+      <div className='user_input'>
         <div className="login_text">아이디</div>
         <input
           placeholder="아이디를 입력해주세요"
@@ -59,7 +59,7 @@ const LoginComponent = () => {
         />
       </div>
 
-      <div>
+      <div className='user_input'>
         <div className="login_text">비밀번호</div>
         <input
           type="password"
