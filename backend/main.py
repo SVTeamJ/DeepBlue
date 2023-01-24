@@ -7,7 +7,6 @@ from database import Base
 from database import engine
 
 from api.api import api_router
-from api.endpoints import fish
 Base.metadata.create_all(bind=engine)
 
 # cors 
@@ -25,4 +24,3 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(api_router, prefix="/api")
-app.include_router(fish.router)
