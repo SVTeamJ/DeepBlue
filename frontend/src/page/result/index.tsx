@@ -17,7 +17,7 @@ interface result {
   url: string;
 }
 const Result = () => {
-  const navagater = useNavigate();
+  const navigater = useNavigate();
   const location = useLocation();
   const resultData = (location.state as RouterState)?.data;
   const [result, setResult] = useState<result | null>();
@@ -30,7 +30,7 @@ const Result = () => {
   }, []);
 
   const gotoMain = () => {
-    navagater('/');
+    navigater('/');
   };
   return (
     <div>
@@ -47,27 +47,29 @@ const Result = () => {
               <div className="insert_topBox"></div>
               <div className="insert_normalBox1">
                 <div className="insert_Namebox">{result?.fish_type}</div>
-                <div className="insert_smallNamebox">{result?.fish_type}</div>
+                <div className="insert_smallNamebox">학명 : Dasyatis akajei</div>
               </div>
-              <div className="insert_discribeBox">{result?.description}</div>
+              <div className="insert_discribeBox">노랑가오리는 색가오리과에 속하는 물고기로
+꼬리에 긴 독가시가 하나 있는데 길이가 약 15cm 이기 때문에 매우 기다란 것 뿐만 아니라 양쪽에 톱니가 있어 인간의 몸을 찌르면
+몹시 아플 뿐만 아니라 독가시 끝에 맹독이 있어 기절하고 심지어 사망하는 수도 있다</div>
               <div className="insert_qnaBox">
                 <div className="insert_questionBox">
                   분류
                   <br />
                   서식지
                   <br />
-                  독성유무:
+                  독성유무
                   <br />
                   산란기
                 </div>
                 <div className="insert_answerBox">
                   포유류
                   <br />
-                  바다
+                  서태평양 지역의 얕은 바다와 강 하구
                   <br />
                   {result?.toxicity}
                   <br />
-                  {result?.closed_season}~{result?.open_season}
+                  5월 ~ 8월
                 </div>
               </div>
             </div>
