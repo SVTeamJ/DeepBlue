@@ -11,8 +11,9 @@ def create_fish(db:Session,fish:fish_schema.FishCreate):
         description=fish.description,
         toxicity=fish.toxicity,
         fish_name=fish.fish_name,
-        fish_habitat=fish.fish_habitat,
-        fish_scientific_name=fish.fish_scientific_name
+        habitat=fish.habitat,
+        scientific_name=fish.scientific_name,
+        classication=fish.classification
         
     )
     db.add(db_fish)
