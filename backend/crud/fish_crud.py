@@ -16,3 +16,6 @@ def create_fish(db:Session,fish:fish_schema.FishCreate):
     db.commit()
     db.refresh(db_fish)
     return db_fish
+
+def get_fish(db:Session,fish_id:int):
+    return db.query(Fish).filter(Fish.fish_id==fish_id).first()

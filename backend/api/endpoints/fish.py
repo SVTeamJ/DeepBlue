@@ -31,7 +31,6 @@ def post_fish(fish:fish_schema.FishCreate,db:Session=Depends(get_db)):
     
 @router.get("/{fish_id}",response_model=fish_schema.Fish)
 def get_fish(fish_id:int,db:Session=Depends(get_db)):
-    fish_information=db.query(fish.Fish).filter(fish.Fish.fish_id==fish_id).first()
-    return fish_information
+    return fish_crud.get_fish(db,fish_id)
     
    
