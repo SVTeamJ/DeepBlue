@@ -11,6 +11,9 @@ class Fish(Base):
     
     fish_id=Column(Integer,primary_key=True,index=True)
     fish_type=Column(String(64),nullable=False,index=True)
+    fish_name=Column(String(64),nullable=False,index=True)
+    fish_habitat=Column(String(64),nullable=False,index=True)
+    fish_scientific_name=Column(String(64),nullable=False,index=True)
     toxicity=Column(String(16),nullable=False,index=True)
     open_season=Column(String(64),nullable=False,index=True)
     closed_season=Column(String(64),nullable=False,index=True)
