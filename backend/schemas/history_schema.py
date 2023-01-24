@@ -11,6 +11,9 @@ class create_History(HistoryBase):
     user_id:int
 
 
+
+
+
 class read_History(HistoryBase):
     fish_id:int
     fish_url:str

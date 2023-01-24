@@ -14,8 +14,13 @@ router=APIRouter()
 #     fish_crud.create_fish(db,fish)
 #     return fish_crud.create_fish(db,fish)
 
+
+
 @router.get("/{fish_id}",response_model=fish_schema.FishRead)
 def get_fish(fish_id:int,db:Session=Depends(get_db)):
+    '''
+    물고기 정보 불러오는 API
+    '''
     return fish_crud.get_fish(db,fish_id)
     
    

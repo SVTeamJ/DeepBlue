@@ -3,12 +3,16 @@ from schemas import history_schema
 from model.history import History
 from model.fish import Fish
 from model.user import User
-from fastapi import HTTPException
 from starlette import status
-from jose import jwt, JWTError
 
-ALGORITHM = "HS256" # jwt 인코딩을 위해 필요한 알고리즘
-SECRET_KEY = "DeepBlue" # 비밀키
+
+
+'''
+ 데이터 베이스에 History 모델 추가
+
+
+'''
+
 
 def create_history(db:Session, history:history_schema.create_History):
 
@@ -24,6 +28,19 @@ def create_history(db:Session, history:history_schema.create_History):
     return db_history
     
 def get_history(db:Session,user_id:int):
+    
+    '''
+    유저의 history불러오기 위해 user_id로 history객체 여러개 반환
+    
+    parameter
+    ---------
+    db:Session
+    user_id:특정 유저의 history를 불러올 때 입력받는 user_id
+    
+    return
+    --------
+    user_id가진 history 전부
+    '''
     # credentials_exception = HTTPException(
     #     status_code=status.HTTP_401_UNAUTHORIZED,
     #     detail="Could not validate credentials",

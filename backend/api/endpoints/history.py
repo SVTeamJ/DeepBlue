@@ -17,6 +17,15 @@ router=APIRouter()
 #     return history_crud.create_history(db,history)
 
 
+
+'''
+user_id 통해서 
+user_id가진 모델 모두 불러 온 후
+리스트 형식으로 반환
+
+'''
+
+
 @router.get("/{user_id}",response_model=list[history_schema.read_History])
 def get_history(user_id:int,
                 db:Session=Depends(get_db)

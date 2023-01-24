@@ -15,6 +15,7 @@ class FishBase(BaseModel):
 #     is_active:bool
 
 
+
 class FishCreate(FishBase):
     description:str
     toxicity:str
@@ -27,6 +28,8 @@ class FishCreate(FishBase):
     scientific_name:str
     classification:str
     
+    
+   
 class FishRead(FishBase):
     fish_id:int
     description: str
