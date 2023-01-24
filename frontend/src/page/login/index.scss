@@ -1,246 +1,105 @@
 @import '../../media.scss';
 
-//#높이가 줄어들때 지정 반응형 생각해야함
-
 .login_background {
-  //배경 지정을 위한 CSS
   width: 100%;
+  min-height: 100vh;
   height: 100vh;
-  max-height: 100vh;
-  min-height: 700px;
-  min-width: 500px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.login_mainLayout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  & > div {
+    width: 80%;
+  }
   @include tablet {
     justify-content: center;
-  }
-  @include desktop {
-    justify-content: center;
-  }
-  @media (width < 1440) {
-    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    & > div {
+      width: 50%;
+    }
   }
 }
 
-.login_left_background {
-  //flex 레이아웃을 위한 css
-  width: 50%;
-  height: 100%;
-  flex-direction: row;
-  justify-content: center;
+.login_explanation {
   display: none;
-
-  @include laptop {
+  color: white;
+  @include tablet {
+    height: 80%;
     display: flex;
+    flex-direction: column;
+    & > h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    & > p {
+      font-size: 2rem;
+      text-align: center;
+      color: white;
+      opacity: 0.5;
+    }
+    & > img {
+      width: 25rem;
+      height: 25rem;
+      margin: 0 auto;
+      animation: move_whale 5s infinite alternate forwards;
+    }
   }
 }
 
-.login_logo_background {
-  //flex 레이아웃을 위한 css
-  width: 100%;
-  min-width: 336px;
-  height: 56px;
+.login_input {
   display: flex;
-  flex-direction: row;
-  justify-self: center;
-}
-
-.login_right_background {
-  //flex 레이아웃을 위한 css
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-  min-width: 264px;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: center;
   justify-content: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
 
   @include tablet {
-  }
-  @include desktop {
-    width: 50%;
+    width: 100%;
+    margin-top: 0;
   }
 }
 
+////Is_login_check
 .insert_login_layout {
-  //로그인,회원가입 창 지정
-  align-self: center;
+  height: 450px;
   width: 100%;
-  height: 100%;
-  min-width: 200px;
-  min-height: 600px;
-  max-width: 400px;
-  max-height: 600px;
-  //min-width: 20px;
-  //min-height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  align-items: center;
   background-color: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 1rem;
 
   @include tablet {
-    //min-width: 400px;
-    //min-height: 400px;
-    max-width: 600px;
-    max-height: 600px;
+    height: 500px;
+    width: 70%;
   }
-
   @include laptop {
-    //min-width: 400px;
-    //min-height: 400px;
-    max-width: 600px;
-    max-height: 600px;
-  }
-
-  @include desktop {
-    //min-width: 400px;
-    min-height: 400px;
-    max-width: 600px;
-    max-height: 600px;
+    height: 600px;
   }
 }
 
 .insert_switch_login {
   display: flex;
-  width: 100%;
-  height: 3.125rem;
-  flex-direction: row;
-  background-color: #d7d7d7;
+  align-items: center;
+
+  & > button {
+    flex-grow: 1;
+    height: 50px;
+  }
+  &:hover {
+    background-color: #eee;
+  }
 }
 
 .switch_button_true {
-  width: 50%;
-  height: 100%;
-  border-radius: 20px 20px 0px 0px;
-  text-align: center;
-  font-size: 1.35rem;
-  font-weight: bold;
+  background-color: red;
 }
 
-.switch_button_false {
-  width: 50%;
-  height: 100%;
-  border-radius: 20px 20px 0px 0px;
-  background-color: white;
-  text-align: center;
-  color: #053366;
-  font-size: 1.35rem;
-  font-weight: bold;
-}
-
-.login_logo {
-  //좌측 상단 로고 CSS
-  width: 56px;
-  height: 56px;
-  justify-items: flex-start;
-  align-self: flex-start;
-}
-
-.login_web_name {
-  //좌측상단 이름 css
-  justify-items: flex-start;
-  align-self: flex-start;
-  color: white;
-  font-size: 36px;
-}
-
-.login_welcome {
-  //좌측 중앙 문장 CSS
-  justify-self: center;
-  align-self: center;
-  color: white;
-  font-size: 5rem;
-}
-
-.login_welcome_background {
-  //환영 문구 위치 조정
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.login_ment {
-  //환영 문구 css
-  justify-self: center;
-  align-self: center;
-  color: white;
-  font-size: 1.5rem;
-  opacity: 50%;
-}
-
-.login_page {
-  //
-  width: 100%;
-  height: 100%;
-  min-width: 400px;
-  min-height: 164px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  padding: 28px 40px;
-}
-
-.login_button {
-  width: 350px;
-  height: 50px;
-  background-color: #053366;
-  border-radius: 20px;
-  color: white;
-
-  @include desktop {
-    width: 500px;
-  }
-
-  @include laptop {
-    width: 500px;
-  }
-
-  @include tablet {
-    width: 500px;
-  }
-}
-
-.login_input {
-  width: 350px;
-  height: 50px;
-  border: 1.5px solid #d8d8d8;
-  border-radius: 20px;
-  font-size: 1.25rem;
-  text-indent: 4%;
-  @include tablet {
-    width: 500px;
-    font-size: 1rem;
-  }
-  @include laptop {
-    width: 500px;
-    font-size: 1rem;
-  }
-  @include desktop {
-    width: 500px;
-    font-size: 1rem;
-  }
-}
-
-.whale_img {
-  //고래 이미지 css
-  width: 50vh;
-  height: auto;
-  justify-self: center;
-  align-self: center;
-
-  animation: move_whale 4.5s infinite alternate forwards;
-}
+/// loginpage
 
 @keyframes move_whale {
   0% {
@@ -251,39 +110,5 @@
   }
   100% {
     transform: translateY(0px);
-  }
-}
-
-.small_whale {
-  height: 38%;
-  width: auto;
-}
-
-.login_text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: black;
-  @include tablet {
-    font-size: 1rem;
-  }
-  @include laptop {
-    font-size: 1rem;
-  }
-  @include desktop {
-    font-size: 1rem;
-  }
-}
-
-.join_us {
-  font-size: 1.7rem;
-  font-weight: bold;
-}
-
-.mobile_welcome {
-  color: white;
-  font-size: 3rem;
-  justify-self: flex-start;
-  @include laptop {
-    display: none;
   }
 }
