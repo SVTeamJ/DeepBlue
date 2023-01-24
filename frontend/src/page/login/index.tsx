@@ -18,6 +18,9 @@ const Login = () => {
             <img src={Whale}></img>
           </div>
           <div className="login_input">
+            <div className="mobile_login_explanation">
+              <h1>Welcome</h1>
+            </div>
             <Is_login_check></Is_login_check>
           </div>
         </div>

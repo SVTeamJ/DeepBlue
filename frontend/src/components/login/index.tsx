@@ -71,7 +71,7 @@ const LoginComponent = () => {
           }}
           onKeyUp={changeButton}
         />
-      </div>
+      </div >
       <button onClick={loginUser} className="login_button">
         로그인
       </button>
