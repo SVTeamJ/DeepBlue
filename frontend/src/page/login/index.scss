@@ -13,13 +13,13 @@
   display: flex;
   width: 100%;
   height: 100%;
-
+  justify-content: center;
+  align-items: center;
   & > div {
     width: 80%;
   }
   @include tablet {
-    justify-content: center;
-    align-items: center;
+    
     margin: 0 auto;
     & > div {
       width: 50%;
@@ -85,6 +85,7 @@
 .insert_switch_login {
   display: flex;
   align-items: center;
+  background-color: #d7d7d7;
 
   & > button {
     flex-grow: 1;
@@ -95,8 +96,24 @@
   }
 }
 
-.switch_button_true {
-  background-color: red;
+.switch_button_false{
+  width: 50%;
+  height: 100%;
+  border-radius: 20px 20px 0px 0px;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.switch_button_true{
+  width: 50%;
+  height: 100%;
+  border-radius: 20px 20px 0px 0px;
+  background-color: white;
+  text-align: center;
+  color :#053366;
+  font-size: 1.35rem;
+  font-weight: bold;
 }
 
 /// loginpage

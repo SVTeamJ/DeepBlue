@@ -56,10 +56,12 @@ const SignUpComponents = () => {
       },
     });
   };
+
+  
   return (
     <div className="signup_page">
       <div className="join_us">JOIN US</div>
-      <div>
+      <div className= 'user_input'>
         <div className="signup_page_text">이름</div>
         <input
           placeholder="이름을 입력해주세요"
@@ -72,7 +74,7 @@ const SignUpComponents = () => {
           onKeyUp={changeButton}
         />
       </div>
-      <div>
+      <div className='user_input'>
         <div className="signup_page_text">아이디</div>
         <input
           required
@@ -85,7 +87,7 @@ const SignUpComponents = () => {
           //onKeyup={changeButton}
         />
       </div>
-      <div>
+      <div className='user_input'>
         <div className="signup_page_text">비밀번호</div>
         <input
           required
@@ -99,7 +101,7 @@ const SignUpComponents = () => {
           onKeyUp={changeButton}
         />
       </div>
-      <div>
+      <div className='user_input'>
         <div className="signup_page_text">비밀번호 확인</div>
         <input
           required
