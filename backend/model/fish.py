@@ -10,11 +10,19 @@ class Fish(Base):
     
     fish_id=Column(Integer,primary_key=True,index=True)
 
+    '''
+    fish_type-이름
+    classification-분류
+    description-설명
+    habitat-서식지
+    scientific_name-학명
+    '''
     fish_type=Column(String(64),nullable=False,index=True)
     scientific_name=Column(String(128),nullable=False,index=True)
     classification = Column(String(64), nullable=False, index=True)
     description = Column(String(512), nullable=False, index=False)
     habitat = Column(String(64), nullable=False, index=False)
+
 
     toxicity=Column(String(16),nullable=False,index=True)
     open_season=Column(String(64),nullable=False,index=False)
