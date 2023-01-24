@@ -2,53 +2,61 @@
 
 .signup_page {
   width: 100%;
-  height: 90%;
+  height: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 28px 40px;
+  padding: 20px 32px;
   padding-top: 0;
+  @include tablet {
+    position: relative;
+  }
 }
 
-.join_us{
+.join_us {
   font-size: 1.7rem;
   font-weight: bold;
 }
 
-
-.user_input{
+.user_input {
   width: 100%;
+  height: 90px;
 }
 
-.signup_page_text{
+.signup_page_text {
   font-size: 1rem;
   font-weight: bold;
   color: black;
 }
 
-
 .signup_page_input {
   width: 100%;
   height: 47px;
   border: 1.5px solid #d8d8d8;
-  border-radius: 20px;
+  border-radius: 15px;
   font-size: 1rem;
   text-indent: 4%;
 }
 
 .signup_page_button {
-  width: 100%;
+  width: 90%;
   height: 50px;
   background-color: #053366;
-  border-radius: 20px;
+  border-radius: 15px;
   color: white;
+  font-size: 1.3rem;
+  margin-top: 10px;
+
+  @include tablet {
+    position: absolute;
+    bottom: 10px;
+  }
 }
 
-.mobile_login_explanation{
+.mobile_login_explanation {
   display: flex;
   width: 50%;
-  @include tablet{
+  @include tablet {
     display: none;
   }
 }
