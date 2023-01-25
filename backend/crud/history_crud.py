@@ -42,8 +42,9 @@ def get_history(db:Session,user_id:int):
     user_id가진 history 전부
     '''
 
+
     return db.query(History.user_id,History.fish_id, Fish.description,
                     Fish.fish_type,History.fish_url,Fish.scientific_name,
                     Fish.classification,Fish.habitat,Fish.toxicity)\
-                    .outerjoin(Fish,History.fish_id == Fish.fish_id).filter(History.user_id == ser_id).all()
+                    .outerjoin(Fish,History.fish_id == Fish.fish_id).filter(History.user_id == user_id).all()
 
