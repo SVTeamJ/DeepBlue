@@ -43,8 +43,17 @@ def get_history(db:Session,user_id:int):
     '''
 
 
-    return db.query(History.user_id,History.fish_id, Fish.description,
-                    Fish.fish_type,History.fish_url,Fish.scientific_name,
-                    Fish.classification,Fish.habitat,Fish.toxicity)\
+    return db.query(History.user_id,
+                    History.fish_id,
+                    Fish.fish_type,
+                    Fish.scientific_name,
+                    Fish.description,
+                    Fish.classification,
+                    Fish.habitat,
+                    Fish.toxicity,
+                    Fish.open_season,
+                    Fish.closed_season,
+                    History.fish_url
+                    )\
                     .outerjoin(Fish,History.fish_id == Fish.fish_id).filter(History.user_id == user_id).all()
 

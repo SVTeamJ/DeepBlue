@@ -25,7 +25,7 @@ user_id가진 모델 모두 불러 온 후
 '''
 
 
-@router.get("/{user_id}")
+@router.get("/{user_id}",response_model=list[history_schema.HistoryList])
 def get_history(user_id:int,
                 db:Session=Depends(get_db)):
     return history_crud.get_history(db,user_id)
