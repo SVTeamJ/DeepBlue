@@ -14,7 +14,7 @@ from starlette import status
 '''
 
 
-def create_history(db:Session, history:history_schema.create_History):
+def create_history(db:Session, history:history_schema.HistoryCreate):
 
     # create fish here
     db_history=History(
@@ -41,22 +41,9 @@ def get_history(db:Session,user_id:int):
     --------
     user_id가진 history 전부
     '''
-    # credentials_exception = HTTPException(
-    #     status_code=status.HTTP_401_UNAUTHORIZED,
-    #     detail="Could not validate credentials",
-    #     headers={"WWW-Authenticate": "Bearer"},
-    # )
-    # try:
-    #     payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-    #     username: str = payload.get("sub")
-    #     if username is None:
-    #         raise credentials_exception
-    # except JWTError:
-    #     raise credentials_exception
-    # else:
-    #     user=db.query(User).filter(User.name==username).first()
-    #     user_id=user.id
-    #     return user_id
 
-    return db.query(History).filter(History.user_id == user_id).all()
-    
+    return db.query(History.user_id,History.fish_id, Fish.description,
+                    Fish.fish_type,History.fish_url,Fish.scientific_name,
+                    Fish.classification,Fish.habitat,Fish.toxicity)\
+                    .outerjoin(Fish,History.fish_id == Fish.fish_id).filter(History.user_id == ser_id).all()
+
