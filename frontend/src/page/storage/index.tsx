@@ -45,12 +45,12 @@ const Storage = () => {
   }
   console.log(data);
 
-  // const { data } = useQuery<fishInform[]>(['FISHLIST'], () =>
-  //   restFetcher({
-  //     method: 'GET',
-  //     path: '/api/v1/fishList/all',
-  //   }),
-  // );
+  const { data:fishList } = useQuery<fishInform[]>(['FISHLIST'], () =>
+    restFetcher({
+      method: 'GET',
+      path: '/api/v1/fishList/all',///////////////////////////////////
+    }),
+  );
 
   const showDetailFish = (item: fishInform) => {
     setCurrentModalInform(() => item);
@@ -61,7 +61,7 @@ const Storage = () => {
   // useEffect(() => {
   //   (async () => {
   //     let result = await axios.get('/api/v1/fishList/all');
-  //     console.log(result);
+  //     console.log(result);///////////////////////////////////////////////
   //   })();
   // }, []);
   const gotoMain = () => {
@@ -83,8 +83,8 @@ const Storage = () => {
         <p>이곳에서 여러분이 잡은 물고기의 정보를 모두 볼 수 있어요!</p>
       </div>
       <div onClick={gotoTop} className="fishList_gotoMain"></div>
-      {/* <div className="fishList_view-grid">
-        {data?.map((item, index) => {
+      <div className="fishList_view-grid">
+        {fishList?.map((item, index) => {
           return (
             <div
               onClick={() => showDetailFish(item)}
@@ -99,7 +99,7 @@ const Storage = () => {
             </div>
           );
         })}
-      </div> */}
+      </div>
       {modal ? (
         <DetailFishList
           modal={modal}

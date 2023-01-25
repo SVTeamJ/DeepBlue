@@ -12,9 +12,9 @@ import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
 import reset from './reset.scss';
 import axios from 'axios';
-// if (import.meta.env.DEV) {
-//   worker.start();
-// }
+if (import.meta) {
+  worker.start();
+}
 Sentry.init({
   dsn: `${import.meta.env.VITE_Sentry}`,
   integrations: [new BrowserTracing()],
