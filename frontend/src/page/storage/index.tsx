@@ -5,12 +5,16 @@ import glassPreview from '../../assets/glassPreview.png';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './index.scss';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
 import logo from '../../assets/logo.png';
 import Nav from '@/components/nav';
+import { useRecoilState } from 'recoil';
+import { User } from '@/components/signup';
+import { UUid } from '@/atom/atom';
 const Storage = () => {
   const navigator = useNavigate();
+  const [userInform, setUserInform] = useRecoilState<User>(UUid);
   const [modal, setModal] = useState(false);
   const [currentModalInform, setCurrentModalInform] = useState({
     fish_type: '',
@@ -20,12 +24,33 @@ const Storage = () => {
     description: '',
   });
 
-  const { data } = useQuery<fishInform[]>(['FISHLIST'], () =>
+  let token = localStorage.getItem('access_token');
+  console.log(userInform.id);
+  const { data, isLoading } = useQuery(['USER'], () =>
     restFetcher({
       method: 'GET',
-      path: '/api/v1/fishList/all',
+      path: `http://localhost:8000/api/users/${userInform.id}`,
     }),
   );
+
+  if (!token) {
+    (async () => {
+      alert('로그인이 필요한 서비스입니다.');
+    })();
+    return (
+      <>
+        <Navigate replace to="/" />
+      </>
+    );
+  }
+  console.log(data);
+
+  // const { data } = useQuery<fishInform[]>(['FISHLIST'], () =>
+  //   restFetcher({
+  //     method: 'GET',
+  //     path: '/api/v1/fishList/all',
+  //   }),
+  // );
 
   const showDetailFish = (item: fishInform) => {
     setCurrentModalInform(() => item);
@@ -49,6 +74,7 @@ const Storage = () => {
       behavior: 'smooth',
     });
   };
+
   return (
     <div className="fishList_view">
       <Nav />
@@ -57,7 +83,7 @@ const Storage = () => {
         <p>이곳에서 여러분이 잡은 물고기의 정보를 모두 볼 수 있어요!</p>
       </div>
       <div onClick={gotoTop} className="fishList_gotoMain"></div>
-      <div className="fishList_view-grid">
+      {/* <div className="fishList_view-grid">
         {data?.map((item, index) => {
           return (
             <div
@@ -73,7 +99,7 @@ const Storage = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
       {modal ? (
         <DetailFishList
           modal={modal}

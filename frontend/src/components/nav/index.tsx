@@ -3,6 +3,9 @@ import { Link, useMatch, useNavigate } from 'react-router-dom';
 import home from '../../assets/home.png';
 import './index.scss';
 import logo from '../../assets/logo.png';
+import { useRecoilState } from 'recoil';
+import { User } from '../signup';
+import { UUid } from '@/atom/atom';
 const Nav = () => {
   const main = useMatch('/');
   const storage = useMatch('/storage');
@@ -13,6 +16,19 @@ const Nav = () => {
   const gotoMain = () => {
     navigator('/');
   };
+  const [userInform, setUserInform] = useRecoilState<User>(UUid);
+  const goLogout = () => {
+    alert('로그아웃되었습니다!');
+    setUserInform({
+      name: '',
+      username: '',
+      password1: '',
+      password_check: '',
+      id: '',
+    });
+    localStorage.removeItem('access_token');
+  };
+  let token = localStorage.getItem('access_token');
   return (
     <div className="nav">
       <div onClick={gotoMain} className="nav-logo">
@@ -27,9 +43,15 @@ const Nav = () => {
         <Link to="/storage" className={storage ? 'focus' : 'not'}>
           Storage
         </Link>
-        <Link to="/login" className={login ? 'focus' : 'not'}>
-          Login
-        </Link>
+        {!token ? (
+          <Link to="/login" className={login ? 'focus' : 'not'}>
+            Login
+          </Link>
+        ) : (
+          <Link to="/" onClick={goLogout} className={'not'}>
+            Logout
+          </Link>
+        )}
       </div>
     </div>
   );

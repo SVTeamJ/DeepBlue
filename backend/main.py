@@ -7,7 +7,6 @@ from database import Base
 from database import engine
 
 from api.api import api_router
-
 Base.metadata.create_all(bind=engine)
 
 # cors 
