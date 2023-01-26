@@ -36,13 +36,34 @@ const DetaiFish = ({
             backgroundSize: 'cover',
           }}
         ></div>
+
+
+
+
         <div className="DetailPage_inform-input">
-          <h1>{fish_type}</h1>
-          <div className="DetailPage_line"></div>
-          <div className="DetailPage_inform-closed_season">
-            <h1>서식기간</h1>
-            <p>{closed_season}</p>
+          {/* <h1>{fish_type}</h1>
+          <div className="DetailPage_line"></div> */}
+
+          <div className='DetailPage_name'>
+            <h1>{fish_type}</h1>
+            <p>&nbsp;학명 : afdasfsafa</p>
           </div>
+
+          <div className="DetailPage_description">
+            <h1>설명</h1>
+            <p> {description}</p>
+          </div>
+
+          <div  className='DetailPage_inform-classification'>
+            <h1>분류</h1>
+            <p>조기어류</p>
+          </div>
+
+          <div className='DetailPage_inform-habitat' >
+            <h1>서식지</h1>
+            <p>태평양</p>
+          </div>
+
           <div className="DetailPage_inform-toxicyty">
             <h1>이거... 먹을 수 있는건가요?</h1>
             <p>
@@ -51,11 +72,17 @@ const DetaiFish = ({
                 : '아니요 ! 먹으면 안돼요!'}
             </p>
           </div>
-          <div className="DetailPage_description">
-            <h1>설명</h1>
-            <p> {description}</p>
+
+          <div className="DetailPage_inform-closed_season">
+            <h1>번식기</h1>
+            <p>{closed_season}</p>
           </div>
+
         </div>
+
+
+
+
         <span onClick={(e) => closeModal(e)} className="DetailPage_closed">
           X
         </span>
