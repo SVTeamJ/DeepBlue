@@ -8,14 +8,14 @@ from sqlalchemy.orm import relationship
 
 
 class History(Base):
+    '''
+        fish_name -이름
+        fish_url-사진
+        fish_id-생성된 물고기의 id
+        user_id-히스토리 주인 유저의  id
+        '''
     __tablename__="history"
-    
-    '''
-    fish_name -이름
-    fish_url-사진
-    fish_id-생성된 물고기의 id
-    user_id-히스토리 주인 유저의  id
-    '''
+
     history_id=Column(Integer,nullable=False,primary_key=True)
     fish_url=Column(String(100),nullable=False,index=True)
     fish_name=Column(String(100),nullable=False,index=True)
