@@ -10,7 +10,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/user/login")
 
 router=APIRouter()
 
-@router.post("/", response_model=history_schema.HistoryCreate)
+@router.post("/{user_id}", response_model=history_schema.HistoryCreate)
 def post_history(history:history_schema.HistoryCreate,
                 db:Session=Depends(get_db)):
     return history_crud.create_history(db,history)
