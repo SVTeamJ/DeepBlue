@@ -23,7 +23,6 @@ class Fish(Base):
     habitat = Column(String(64), nullable=False, index=False)
 
     toxicity=Column(String(16),nullable=False,index=True)
-    open_season=Column(String(64),nullable=False,index=False)
     closed_season=Column(String(64),nullable=False,index=False)
     fish_url=Column(String(100),nullable=False,index=False)
 

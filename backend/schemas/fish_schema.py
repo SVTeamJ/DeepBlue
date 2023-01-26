@@ -20,7 +20,6 @@ class FishCreate(FishBase):
     description:str
     toxicity:str
     fish_type:str
-    open_season:str
     closed_season:str
     fish_name:str
     habitat:str
@@ -34,7 +33,6 @@ class FishRead(FishBase):
     description: str
     toxicity: str
     fish_type: str
-    open_season: str
     closed_season: str
     habitat: str
     scientific_name: str

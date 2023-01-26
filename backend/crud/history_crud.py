@@ -14,13 +14,14 @@ from starlette import status
 '''
 
 
-def create_history(db:Session, history:history_schema.HistoryCreate):
+def create_history(user_id:int,
+                    db:Session,
+                   history:history_schema.HistoryCreate):
 
     # create fish here
     db_history=History(
-        user_id=history.user_id,
+        user_id=user_id,
         fish_url=history.fish_url,
-        fish_name=history.fish_name,
         fish_id=history.fish_id
     )
     db.add(db_history)
@@ -51,7 +52,6 @@ def get_history(db:Session,user_id:int):
                     Fish.classification,
                     Fish.habitat,
                     Fish.toxicity,
-                    Fish.open_season,
                     Fish.closed_season,
                     History.fish_url
                     )\

@@ -5,14 +5,15 @@ class HistoryBase(BaseModel):
         orm_mode = True
 
 class HistoryCreate(HistoryBase):
-    fish_id:int
     fish_url:str
-    user_id:int
+    fish_id:int
 
-class HistoryRead(HistoryBase):
-    fish_id:int
-    fish_url:str
-    fish_name:str
+
+# class HistoryRead(HistoryBase):
+#     fish_id:int
+#     fish_url:str
+#     fish_name:str
+#     user_id:int
 
 class HistoryList(HistoryBase):
    
@@ -22,7 +23,6 @@ class HistoryList(HistoryBase):
     classification: str
     habitat: str
     toxicity: str
-    open_season: str
     closed_season: str
     fish_url: str
     
