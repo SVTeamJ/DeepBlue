@@ -16,19 +16,27 @@ class HistoryRead(HistoryBase):
     fish_name:str
 
 class HistoryList(HistoryBase):
-    user_id:int
-    fish_id:int
-    fish_url:str
-    fish_name:str
-    description: str
-    toxicity: str
+   
     fish_type: str
+    scientific_name: str
+    description: str
+    classification: str
+    habitat: str
+    toxicity: str
     open_season: str
     closed_season: str
     fish_url: str
-    habitat: str
-    scientific_name: str
-    classification: str
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
     
