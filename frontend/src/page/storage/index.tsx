@@ -26,12 +26,12 @@ const Storage = () => {
 
   let token = localStorage.getItem('access_token');
   console.log(userInform.id);
-  const { data, isLoading } = useQuery(['USER'], () =>
-    restFetcher({
-      method: 'GET',
-      path: `http://localhost:8000/api/users/${userInform.id}`,
-    }),
-  );
+  // const { data, isLoading } = useQuery(['USER'], () =>
+  //   restFetcher({
+  //     method: 'GET',
+  //     path: `http://localhost:8000/api/users/${userInform.id}`,
+  //   }),
+  // );
 
   if (!token) {
     (async () => {
@@ -43,7 +43,6 @@ const Storage = () => {
       </>
     );
   }
-  console.log(data);
 
   // const { data } = useQuery<fishInform[]>(['FISHLIST'], () =>
   //   restFetcher({

@@ -5,7 +5,7 @@
   width: 100vw;
   height: 115vh;
   background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
-  @include tablet{
+  @include tablet {
     height: 100vh;
   }
 }
@@ -106,6 +106,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   @include tablet {
     height: 15%;
   }
@@ -170,9 +171,9 @@
   color: #000000;
   font-size: 0.8rem;
   font-weight: lighter;
-  margin-top:3px;
+  margin-top: 3px;
 
-  @include tablet{
+  @include tablet {
     width: 80%;
     justify-content: flex-start;
     margin-top: none;
@@ -207,7 +208,7 @@
   justify-content: center;
   margin-bottom: 20px;
 
-  @include tablet{
+  @include tablet {
     flex-direction: row;
     justify-content: flex-start;
   }
