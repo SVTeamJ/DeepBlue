@@ -15,13 +15,13 @@ DeepBlue는 검색하지않아도 사진 한장으로 여러분이 원하는 물
 
 ## System Architecture
 
-<img width="100%" height="100%" alt="SA" src="[https://user-images.githubusercontent.com/78634177/193357917-a337e4b5-fd54-4efe-89c3-ab274a00477c.png](https://user-images.githubusercontent.com/78634177/193357917-a337e4b5-fd54-4efe-89c3-ab274a00477c.png)">
+<img width="100%" height="100%" alt="SA" src="https://user-images.githubusercontent.com/78102507/214868298-6e947e91-fab4-4eea-9c3f-356fdfc2d02e.png">
 
 <br>
 
 # 📋ERD
+<img width="100%" height="100%" alt="SA" src="https://user-images.githubusercontent.com/78102507/214868502-f1f45e57-8d2e-4cac-8c3c-bc14553946a0.png">
 
-![Untitled (1).png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/edae31fb-e0ae-4d35-ab71-a079da6679c1/Untitled_(1).png)
 
 ## 📚 TECH STACKS
 
