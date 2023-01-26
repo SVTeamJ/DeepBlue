@@ -6,14 +6,14 @@ class HistoryBase(BaseModel):
 
 class HistoryCreate(HistoryBase):
     fish_url:str
-    fish_name:str
-    user_id:int
-
-class HistoryRead(HistoryBase):
     fish_id:int
-    fish_url:str
-    fish_name:str
-    user_id:int
+
+
+# class HistoryRead(HistoryBase):
+#     fish_id:int
+#     fish_url:str
+#     fish_name:str
+#     user_id:int
 
 class HistoryList(HistoryBase):
    
