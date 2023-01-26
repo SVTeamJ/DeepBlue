@@ -7,6 +7,7 @@ import pymysql
 router = APIRouter()
 
 
+
 @router.post("/")
 async def infer(file: UploadFile = File()):
     content = await file.read()
@@ -25,10 +26,10 @@ async def infer(file: UploadFile = File()):
     result = {"model": res[0], 
               "type": res[1],
               "toxicity": res[2],
-              "classification": res[3],
-              "scientific_name": res[4],
-              "close_season": res[5], 
-              "description": res[6],
+              "close_season": res[3], 
+              "description": res[4],
+              "classification": res[5],
+              "scientific_name": res[6],
               "habitat": res[7], 
               "image_url": url} 
     conn.commit() 
