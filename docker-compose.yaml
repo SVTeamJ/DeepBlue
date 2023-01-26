@@ -55,41 +55,119 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-  rabbitmq:
-    image: rabbitmq:3-management-alpine
-    container_name: 'rabbitmq'
-    ports:
-      - 5672:5672
-      - 15672:15672
-    volumes:
-      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
-    networks:
-      - mynet
+#  rabbitmq:
+#    image: rabbitmq:3-management-alpine
+#    container_name: 'rabbitmq'
+#    ports:
+#      - 5672:5672
+#      - 15672:15672
+#    volumes:
+#      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+#      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+#    networks:
+#      - mynet
+#  prometheus:
+#    image: prom/prometheus
+#    ports:
+#      - 9090:9090
+#    volumes:
+#      - ./prometheus.yaml:/etc/prometheus/prometheus.yml:ro
+#    networks:
+#      - mynet
+#  grafana:
+#    image: grafana/grafana
+#    ports:
+#      - 3001:3000
+#  cadvisor:
+#    image: gcr.io/cadvisor/cadvisor:latest
+#    platform: linux/amd64
+#    container_name: cadvisor
+#    ports:
+#      - 8081:8080
+#    volumes:
+#      - /:/rootfs:ro
+#      - /var/run:/var/run:rw
+#      - /sys:/sys:ro
+#      - /var/lib/docker/:/var/lib/docker:ro
+#      - /var/run/docker.sock:/var/run/docker.sock:rw
+#    networks:
+#      - mynet
+
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:latest
+    restart: always
     ports:
-      - 9090:9090
+      - "9090:9090"
+    links:
+      - cadvisor
+      - alertmanager
     volumes:
-      - ./prometheus.yaml:/etc/prometheus/prometheus.yml:ro
+      - ./monitoring/prometheus/:/etc/prometheus/
+    user: root
+    depends_on:
+      - cadvisor
+    # 여기에 대해서 설명
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+        - mynet
+
+  grafana:
+    build:
+      context: ./monitoring/grafana
+    container_name: grafana
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
+    networks:
+        - mynet
+# node-exporter 역할이 무엇인가요?
+  node-exporter:
+    container_name: node-exporter
+    image: prom/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - "9100:9100"
+    restart: always
     networks:
       - mynet
-  grafana:
-    image: grafana/grafana
+# alertmanager가 무엇인가요?
+  alertmanager:
+    container_name: alertmanager
+    image: prom/alertmanager
     ports:
-      - 3001:3000
+      - "9093:9093"
+    volumes:
+      - ./monitoring/alertmanager/:/etc/alertmanager/
+    restart: always
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+    networks:
+        - mynet
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor:latest
-    platform: linux/amd64
     container_name: cadvisor
-    ports:
-      - 8081:8080
+    image: gcr.io/cadvisor/cadvisor:v0.46.0
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-      - /var/run/docker.sock:/var/run/docker.sock:rw
+    ports:
+      - "8080:8080"
+    restart: always
     networks:
       - mynet
   nginx:
@@ -100,8 +178,89 @@ services:
       - 443:443
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/log:/var/log/nginx
     networks:
       - mynet
+  elasticsearch:
+    build:
+      context: elk/elasticsearch
+      args:
+        ELASTIC_VERSION: 8.5.2
+    volumes:
+      - ./elk/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      node.name: elasticsearch
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      # Bootstrap password.
+      # Used to initialize the keystore during the initial startup of
+      # Elasticsearch. Ignored on subsequent runs.
+      ELASTIC_PASSWORD: changeme
+      # Use single node discovery in order to disable production mode and avoid bootstrap checks.
+      # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
+      discovery.type: single-node
+    restart: unless-stopped
+    networks:
+      - mynet
+
+  logstash:
+    build:
+      context: elk/logstash
+      args:
+        ELASTIC_VERSION: 8.5.2
+    volumes:
+      - ./elk/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
+      - ./elk/logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+    ports:
+      - 5044:5044
+      - 50000:50000/tcp
+      - 50000:50000/udp
+      - 9600:9600
+    environment:
+      LS_JAVA_OPTS: -Xms256m -Xmx256m
+      LOGSTASH_INTERNAL_PASSWORD: changeme
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+    networks:
+      - mynet
+
+  kibana:
+    build:
+      context: elk/kibana
+      args:
+        ELASTIC_VERSION: 8.5.2
+    volumes:
+      - ./elk/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml:ro,Z
+    ports:
+      - 5601:5601
+    environment:
+      KIBANA_SYSTEM_PASSWORD: changeme
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+    networks:
+      - mynet
+
+  filebeat:
+    build:
+      context: elk/filebeat
+      args:
+        ELASTIC_VERSION: 8.5.2
+    entrypoint: "filebeat -e -strict.perms=false"
+    volumes:
+      - ./elk/filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./nginx/log:/var/log/nginx # nginx log path (require same option on nginx container)
+    depends_on:
+      - logstash
+      - elasticsearch
+      - kibana
+    restart: unless-stopped
+    networks:
+      - mynet
+
 volumes:
   mysql_data_dev: null
 
