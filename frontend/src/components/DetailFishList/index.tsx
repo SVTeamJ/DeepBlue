@@ -1,18 +1,22 @@
 import { fishInform } from '@/mocks/handlers';
+import { result } from '@/page/result';
 import React from 'react';
 import './index.scss';
 
-interface fishInfromProps extends fishInform {
+interface fishInfromProps extends result{
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
   modal: boolean;
 }
 
 const DetaiFish = ({
-  fish_type,
-  toxicyty,
-  image,
-  closed_season,
+  classification,
+  close_season,
   description,
+  habitat,
+  fish_url,
+  scientific_name,
+  toxicity,
+  type,
   setModal,
   modal,
 }: fishInfromProps) => {
@@ -32,21 +36,21 @@ const DetaiFish = ({
         <div
           className="DetailPage_inform-img"
           style={{
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${fish_url})`,
             backgroundSize: 'cover',
           }}
         ></div>
         <div className="DetailPage_inform-input">
-          <h1>{fish_type}</h1>
+          <h1>{habitat}</h1>
           <div className="DetailPage_line"></div>
           <div className="DetailPage_inform-closed_season">
             <h1>서식기간</h1>
-            <p>{closed_season}</p>
+            <p>{close_season}</p>
           </div>
           <div className="DetailPage_inform-toxicyty">
             <h1>이거... 먹을 수 있는건가요?</h1>
             <p>
-              {toxicyty == 'yes'
+              {toxicity == 'yes'
                 ? '네 맛있게드세요.'
                 : '아니요 ! 먹으면 안돼요!'}
             </p>
