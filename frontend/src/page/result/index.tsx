@@ -6,26 +6,25 @@ import Nav from '@/components/nav';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ResultData } from '@/type/result';
 interface RouterState {
-  data: ResultData;
+  data: result;
 }
 interface result {
-  closed_season: string;
+  classification: string;
+  close_season: string;
   description: string;
-  fish_type: string;
-  open_season: string;
+  habitat: string;
+  image_url: string;
+  model: string;
+  scientific_name: string;
   toxicity: string;
-  url: string;
+  type: string;
 }
+
 const Result = () => {
   const navigater = useNavigate();
   const location = useLocation();
   const resultData = (location.state as RouterState)?.data;
-  const [result, setResult] = useState<result | null>();
   useEffect(() => {
-    const result = { url: resultData.url, ...resultData.fields };
-    setResult(result);
-    console.log(result);
-
     //여기다가 도감페이지에 저장해주는 post요청해주세요
   }, []);
 
@@ -41,17 +40,19 @@ const Result = () => {
           <div className="insert_linebox"></div>
           <div className="insert_bigbox">
             <div className="insert_smallbox1">
-              <img className="insert_dolpic" src={result?.url}></img>
+              <img className="insert_dolpic" src={resultData?.image_url}></img>
             </div>
             <div className="insert_smallbox2">
               <div className="insert_topBox"></div>
               <div className="insert_normalBox1">
-                <div className="insert_Namebox">{result?.fish_type}</div>
-                <div className="insert_smallNamebox">학명 : Dasyatis akajei</div>
+                <div className="insert_Namebox">{resultData?.type}</div>
+                <div className="insert_smallNamebox">
+                  학명 : {resultData?.scientific_name}
+                </div>
               </div>
-              <div className="insert_discribeBox">노랑가오리는 색가오리과에 속하는 물고기로
-꼬리에 긴 독가시가 하나 있는데 길이가 약 15cm 이기 때문에 매우 기다란 것 뿐만 아니라 양쪽에 톱니가 있어 인간의 몸을 찌르면
-몹시 아플 뿐만 아니라 독가시 끝에 맹독이 있어 기절하고 심지어 사망하는 수도 있다</div>
+              <div className="insert_discribeBox">
+                {resultData?.description}
+              </div>
               <div className="insert_qnaBox">
                 <div className="insert_questionBox">
                   분류
@@ -63,13 +64,13 @@ const Result = () => {
                   산란기
                 </div>
                 <div className="insert_answerBox">
-                  포유류
+                  {resultData?.classification}
                   <br />
-                  서태평양 지역의 얕은 바다와 강 하구
+                  {resultData?.habitat}
                   <br />
-                  {result?.toxicity}
+                  {resultData?.toxicity}
                   <br />
-                  5월 ~ 8월
+                  {resultData?.close_season}
                 </div>
               </div>
             </div>
