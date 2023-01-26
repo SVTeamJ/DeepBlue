@@ -5,10 +5,26 @@ import dolImg from '../../assets/image 69.png';
 import Nav from '@/components/nav';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ResultData } from '@/type/result';
+import axios from 'axios';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { UUid } from '@/atom/atom';
+
 interface RouterState {
-  data: result;
+  data: result2;
 }
-interface result {
+export interface result {
+  classification: string;
+  close_season: string;
+  description: string;
+  habitat: string;
+  fish_url: string;
+  model: string;
+  scientific_name: string;
+  toxicity: string;
+  type: string;
+}
+
+interface result2{
   classification: string;
   close_season: string;
   description: string;
@@ -20,12 +36,36 @@ interface result {
   type: string;
 }
 
+interface Storge{
+  fish_url : string;
+  fish_id : number;
+}
+
+async function post_storge(result:any,user:any) {
+  const body: Storge = {
+    fish_url : result.image_url,
+    fish_id : result.model,
+  };
+  console.log(body);
+  await axios
+    .post("http://localhost:8000/api/history/3", body)
+    .then((res)=>{
+      console.log(res.data);
+    })
+}
+
 const Result = () => {
+  const user = useRecoilValue(UUid);
   const navigater = useNavigate();
   const location = useLocation();
   const resultData = (location.state as RouterState)?.data;
   useEffect(() => {
     //여기다가 도감페이지에 저장해주는 post요청해주세요
+    console.log(resultData);
+    console.log(resultData.image_url);
+    console.log("1");
+    console.log(user);
+    post_storge(resultData,user);
   }, []);
 
   const gotoMain = () => {

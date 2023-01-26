@@ -9,29 +9,44 @@ import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
 import logo from '../../assets/logo.png';
 import Nav from '@/components/nav';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { User } from '@/components/signup';
 import { UUid } from '@/atom/atom';
+import { result } from '../result';
+
+
+async function get_storage(user:any,setData:any) {
+  await axios
+    .get(`http://localhost:8000/api/history/3`)
+    .then((res)=>{
+      console.log("1");
+      console.log(res.data);
+      setData(res.data);
+    })
+}
+
 const Storage = () => {
   const navigator = useNavigate();
   const [userInform, setUserInform] = useRecoilState<User>(UUid);
   const [modal, setModal] = useState(false);
   const [currentModalInform, setCurrentModalInform] = useState({
-    fish_type: '',
-    toxicyty: '',
-    image: '',
-    closed_season: '',
-    description: '',
+    classification: "",
+    close_season: "",
+    description: "",
+    habitat: "",
+    fish_url: "",
+    model: "",
+    scientific_name: "",
+    toxicity: "",
+    type: "",
   });
 
   let token = localStorage.getItem('access_token');
   console.log(userInform.id);
-  // const { data, isLoading } = useQuery(['USER'], () =>
-  //   restFetcher({
-  //     method: 'GET',
-  //     path: `http://localhost:8000/api/users/${userInform.id}`,
-  //   }),
-  // );
+  const user = useRecoilValue(UUid);
+  useEffect(()=>{
+    get_storage(user,setData)
+  },[])
 
   if (!token) {
     (async () => {
@@ -44,25 +59,15 @@ const Storage = () => {
     );
   }
 
-  // const { data } = useQuery<fishInform[]>(['FISHLIST'], () =>
-  //   restFetcher({
-  //     method: 'GET',
-  //     path: '/api/v1/fishList/all',
-  //   }),
-  // );
+  const [data, setData] = useState<result[]|null>();
 
-  const showDetailFish = (item: fishInform) => {
+  
+
+  const showDetailFish = (item: result) => {
     setCurrentModalInform(() => item);
     setModal(true);
   };
 
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   (async () => {
-  //     let result = await axios.get('/api/v1/fishList/all');
-  //     console.log(result);
-  //   })();
-  // }, []);
   const gotoMain = () => {
     navigator('/');
   };
@@ -82,7 +87,7 @@ const Storage = () => {
         <p>이곳에서 여러분이 잡은 물고기의 정보를 모두 볼 수 있어요!</p>
       </div>
       <div onClick={gotoTop} className="fishList_gotoMain"></div>
-      {/* <div className="fishList_view-grid">
+      <div className="fishList_view-grid">
         {data?.map((item, index) => {
           return (
             <div
@@ -91,14 +96,14 @@ const Storage = () => {
             >
               <div
                 style={{
-                  backgroundImage: `url(${item.image})`,
+                  backgroundImage: `url(${item.fish_url})`,
                 }}
                 className="fishList_view-img"
               ></div>
             </div>
           );
         })}
-      </div> */}
+      </div>
       {modal ? (
         <DetailFishList
           modal={modal}
