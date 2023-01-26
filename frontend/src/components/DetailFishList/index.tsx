@@ -29,13 +29,16 @@ const DetaiFish = ({
   return (
     <div onClick={(e) => closeModal(e)} className="DetailPage">
       <div className="DetailPage_inform">
-        <div
-          className="DetailPage_inform-img"
-          style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: 'cover',
-          }}
-        ></div>
+        <div className='Detail_layout'>
+          <div
+            className="DetailPage_inform-img"
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+            }}
+          ></div>
+        </div>
+
 
 
 
@@ -46,9 +49,8 @@ const DetaiFish = ({
 
           <div className='DetailPage_name'>
             <h1>{fish_type}</h1>
-            <p>&nbsp;학명 : afdasfsafa</p>
           </div>
-
+          <p>학명 : ㅇㄹㅁㅇㄴㄹㄴ</p>
           <div className="DetailPage_description">
             <h1>설명</h1>
             <p> {description}</p>
