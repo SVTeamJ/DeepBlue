@@ -67,7 +67,7 @@ const Result = () => {
                   <br />
                   서태평양 지역의 얕은 바다와 강 하구
                   <br />
-                  {result?.toxicity}
+                  O
                   <br />
                   5월 ~ 8월
                 </div>
