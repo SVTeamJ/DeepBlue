@@ -22,7 +22,6 @@ class FishCreate(FishBase):
     fish_type:str
     open_season:str
     closed_season:str
-    fish_url:str
     fish_name:str
     habitat:str
     scientific_name:str
@@ -37,7 +36,6 @@ class FishRead(FishBase):
     fish_type: str
     open_season: str
     closed_season: str
-    fish_url: str
     habitat: str
     scientific_name: str
     classification: str

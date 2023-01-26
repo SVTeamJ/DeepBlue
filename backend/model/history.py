@@ -17,7 +17,7 @@ class History(Base):
     __tablename__="history"
 
     history_id=Column(Integer,nullable=False,primary_key=True)
-    fish_url=Column(String(100),nullable=False,index=True)
+    fish_url=Column(String(200),nullable=False,index=True)
     fish_name=Column(String(100),nullable=False,index=True)
     user_id=Column(Integer,ForeignKey("users.id"))
     fish_id=Column(Integer,ForeignKey("fish.fish_id"))
