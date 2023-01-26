@@ -1,7 +1,10 @@
 # DeepBlue
 
 
-![화면 캡처 2023-01-26 232218](https://user-images.githubusercontent.com/78102507/214866383-243d8a51-87a8-49ec-a2d9-fd039cb5219d.jpg)
+<img width="100%" height="100%" alt="SA" src="https://user-images.githubusercontent.com/78102507/214868926-ae019641-764a-4e78-a77e-bbed9702f62b.jpg">
+
+
+
 
 <br>
 
@@ -12,6 +15,8 @@
 DeepBlue는 검색하지않아도 사진 한장으로 여러분이 원하는 물고기 정보를  찾아줍니다!
 
 여러분이 궁금해하는 깊은 바닷속 정체모를 생물의 사진을 올려보세요! 😆
+
+<br/>
 
 ## System Architecture
 
