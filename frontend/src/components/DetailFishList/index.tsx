@@ -40,6 +40,7 @@ const DetaiFish = ({
             backgroundSize: 'cover',
           }}
         ></div>
+        
         <div className="DetailPage_inform-input">
           <h1>{habitat}</h1>
           <div className="DetailPage_line"></div>
