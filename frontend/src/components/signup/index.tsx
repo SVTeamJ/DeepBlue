@@ -2,11 +2,12 @@ import { UUid } from '@/atom/atom';
 import { restFetcher } from '@/queryClient';
 import { useMutation } from '@tanstack/react-query';
 import React, { useState } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import './index.scss';
 //유저생성
 export interface User extends createUser {
   id: string;
+  is_active?: boolean;
 }
 
 interface createUser {
@@ -23,8 +24,6 @@ const SignUpComponents = () => {
   const [checkPw, setCheckPw] = useState('');
 
   const [button, setButton] = useState(true);
-
-  const [userInform, setUserInform] = useRecoilState<User>(UUid);
 
   function changeButton() {
     id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
@@ -47,8 +46,6 @@ const SignUpComponents = () => {
     };
     mutate(newUser, {
       onSuccess: (data) => {
-        console.log(data);
-        setUserInform(data);
         alert('회원가입 완료!');
       },
       onError: () => {
@@ -57,11 +54,10 @@ const SignUpComponents = () => {
     });
   };
 
-  
   return (
     <div className="signup_page">
       <div className="join_us">JOIN US</div>
-      <div className= 'user_input'>
+      <div className="user_input">
         <div className="signup_page_text">이름</div>
         <input
           placeholder="이름을 입력해주세요"
@@ -74,7 +70,7 @@ const SignUpComponents = () => {
           onKeyUp={changeButton}
         />
       </div>
-      <div className='user_input'>
+      <div className="user_input">
         <div className="signup_page_text">아이디</div>
         <input
           required
@@ -87,7 +83,7 @@ const SignUpComponents = () => {
           //onKeyup={changeButton}
         />
       </div>
-      <div className='user_input'>
+      <div className="user_input">
         <div className="signup_page_text">비밀번호</div>
         <input
           required
@@ -101,7 +97,7 @@ const SignUpComponents = () => {
           onKeyUp={changeButton}
         />
       </div>
-      <div className='user_input'>
+      <div className="user_input">
         <div className="signup_page_text">비밀번호 확인</div>
         <input
           required

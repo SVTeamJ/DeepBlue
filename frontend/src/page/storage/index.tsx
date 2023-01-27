@@ -1,36 +1,24 @@
-import { fishInform } from '@/mocks/handlers';
-import { restFetcher } from '@/queryClient';
 import { useQuery } from '@tanstack/react-query';
-import glassPreview from '../../assets/glassPreview.png';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './index.scss';
-import { Navigate, redirect, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
-import logo from '../../assets/logo.png';
 import Nav from '@/components/nav';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { User } from '@/components/signup';
+import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
 import { aiType } from '@/type/result';
+import { get_storage } from 'api/api';
 
 interface resultType extends aiType {
   fish_url: string;
 }
 
-async function get_storage(user: User, setData: any) {
-  await axios.get(`http://localhost:8000/api/history/3`).then((res) => {
-    console.log('1');
-    console.log(res.data);
-    setData(res.data);
-  });
-}
-
 const Storage = () => {
-  const navigator = useNavigate();
-  const userInform = useRecoilValue<User>(UUid);
   const [modal, setModal] = useState(false);
-  const [data, setData] = useState<resultType[] | null>();
+  const user = useRecoilValue(UUid);
+  const { data: res } = useQuery(['HISTORY', user], () => get_storage(user));
+
+  let token = localStorage.getItem('access_token');
   const [currentModalInform, setCurrentModalInform] = useState({
     classification: '',
     close_season: '',
@@ -42,13 +30,6 @@ const Storage = () => {
     toxicity: '',
     type: '',
   });
-
-  let token = localStorage.getItem('access_token');
-  console.log(userInform.id);
-  const user = useRecoilValue(UUid);
-  useEffect(() => {
-    get_storage(user, setData);
-  }, []);
 
   if (!token) {
     (async () => {
@@ -64,10 +45,6 @@ const Storage = () => {
   const showDetailFish = (item: resultType) => {
     setCurrentModalInform(() => item);
     setModal(true);
-  };
-
-  const gotoMain = () => {
-    navigator('/');
   };
 
   const gotoTop = () => {
@@ -86,9 +63,10 @@ const Storage = () => {
       </div>
       <div onClick={gotoTop} className="fishList_gotoMain"></div>
       <div className="fishList_view-grid">
-        {data?.map((item, index) => {
+        {res?.map((item, index) => {
           return (
             <div
+              key={index}
               onClick={() => showDetailFish(item)}
               className="fishList_view-card"
             >

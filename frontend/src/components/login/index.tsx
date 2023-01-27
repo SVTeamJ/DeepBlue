@@ -4,20 +4,20 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './index.scss';
 import axios from 'axios';
+import { User } from '../signup';
+import { useSetRecoilState } from 'recoil';
+import { UUid } from '@/atom/atom';
+import { AllUser } from '@/type/user';
 interface userType {
   username: string;
   password: string;
 }
+
 const LoginComponent = () => {
   const navigator = useNavigate();
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
-
-  const [button, setButton] = useState(true);
-
-  function changeButton() {
-    id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
-  }
+  const setUserInform = useSetRecoilState<User>(UUid);
 
   const { mutate, isLoading, isError } = useMutation((user: userType) => {
     return restFetcher({
@@ -33,20 +33,31 @@ const LoginComponent = () => {
       password: pw,
     };
     mutate(user, {
-      onSuccess: (data) => {
+      onSuccess: async (data) => {
         console.log(data);
         axios.defaults.headers.common[
           'Authorization'
         ] = `Bearer ${data.accessToken}`;
         localStorage.setItem('access_token', data.access_token);
         navigator('/');
+
+        const result = await axios.get(
+          'http://localhost:8000/api/users?skip=0&limit=100',
+        );
+        const findUser = result.data.find(
+          (item: AllUser) => item.username == data.username,
+        );
+        setUserInform(findUser);
+      },
+      onError: () => {
+        alert('아이디 비번을 확인해 주세요!');
       },
     });
   };
   return (
     <div className="login_page">
       <div className="join_us">LOGIN</div>
-      <div className='user_input'>
+      <div className="user_input">
         <div className="login_text">아이디</div>
         <input
           placeholder="아이디를 입력해주세요"
@@ -59,7 +70,7 @@ const LoginComponent = () => {
         />
       </div>
 
-      <div className='user_input'>
+      <div className="user_input">
         <div className="login_text">비밀번호</div>
         <input
           type="password"
@@ -69,9 +80,8 @@ const LoginComponent = () => {
           onChange={(e) => {
             setPw(e.target.value);
           }}
-          onKeyUp={changeButton}
         />
-      </div >
+      </div>
       <button onClick={loginUser} className="login_button">
         로그인
       </button>
