@@ -22,11 +22,13 @@ export interface Storge {
 }
 
 const Result = () => {
+  //유저 정보 가져오기
   const user = useRecoilValue(UUid);
   const navigater = useNavigate();
   const location = useLocation();
   const resultData = (location.state as RouterState)?.data;
 
+  //최초 result페이지 렌더링시 도감에 데이터 저장
   useEffect(() => {
     useMutation(() => post_storge(resultData, user));
   }, []);
