@@ -1,14 +1,10 @@
-export interface ResultData {
-  fields: DetailData;
-  model: string;
-  pk: number;
-  url: string;
-}
-
-interface DetailData {
-  closed_season: string;
+export interface aiType {
+  classification: string;
+  close_season: string;
   description: string;
-  fish_type: string;
-  open_season: string;
+  habitat: string;
+  model: string;
+  scientific_name: string;
   toxicity: string;
+  type: string;
 }
