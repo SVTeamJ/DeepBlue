@@ -12,41 +12,43 @@ import Nav from '@/components/nav';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { User } from '@/components/signup';
 import { UUid } from '@/atom/atom';
-import { result } from '../result';
+import { aiType } from '@/type/result';
 
+interface resultType extends aiType {
+  fish_url: string;
+}
 
-async function get_storage(user:any,setData:any) {
-  await axios
-    .get(`http://localhost:8000/api/history/3`)
-    .then((res)=>{
-      console.log("1");
-      console.log(res.data);
-      setData(res.data);
-    })
+async function get_storage(user: User, setData: any) {
+  await axios.get(`http://localhost:8000/api/history/3`).then((res) => {
+    console.log('1');
+    console.log(res.data);
+    setData(res.data);
+  });
 }
 
 const Storage = () => {
   const navigator = useNavigate();
-  const [userInform, setUserInform] = useRecoilState<User>(UUid);
+  const userInform = useRecoilValue<User>(UUid);
   const [modal, setModal] = useState(false);
+  const [data, setData] = useState<resultType[] | null>();
   const [currentModalInform, setCurrentModalInform] = useState({
-    classification: "",
-    close_season: "",
-    description: "",
-    habitat: "",
-    fish_url: "",
-    model: "",
-    scientific_name: "",
-    toxicity: "",
-    type: "",
+    classification: '',
+    close_season: '',
+    description: '',
+    habitat: '',
+    fish_url: '',
+    model: '',
+    scientific_name: '',
+    toxicity: '',
+    type: '',
   });
 
   let token = localStorage.getItem('access_token');
   console.log(userInform.id);
   const user = useRecoilValue(UUid);
-  useEffect(()=>{
-    get_storage(user,setData)
-  },[])
+  useEffect(() => {
+    get_storage(user, setData);
+  }, []);
 
   if (!token) {
     (async () => {
@@ -59,11 +61,7 @@ const Storage = () => {
     );
   }
 
-  const [data, setData] = useState<result[]|null>();
-
-  
-
-  const showDetailFish = (item: result) => {
+  const showDetailFish = (item: resultType) => {
     setCurrentModalInform(() => item);
     setModal(true);
   };
