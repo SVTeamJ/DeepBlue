@@ -14,14 +14,14 @@ interface RouterState {
 }
 export interface result {
   classification: string;
-  close_season: string;
+  closed_season: string;
   description: string;
   habitat: string;
   fish_url: string;
   model: string;
   scientific_name: string;
   toxicity: string;
-  type: string;
+  fish_type: string;
 }
 
 interface result2{

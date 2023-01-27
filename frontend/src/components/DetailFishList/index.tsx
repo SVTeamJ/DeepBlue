@@ -10,13 +10,13 @@ interface fishInfromProps extends result{
 
 const DetaiFish = ({
   classification,
-  close_season,
+  closed_season,
   description,
   habitat,
   fish_url,
   scientific_name,
   toxicity,
-  type,
+  fish_type,
   setModal,
   modal,
 }: fishInfromProps) => {
@@ -44,11 +44,11 @@ const DetaiFish = ({
         </div>
 
         <div className="DetailPage_inform-input">
-          <h1>이름</h1>
+          <h1>{fish_type}</h1>
           <p>학명 : {scientific_name}</p>
           <div className="DetailPage_inform-closed_season">
             <h1>번식기</h1>
-            <p>{close_season}</p>
+            <p>{closed_season}</p>
           </div>
           <div className="DetailPage_description">
             <h1>설명</h1>

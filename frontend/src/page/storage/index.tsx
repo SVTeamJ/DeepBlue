@@ -12,7 +12,7 @@ import Nav from '@/components/nav';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { User } from '@/components/signup';
 import { UUid } from '@/atom/atom';
-import { result } from '../result';
+import { result} from '../result';
 
 
 async function get_storage(user:any,setData:any) {
@@ -31,14 +31,14 @@ const Storage = () => {
   const [modal, setModal] = useState(false);
   const [currentModalInform, setCurrentModalInform] = useState({
     classification: "",
-    close_season: "",
+    closed_season: "",
     description: "",
     habitat: "",
     fish_url: "",
     model: "",
     scientific_name: "",
     toxicity: "",
-    type: "",
+    fish_type: "",
   });
 
   let token = localStorage.getItem('access_token');
