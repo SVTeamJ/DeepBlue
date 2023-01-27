@@ -5,15 +5,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { aiType } from '@/type/result';
 import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
-import { useMutation } from '@tanstack/react-query';
 import { post_storge } from '../../../api/api';
-import { User } from '@/components/signup';
 
 interface RouterState {
   data: result;
 }
 
-interface result extends aiType, User {
+interface result extends aiType {
   image_url: string;
 }
 
@@ -21,10 +19,7 @@ export interface Storge {
   fish_url: string;
   fish_id: string;
 }
-interface mutateType {
-  resultData: result;
-  user: User;
-}
+
 const Result = () => {
   //유저 정보 가져오기
   const user = useRecoilValue(UUid);
