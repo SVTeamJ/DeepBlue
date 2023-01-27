@@ -6,6 +6,8 @@ import line from '../../assets/Bar.png';
 import circle from '../../assets/circle.png';
 import inline from '../../assets/inline.png';
 import bar from '../../assets/bar.png';
+import { useQuery } from '@tanstack/react-query';
+import { restFetcher } from '@/queryClient';
 type chartType = 'line' | 'area' | 'bar' | 'radar' | undefined;
 
 const ChartPage = () => {
@@ -14,8 +16,12 @@ const ChartPage = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+
+  // const {data}=useQuery(["CHAT"],()=>{
+  //   return restFetcher("aa");
+  // })
+
   const changeButton = (e: any) => {
-    console.log(e.target.className);
     setChartType(() => e.target.className);
   };
 
@@ -25,6 +31,7 @@ const ChartPage = () => {
       height: window.innerHeight,
     });
   };
+
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => {
@@ -54,7 +61,7 @@ const ChartPage = () => {
             series={[
               {
                 name: '어류들',
-                data: [32, 54, 43, 15, 53],
+                data: [32, 54, 42, 59, 53],
               },
             ]}
             options={{
