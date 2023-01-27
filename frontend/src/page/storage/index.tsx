@@ -16,11 +16,7 @@ interface resultType extends aiType {
 const Storage = () => {
   const [modal, setModal] = useState(false);
   const user = useRecoilValue(UUid);
-  const { data: res } = useQuery(['HISTORY', user], () => get_storage(user), {
-    enabled: false,
-    staleTime: 1000 * 60 ** 60,
-    refetchOnWindowFocus: false,
-  });
+  const { data: res } = useQuery(['HISTORY', user], () => get_storage(user));
 
   let token = localStorage.getItem('access_token');
   const [currentModalInform, setCurrentModalInform] = useState({
@@ -70,6 +66,7 @@ const Storage = () => {
         {res?.map((item, index) => {
           return (
             <div
+              key={index}
               onClick={() => showDetailFish(item)}
               className="fishList_view-card"
             >
