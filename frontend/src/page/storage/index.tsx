@@ -6,8 +6,7 @@ import DetailFishList from '@/components/DetailFishList';
 import Nav from '@/components/nav';
 import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
-import { aiType } from '@/type/result';
-import { get_storage } from 'api/api';
+import { result} from '../result';
 
 interface resultType extends aiType {
   fish_url: string;
@@ -20,15 +19,15 @@ const Storage = () => {
 
   let token = localStorage.getItem('access_token');
   const [currentModalInform, setCurrentModalInform] = useState({
-    classification: '',
-    close_season: '',
-    description: '',
-    habitat: '',
-    fish_url: '',
-    model: '',
-    scientific_name: '',
-    toxicity: '',
-    type: '',
+    classification: "",
+    closed_season: "",
+    description: "",
+    habitat: "",
+    fish_url: "",
+    model: "",
+    scientific_name: "",
+    toxicity: "",
+    fish_type: "",
   });
 
   if (!token) {
