@@ -1,15 +1,10 @@
-import { fishInform } from '@/mocks/handlers';
-import { restFetcher } from '@/queryClient';
 import { useQuery } from '@tanstack/react-query';
-import glassPreview from '../../assets/glassPreview.png';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './index.scss';
 import { Navigate, useNavigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
 import Nav from '@/components/nav';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { User } from '@/components/signup';
+import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
 import { aiType } from '@/type/result';
 import { get_storage } from 'api/api';
@@ -21,6 +16,12 @@ interface resultType extends aiType {
 const Storage = () => {
   const [modal, setModal] = useState(false);
   const user = useRecoilValue(UUid);
+  const { data: res } = useQuery(['HISTORY', user], () => get_storage(user), {
+    enabled: false,
+    staleTime: 1000 * 60 ** 60,
+    refetchOnWindowFocus: false,
+  });
+
   let token = localStorage.getItem('access_token');
   const [currentModalInform, setCurrentModalInform] = useState({
     classification: '',
@@ -34,8 +35,6 @@ const Storage = () => {
     type: '',
   });
 
-  const { data } = useQuery(['HISTORY', user], () => get_storage(user));
-  console.log(data);
   if (!token) {
     (async () => {
       alert('로그인이 필요한 서비스입니다.');
@@ -68,7 +67,7 @@ const Storage = () => {
       </div>
       <div onClick={gotoTop} className="fishList_gotoMain"></div>
       <div className="fishList_view-grid">
-        {data?.data?.map((item: any, index: any) => {
+        {res?.map((item, index) => {
           return (
             <div
               onClick={() => showDetailFish(item)}
