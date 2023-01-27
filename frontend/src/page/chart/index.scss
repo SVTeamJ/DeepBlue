@@ -1,0 +1,55 @@
+@import '../../media.scss';
+
+.chart_background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #006ccf 0%, #061a38 82.81%, #071228 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.chart_main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.chart {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border: 3px solid white;
+  border-radius: 15px;
+
+  @include tablet {
+    width: 700px;
+    height: 500px;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: flex-end;
+
+  & > img {
+    animation: iconMove 5s infinite forwards alternate;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    color: black;
+    transition: 0.2s;
+
+    @include tablet {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  & > img:hover {
+    scale: 1.2;
+  }
+}
