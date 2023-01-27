@@ -14,3 +14,7 @@ export async function post_storge(resultData: result, user: User) {
   };
   await axios.post(`http://localhost:8000/api/history/${user.id}`, body);
 }
+
+export function get_storage(user: User) {
+  return axios.get(`http://localhost:8000/api/history/${user.id}`);
+}

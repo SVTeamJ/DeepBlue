@@ -47,7 +47,6 @@ const LoginComponent = () => {
         const result = await axios.get(
           'http://localhost:8000/api/users?skip=0&limit=100',
         );
-        console.log(result.data);
         const findUser = result.data.find(
           (item: any) => item.username == data.username,
         );

@@ -60,5 +60,5 @@ export const restFetcher = async ({
 export const QueryKeys = {
   FISHLIST: 'FISHLIST',
   USER: 'USER',
-  AIRESULT: 'AIRESULT',
+  HISTORY: 'HISTORY',
 };
