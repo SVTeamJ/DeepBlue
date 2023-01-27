@@ -7,12 +7,13 @@ import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
 import { useMutation } from '@tanstack/react-query';
 import { post_storge } from '../../../api/api';
+import { User } from '@/components/signup';
 
 interface RouterState {
   data: result;
 }
 
-interface result extends aiType {
+interface result extends aiType, User {
   image_url: string;
 }
 
@@ -20,7 +21,10 @@ export interface Storge {
   fish_url: string;
   fish_id: string;
 }
-
+interface mutateType {
+  resultData: result;
+  user: User;
+}
 const Result = () => {
   //유저 정보 가져오기
   const user = useRecoilValue(UUid);
@@ -30,7 +34,9 @@ const Result = () => {
 
   //최초 result페이지 렌더링시 도감에 데이터 저장
   useEffect(() => {
-    useMutation(() => post_storge(resultData, user));
+    if (user.id) {
+      post_storge(resultData, user);
+    }
   }, []);
 
   const gotoMain = () => {

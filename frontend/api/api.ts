@@ -7,10 +7,10 @@ interface result extends aiType {
   image_url: string;
 }
 
-export async function post_storge(data: result, user: User) {
+export async function post_storge(resultData: result, user: User) {
   const body: Storge = {
-    fish_url: data.image_url,
-    fish_id: data.model,
+    fish_url: resultData.image_url,
+    fish_id: resultData.model,
   };
-  return await axios.post('http://localhost:8000/api/history/3', body);
+  await axios.post(`http://localhost:8000/api/history/${user.id}`, body);
 }
