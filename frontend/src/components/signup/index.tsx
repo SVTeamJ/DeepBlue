@@ -25,8 +25,6 @@ const SignUpComponents = () => {
 
   const [button, setButton] = useState(true);
 
-  const setUserInform = useSetRecoilState<User>(UUid);
-
   function changeButton() {
     id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
   }

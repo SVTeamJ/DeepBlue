@@ -7,20 +7,17 @@ import axios from 'axios';
 import { User } from '../signup';
 import { useSetRecoilState } from 'recoil';
 import { UUid } from '@/atom/atom';
+import { AllUser } from '@/type/user';
 interface userType {
   username: string;
   password: string;
 }
+
 const LoginComponent = () => {
   const navigator = useNavigate();
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const setUserInform = useSetRecoilState<User>(UUid);
-  const [button, setButton] = useState(true);
-
-  function changeButton() {
-    id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
-  }
 
   const { mutate, isLoading, isError } = useMutation((user: userType) => {
     return restFetcher({
@@ -48,7 +45,7 @@ const LoginComponent = () => {
           'http://localhost:8000/api/users?skip=0&limit=100',
         );
         const findUser = result.data.find(
-          (item: any) => item.username == data.username,
+          (item: AllUser) => item.username == data.username,
         );
         setUserInform(findUser);
       },
@@ -80,7 +77,6 @@ const LoginComponent = () => {
           onChange={(e) => {
             setPw(e.target.value);
           }}
-          onKeyUp={changeButton}
         />
       </div>
       <button onClick={loginUser} className="login_button">
