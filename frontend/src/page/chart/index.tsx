@@ -17,7 +17,7 @@ const ChartPage = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const { data } = useQuery(['CHAT'], async () => {
+  const { data } = useQuery<any>(['CHAT'], async () => {
     return restFetcher({
       method: 'GET',
       path: 'http://localhost:8000/api/charts/',
@@ -30,14 +30,22 @@ const ChartPage = () => {
 
   useEffect(() => {
     const summing: number[] = [];
-
-    summing[0] = data['넙치'] ? data['넙치'] : 0;
-    summing[1] = data['고등어'] ? data['넙치'] : 0;
-    summing[2] = data['노랑 가오리'] ? data['노랑 가오리'] : 0;
-    summing[3] = data['적색퉁돔'] ? data['적색퉁돔'] : 0;
-    summing[4] = data['갈치'] ? data['갈치'] : 0;
+    if (data) {
+      summing[0] = data['넙치'] ?? 0;
+      summing[1] = data['고등어'] ?? 0;
+      summing[2] = data['노랑 가오리'] ?? 0;
+      summing[3] = data['적색퉁돔'] ?? 0;
+      summing[4] = data['갈치'] ?? 0;
+    } else {
+      summing[0] = 0;
+      summing[1] = 0;
+      summing[2] = 0;
+      summing[3] = 0;
+      summing[4] = 0;
+    }
     setStatistics(summing);
-  }, []);
+  }, [data]);
+
   const handleResize = () => {
     setWindow({
       width: window.innerWidth,
@@ -85,12 +93,13 @@ const ChartPage = () => {
               series={[
                 {
                   name: '어류들',
+
                   data: [
-                    statistics[0],
-                    statistics[1],
-                    statistics[2],
-                    statistics[3],
-                    statistics[4],
+                    statistics[0] ? statistics[0] : 0,
+                    statistics[1] ? statistics[1] : 0,
+                    statistics[2] ? statistics[2] : 0,
+                    statistics[3] ? statistics[3] : 0,
+                    statistics[4] ? statistics[4] : 0,
                   ],
                 },
               ]}
