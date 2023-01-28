@@ -10,6 +10,7 @@ const Nav = () => {
   const main = useMatch('/');
   const storage = useMatch('/storage');
   const login = useMatch('/login');
+  const chart = useMatch('/chart');
 
   const navigator = useNavigate();
 
@@ -42,6 +43,9 @@ const Nav = () => {
         </Link>
         <Link to="/storage" className={storage ? 'focus' : 'not'}>
           Storage
+        </Link>
+        <Link to="/chart" className={chart ? 'focus' : 'not'}>
+          Chart
         </Link>
         {!token ? (
           <Link to="/login" className={login ? 'focus' : 'not'}>

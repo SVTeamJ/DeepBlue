@@ -61,4 +61,5 @@ export const QueryKeys = {
   FISHLIST: 'FISHLIST',
   USER: 'USER',
   HISTORY: 'HISTORY',
+  CHAT: 'CHAT',
 };
