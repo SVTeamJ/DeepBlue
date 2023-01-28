@@ -72,6 +72,9 @@ const ChartPage = () => {
                 toolbar: {
                   show: false,
                 },
+                zoom: {
+                  enabled: false,
+                },
                 background: 'transparent',
               },
               colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800'],
