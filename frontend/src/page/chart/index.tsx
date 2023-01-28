@@ -64,7 +64,7 @@ const ChartPage = () => {
               type={chartType}
               width={
                 windowSize.width < 500
-                  ? windowSize.width - 50
+                  ? windowSize.width - 45
                   : windowSize.width / 2.5
               }
               height={windowSize.height / 3}
