@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './index.scss';
 import ApexChart from 'react-apexcharts';
 import Nav from '@/components/nav';
-import line from '../../assets/Bar.png';
+import line from '../../assets/line.png';
 import circle from '../../assets/circle.png';
 import inline from '../../assets/inline.png';
 import bar from '../../assets/bar.png';
@@ -45,8 +45,8 @@ const ChartPage = () => {
       <div className="chart_main">
         <div className="buttons" onClick={changeButton}>
           <img src={line} className="line"></img>
-          <img src={circle} className="radar"></img>
           <img src={inline} className="area"></img>
+          <img src={circle} className="radar"></img>
           <img src={bar} className="bar"></img>
         </div>
         <div className="chart">

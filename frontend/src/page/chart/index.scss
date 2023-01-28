@@ -52,8 +52,14 @@
     @include tablet {
       width: 80px;
       height: 80px;
+
+      &:nth-child(1) {
+        width: 80px;
+        height: 65px;
+      }
     }
   }
+
   & > img:hover {
     scale: 1.2;
   }
