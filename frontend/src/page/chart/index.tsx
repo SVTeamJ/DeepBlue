@@ -12,19 +12,32 @@ type chartType = 'line' | 'area' | 'bar' | 'radar' | undefined;
 
 const ChartPage = () => {
   const [chartType, setChartType] = useState<chartType>('line');
+  const [statistics, setStatistics] = useState<number[]>([]);
   const [windowSize, setWindow] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-
-  // const {data}=useQuery(["CHAT"],()=>{
-  //   return restFetcher("aa");
-  // })
+  const { data } = useQuery(['CHAT'], async () => {
+    return restFetcher({
+      method: 'GET',
+      path: 'http://localhost:8000/api/charts/',
+    });
+  });
 
   const changeButton = (e: any) => {
     setChartType(() => e.target.className);
   };
 
+  useEffect(() => {
+    const summing: number[] = [];
+
+    summing[0] = data['넙치'] ? data['넙치'] : 0;
+    summing[1] = data['고등어'] ? data['넙치'] : 0;
+    summing[2] = data['노랑 가오리'] ? data['노랑 가오리'] : 0;
+    summing[3] = data['적색퉁돔'] ? data['적색퉁돔'] : 0;
+    summing[4] = data['갈치'] ? data['갈치'] : 0;
+    setStatistics(summing);
+  }, []);
   const handleResize = () => {
     setWindow({
       width: window.innerWidth,
@@ -34,6 +47,7 @@ const ChartPage = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -71,7 +85,13 @@ const ChartPage = () => {
               series={[
                 {
                   name: '어류들',
-                  data: [32, 54, 42, 59, 53],
+                  data: [
+                    statistics[0],
+                    statistics[1],
+                    statistics[2],
+                    statistics[3],
+                    statistics[4],
+                  ],
                 },
               ]}
               options={{
