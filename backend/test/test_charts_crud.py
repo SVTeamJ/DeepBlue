@@ -11,6 +11,10 @@ from main import app
 class MyTestCase(unittest.TestCase):
 
     def get_db(self):
+        """
+        Fake 데이터 베이스
+        :return:
+        """
         # Create a fake database object
         db = MagicMock()
         # Add some test data
@@ -18,7 +22,13 @@ class MyTestCase(unittest.TestCase):
         db.query.return_value.filter.return_value.first.side_effect = items
         return db
 
-    def test_fish_crud(self):
+    def test_charts_crud(self):
+        """
+        차트 정보 불러오는 API 테스트
+        현재 데이터 베이스에 있는 데이터를 불러오는지 확인
+        :return: 모든 Fish_type
+        history에 fish_type이 없을시 0으로 반환
+        """
         # db = self.get_db()
         client = TestClient(app)
 
