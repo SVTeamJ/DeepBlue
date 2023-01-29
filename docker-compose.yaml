@@ -1,7 +1,6 @@
 version: "3"
 
 services:
-
   ## TODO 기본 틀만 잡았으며 추후에 수정 예정
   # ai:
   #   container_name: ai
@@ -15,7 +14,7 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - 3000:3000
     tty: true
