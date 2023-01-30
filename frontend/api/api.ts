@@ -1,17 +1,17 @@
 import axios from 'axios';
 import { User } from '../src/components/signup';
 import { Storge } from '../src/page/result';
-import { aiType } from '../src/type/result';
+import { ResultData } from '../src/type/result';
 
 const BASE_URL = import.meta.env.DEV
   ? 'http://localhost:8000/api'
   : 'http://www.deepblue3.shop:8000/api';
 
-interface result extends aiType {
+interface result extends ResultData {
   image_url: string;
 }
 
-interface resultType extends aiType {
+interface resultType extends ResultData {
   fish_url: string;
 }
 

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './index.scss';
 import Nav from '@/components/nav';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { aiType } from '@/type/result';
+import { ResultData } from '@/type/result';
 import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
 import { post_storge } from '../../../api/api';
 
 interface RouterState {
-  data: result;
+  data: result2;
 }
 export interface result {
   classification: string;
@@ -22,7 +22,7 @@ export interface result {
   fish_type: string;
 }
 
-interface result extends aiType {
+interface result2 extends ResultData {
   image_url: string;
 }
 
