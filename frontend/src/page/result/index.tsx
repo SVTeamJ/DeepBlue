@@ -10,6 +10,17 @@ import { post_storge } from '../../../api/api';
 interface RouterState {
   data: result;
 }
+export interface result {
+  classification: string;
+  closed_season: string;
+  description: string;
+  habitat: string;
+  fish_url: string;
+  model: string;
+  scientific_name: string;
+  toxicity: string;
+  fish_type: string;
+}
 
 interface result extends aiType {
   image_url: string;

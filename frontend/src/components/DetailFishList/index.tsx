@@ -10,13 +10,13 @@ interface fishInfromProps extends result {
 
 const DetaiFish = ({
   classification,
-  close_season,
+  closed_season,
   description,
   habitat,
   fish_url,
   scientific_name,
   toxicity,
-  type,
+  fish_type,
   setModal,
   modal,
 }: fishInfromProps) => {
@@ -33,31 +33,43 @@ const DetaiFish = ({
   return (
     <div onClick={(e) => closeModal(e)} className="DetailPage">
       <div className="DetailPage_inform">
-        <div
-          className="DetailPage_inform-img"
-          style={{
-            backgroundImage: `url(${fish_url})`,
-            backgroundSize: 'cover',
-          }}
-        ></div>
+        <div className='Detail_layout'>
+          <div
+            className="DetailPage_inform-img"
+            style={{
+              backgroundImage: `url(${fish_url})`,
+              backgroundSize: 'cover',
+            }}
+          ></div>
+        </div>
+
         <div className="DetailPage_inform-input">
-          <h1>{habitat}</h1>
-          <div className="DetailPage_line"></div>
+          <h1>{fish_type}</h1>
+          <p>학명 : {scientific_name}</p>
           <div className="DetailPage_inform-closed_season">
-            <h1>서식기간</h1>
-            <p>{close_season}</p>
-          </div>
-          <div className="DetailPage_inform-toxicyty">
-            <h1>이거... 먹을 수 있는건가요?</h1>
-            <p>
-              {toxicity == 'yes'
-                ? '네 맛있게드세요.'
-                : '아니요 ! 먹으면 안돼요!'}
-            </p>
+            <h1>번식기</h1>
+            <p>{closed_season}</p>
           </div>
           <div className="DetailPage_description">
             <h1>설명</h1>
             <p> {description}</p>
+          </div>
+
+          <div  className='DetailPage_inform-classification'>
+            <h1>분류</h1>
+            <p>{classification}</p>
+          </div>
+
+          <div className='DetailPage_inform-habitat' >
+          <h1>서식지</h1>
+            <p>{habitat}</p>
+          </div>
+
+          <div className="DetailPage_inform-toxicyty">
+            <h1>독성</h1>
+            <p>
+              {toxicity}
+            </p>
           </div>
         </div>
         <span onClick={(e) => closeModal(e)} className="DetailPage_closed">

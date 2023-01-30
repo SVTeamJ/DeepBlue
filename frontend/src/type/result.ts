@@ -1,4 +1,4 @@
-export interface aiType {
+export interface ResultData {
   classification: string;
   close_season: string;
   description: string;
