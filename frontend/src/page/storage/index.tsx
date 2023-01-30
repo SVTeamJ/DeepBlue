@@ -12,7 +12,7 @@ import Nav from '@/components/nav';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { User } from '@/components/signup';
 import { UUid } from '@/atom/atom';
-import { result } from '../result';
+import { result} from '../result';
 
 
 async function get_storage(user:any,setData:any) {
