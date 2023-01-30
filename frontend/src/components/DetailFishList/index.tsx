@@ -3,7 +3,7 @@ import { result } from '@/page/result';
 import React from 'react';
 import './index.scss';
 
-interface fishInfromProps extends result{
+interface fishInfromProps extends result {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
   modal: boolean;
 }

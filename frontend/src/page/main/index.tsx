@@ -6,12 +6,12 @@ import shark from '@/assets/shark.jpg';
 import crucian from '@/assets/crucian.jpg';
 import turtle from '@/assets/turtle.jpg';
 import jellyfish from '@/assets/jellyfish.jpg';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { User } from '@/components/signup';
 import { UUid } from '@/atom/atom';
 
 const Main = () => {
-  const [userInform, setUserInform] = useRecoilState<User>(UUid);
+  const userInform = useRecoilValue<User>(UUid);
   useEffect(() => {
     console.log(userInform);
   }, []);

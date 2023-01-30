@@ -18,7 +18,7 @@ const InsertImage = () => {
     (formData: FormData) => {
       return restFetcher({
         method: 'POST',
-        path: 'http://localhost:8000/api/ai',
+        path: '/ai',
         body: formData,
       });
     },

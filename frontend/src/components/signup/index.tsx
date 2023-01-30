@@ -2,7 +2,6 @@ import { UUid } from '@/atom/atom';
 import { restFetcher } from '@/queryClient';
 import { useMutation } from '@tanstack/react-query';
 import React, { useState } from 'react';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import './index.scss';
 //유저생성
 export interface User extends createUser {
@@ -32,7 +31,7 @@ const SignUpComponents = () => {
   const { mutate, isLoading } = useMutation((newUser: createUser) => {
     return restFetcher({
       method: 'POST',
-      path: 'http://localhost:8000/api/users/signup',
+      path: '/users/signup',
       body: newUser,
     });
   });
