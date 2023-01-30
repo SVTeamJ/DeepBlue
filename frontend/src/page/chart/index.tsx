@@ -20,7 +20,7 @@ const ChartPage = () => {
   const { data } = useQuery<any>(['CHAT'], async () => {
     return restFetcher({
       method: 'GET',
-      path: 'http://localhost:8000/api/charts/',
+      path: '/charts/',
     });
   });
 

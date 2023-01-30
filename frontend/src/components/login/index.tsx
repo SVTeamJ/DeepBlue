@@ -13,6 +13,10 @@ interface userType {
   password: string;
 }
 
+const BASE_URL = import.meta.env.DEV
+  ? 'http://localhost:8000/api'
+  : 'http://deepblue3.shop:8000/api';
+
 const LoginComponent = () => {
   const navigator = useNavigate();
   const [id, setId] = useState('');
@@ -41,7 +45,7 @@ const LoginComponent = () => {
         localStorage.setItem('access_token', data.access_token);
         navigator('/');
 
-        const result = await axios.get('/users?skip=0&limit=100');
+        const result = await axios.get(`${BASE_URL}/users?skip=0&limit=100`);
         const findUser = result.data.find(
           (item: AllUser) => item.username == data.username,
         );
