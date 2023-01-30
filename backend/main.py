@@ -11,6 +11,9 @@ Base.metadata.create_all(bind=engine)
 
 # cors 
 origins = [
+    "http://www.deepblue3.shop:8000",
+    "http://www.deepblue3.shop:3000",
+    "http://www.deepblue3.shop",
     "http://localhost",
     "http://localhost:3000",
     "http://localhost:8080",
