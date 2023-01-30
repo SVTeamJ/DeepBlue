@@ -51,7 +51,7 @@
 }
 
 .DetailPage_inform-img {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   min-width: 100%;
@@ -86,7 +86,7 @@
 }
 
 .DetailPage_inform-closed_season {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 
   & > h1 {
     font-size: 1.5rem;
@@ -98,7 +98,7 @@
 }
 
 .DetailPage_inform-toxicyty {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   & > h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -109,7 +109,7 @@
 }
 
 .DetailPage_inform-habitat {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   & > h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -120,7 +120,7 @@
 }
 
 .DetailPage_inform-classification {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   & > h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -146,7 +146,7 @@
 
 .DetailPage_name{
   display: flex;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   & > h1 {
     font-size: 2rem;
     font-weight: bold;
