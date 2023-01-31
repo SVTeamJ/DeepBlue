@@ -35,21 +35,25 @@
     flex-direction: column;
     justify-content: center;
     transform: translateX(60px);
+    overflow: hidden;
     & > h1 {
       font-size: 3rem;
       text-align: center;
+      overflow: hidden;
     }
     & > p {
       font-size: 2rem;
       text-align: center;
       color: white;
       opacity: 0.5;
+      overflow: hidden;
     }
     & > img {
       width: 25rem;
       height: 25rem;
       margin: 0 auto;
       animation: move_whale 5s infinite alternate forwards;
+      overflow: hidden;
     }
   }
 }
