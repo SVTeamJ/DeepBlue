@@ -16,7 +16,7 @@ import axios from 'axios';
 //   worker.start();
 // }
 Sentry.init({
-  dsn: `${import.meta.env.VITE_Sentry}`,
+  dsn: import.meta.env.VITE_SENTRY_DSN,
   integrations: [new BrowserTracing()],
   tracesSampleRate: 1.0,
 });
