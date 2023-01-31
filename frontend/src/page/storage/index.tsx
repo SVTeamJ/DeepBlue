@@ -21,7 +21,7 @@ const BASE_URL = import.meta.env.DEV
 async function get_storage(user: any, setData: any) {
   await axios
     //axios를 활용한 get요청
-    .get(`${BASE_URL}/history/3`)
+    .get(`${BASE_URL}/history/${user.id}`)
     //위의 주소에서 get으로 받아옴
     .then((res) => {
       console.log(res.data);

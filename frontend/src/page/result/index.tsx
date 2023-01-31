@@ -40,6 +40,7 @@ const Result = () => {
 
   //최초 result페이지 렌더링시 도감에 데이터 저장
   useEffect(() => {
+    console.log(user.id);
     if (user.id) {
       post_storge(resultData, user);
     }
