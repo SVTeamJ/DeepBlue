@@ -1,24 +1,19 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import './index.scss';
-import { Navigate, redirect, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
 import Nav from '@/components/nav';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { User } from '@/components/signup';
+import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
-import { result } from '../result';
-import { get_storage, resultType, resultType2 } from 'api/api';
-
-const BASE_URL = import.meta.env.DEV
-  ? 'http://localhost:8000/api'
-  : 'http://www.deepblue3.shop:8000/api';
+import { get_storage, result, resultType2 } from 'api/api';
+import { ResultData, ResultData2 } from '@/type/result';
+import { aiResult } from '../result';
 
 const Storage = () => {
-  const navigator = useNavigate();
   const user = useRecoilValue(UUid);
   const [modal, setModal] = useState(false); //
-  const [currentModalInform, setCurrentModalInform] = useState<resultType2>({
+  const [currentModalInform, setCurrentModalInform] = useState<any>({
     classification: '',
     closed_season: '',
     description: '',

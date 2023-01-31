@@ -1,7 +1,12 @@
 import { fishInform } from '@/mocks/handlers';
-import { result } from '@/page/result';
+import { ResultData, ResultData2 } from '@/type/result';
 import React from 'react';
 import './index.scss';
+
+export interface result extends ResultData {
+  fish_url: string;
+  fish_type: string;
+}
 
 interface fishInfromProps extends result {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -33,7 +38,7 @@ const DetaiFish = ({
   return (
     <div onClick={(e) => closeModal(e)} className="DetailPage">
       <div className="DetailPage_inform">
-        <div className='Detail_layout'>
+        <div className="Detail_layout">
           <div
             className="DetailPage_inform-img"
             style={{
@@ -55,21 +60,19 @@ const DetaiFish = ({
             <p> {description}</p>
           </div>
 
-          <div  className='DetailPage_inform-classification'>
+          <div className="DetailPage_inform-classification">
             <h1>분류</h1>
             <p>{classification}</p>
           </div>
 
-          <div className='DetailPage_inform-habitat' >
-          <h1>서식지</h1>
+          <div className="DetailPage_inform-habitat">
+            <h1>서식지</h1>
             <p>{habitat}</p>
           </div>
 
           <div className="DetailPage_inform-toxicyty">
             <h1>독성</h1>
-            <p>
-              {toxicity}
-            </p>
+            <p>{toxicity}</p>
           </div>
         </div>
         <span onClick={(e) => closeModal(e)} className="DetailPage_closed">

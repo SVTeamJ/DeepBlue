@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './index.scss';
 import Is_login_check from './is_login';
-import Icon from '@/assets/icon.png';
 import Whale from '@/assets/whale.png';
 import Nav from '@/components/nav';
-import Login_page from './loginpage';
 
 const Login = () => {
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './index.scss';
 import Nav from '@/components/nav';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -10,15 +10,9 @@ import { post_storge } from '../../../api/api';
 interface RouterState {
   data: result2;
 }
-export interface result {
-  classification: string;
-  closed_season: string;
-  description: string;
-  habitat: string;
+
+export interface aiResult extends ResultData {
   fish_url: string;
-  model: string;
-  scientific_name: string;
-  toxicity: string;
   fish_type: string;
 }
 
