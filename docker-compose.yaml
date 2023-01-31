@@ -12,12 +12,14 @@ services:
 
   frontend:
     container_name: frontend
+    ports:
+      - 3000:3000
     build:
       context: ./frontend
       dockerfile: Dockerfile.prod
     volumes:
       - ./frontend/:/frontend
-      - build_folder:/frontend/dist
+      - ./build_folder:/frontend/dist
       - ./frontend/node_modules/:/frontend/node_modules
     tty: true
     networks:
@@ -96,12 +98,14 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx
+    build:
+        context: ./nginx
+        dockerfile: Dockerfile
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - build_folder:/var/www/frontend
+      - ./build_folder:/var/www/frontend
     networks:
       - mynet
 volumes:
