@@ -82,10 +82,10 @@ docker-compose up --build
 
 <img width="65%" justify="center" src = 'https://user-images.githubusercontent.com/78102507/215952205-1472da5c-42d5-48b9-8043-85e4b062f08e.gif'/>
 
-
-
-
 <img width="65%" justify="center" src = 'https://user-images.githubusercontent.com/78102507/215954203-1f094a29-b5e4-4d81-b1ba-892be8055d28.gif'/>
+
+<img width="65%" justify="center" src = 'https://user-images.githubusercontent.com/78102507/215957667-0bcb699d-514f-47df-9f17-9dd34d673c0e.gif'/>
+
 
 
 <br>
