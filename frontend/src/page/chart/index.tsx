@@ -20,7 +20,7 @@ const ChartPage = () => {
   const { data } = useQuery<any>(['CHAT'], async () => {
     return restFetcher({
       method: 'GET',
-      path: '/charts/',
+      path: 'http://www.deepblue3.shop:8000/api/charts/',
     });
   });
 

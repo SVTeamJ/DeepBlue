@@ -26,7 +26,7 @@ const LoginComponent = () => {
   const { mutate, isLoading, isError } = useMutation((user: userType) => {
     return restFetcher({
       method: 'POST',
-      path: '/users/login',
+      path: 'http://www.deepblue3.shop:8000/api/users/login',
       params: user,
     });
   });
@@ -45,7 +45,9 @@ const LoginComponent = () => {
         localStorage.setItem('access_token', data.access_token);
         navigator('/');
 
-        const result = await axios.get(`${BASE_URL}/users?skip=0&limit=100`);
+        const result = await axios.get(
+          `http://www.deepblue3.shop:8000/api/users?skip=0&limit=100`,
+        );
         const findUser = result.data.find(
           (item: AllUser) => item.username == data.username,
         );

@@ -18,7 +18,7 @@ const InsertImage = () => {
     (formData: FormData) => {
       return restFetcher({
         method: 'POST',
-        path: '/ai',
+        path: 'http://www.deepblue3.shop:8000/api/ai',
         body: formData,
       });
     },
