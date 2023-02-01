@@ -23,12 +23,11 @@ const Storage = () => {
     fish_type: '',
   });
 
-  const { data: res } = useQuery(['HISTORY'], () => get_storage(user));
+  const { data: res } = useQuery(
+    ['HISTORY'],
+    async () => await get_storage(user),
+  );
   let token = localStorage.getItem('access_token');
-
-  useEffect(() => {
-    location.reload();
-  }, []);
 
   if (!token) {
     (async () => {
