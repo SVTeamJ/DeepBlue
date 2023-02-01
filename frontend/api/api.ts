@@ -4,8 +4,8 @@ import { Storge } from '../src/page/result';
 import { ResultData, ResultData2 } from '../src/type/result';
 
 const BASE_URL = import.meta.env.DEV
-  ? 'http://www.deepblue3.shop:8000/api'
-  : 'http://localhost:8000/api';
+  ? 'http://localhost:8000/api'
+  : 'http://www.deepblue3.shop:8000/api';
 
 export interface result extends ResultData {
   image_url: string;
