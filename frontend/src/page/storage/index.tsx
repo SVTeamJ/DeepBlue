@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.scss';
 import { Navigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
@@ -25,6 +25,10 @@ const Storage = () => {
 
   const { data: res } = useQuery(['HISTORY'], () => get_storage(user));
   let token = localStorage.getItem('access_token');
+
+  useEffect(() => {
+    location.reload();
+  }, []);
 
   if (!token) {
     (async () => {
