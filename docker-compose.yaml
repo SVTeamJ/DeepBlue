@@ -14,7 +14,9 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
+    ports:
+        - 3000:3000
     volumes:
       - ./frontend/:/frontend
       - build_folder:/frontend/dist
