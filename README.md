@@ -81,10 +81,14 @@ docker-compose up --build
 
 ```
 
+## View
+>login page
 <img width="65%" justify="center" src = 'https://user-images.githubusercontent.com/78102507/215954203-1f094a29-b5e4-4d81-b1ba-892be8055d28.gif'/>
 
+>main page & result page & storage page
 <img width="65%" justify="center" src = 'https://user-images.githubusercontent.com/78102507/215961748-4d35ee99-8bdc-4979-ae36-fdee6d627f34.gif'/>
 
+>chart page
 <img width="65%" justify="center" src = 'https://user-images.githubusercontent.com/78102507/215957667-0bcb699d-514f-47df-9f17-9dd34d673c0e.gif'/>
 
 
