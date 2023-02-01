@@ -5,7 +5,7 @@ import Nav from '@/components/nav';
 import line from '@/assets/line.png';
 import circle from '@/assets/circle.png';
 import inline from '@/assets/inline.png';
-import bar from '@/assets/bar.png';
+import bar from '@/assets/var.png';
 import { useQuery } from '@tanstack/react-query';
 import { restFetcher } from '@/queryClient';
 type chartType = 'line' | 'area' | 'bar' | 'radar' | undefined;

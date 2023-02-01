@@ -7,8 +7,6 @@ import Nav from '@/components/nav';
 import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
 import { get_storage, result, resultType2 } from 'api/api';
-import { ResultData, ResultData2 } from '@/type/result';
-import { aiResult } from '../result';
 
 const Storage = () => {
   const user = useRecoilValue(UUid);

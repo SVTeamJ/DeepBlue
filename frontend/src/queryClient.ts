@@ -23,8 +23,8 @@ export const getClient = (() => {
 })();
 
 const BASE_URL = import.meta.env.DEV
-  ? 'http://localhost:8000/api'
-  : 'http://www.deepblue3.shop:8000/api';
+  ? 'http://www.deepblue3.shop:8000/api'
+  : 'http://localhost:8000/api';
 
 export const restFetcher = async ({
   method,
