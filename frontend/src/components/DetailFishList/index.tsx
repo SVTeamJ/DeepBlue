@@ -1,14 +1,8 @@
-import { fishInform } from '@/mocks/handlers';
-import { ResultData, ResultData2 } from '@/type/result';
+import { modalData } from '@/type/detail';
 import React from 'react';
 import './index.scss';
 
-export interface result extends ResultData {
-  fish_url: string;
-  fish_type: string;
-}
-
-interface fishInfromProps extends result {
+interface fishInfromProps extends modalData {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
   modal: boolean;
 }

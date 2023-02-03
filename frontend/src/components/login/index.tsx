@@ -23,10 +23,10 @@ const LoginComponent = () => {
   const [pw, setPw] = useState('');
   const setUserInform = useSetRecoilState<User>(UUid);
 
-  const { mutate, isLoading, isError } = useMutation((user: userType) => {
+  const { mutate } = useMutation((user: userType) => {
     return restFetcher({
       method: 'POST',
-      path: 'http://www.deepblue3.shop:8000/api/users/login',
+      path: `${BASE_URL}/users/login`,
       params: user,
     });
   });
@@ -45,9 +45,7 @@ const LoginComponent = () => {
         localStorage.setItem('access_token', data.access_token);
         navigator('/');
 
-        const result = await axios.get(
-          `http://www.deepblue3.shop:8000/api/users?skip=0&limit=100`,
-        );
+        const result = await axios.get(`${BASE_URL}/users?skip=0&limit=100`);
         const findUser = result.data.find(
           (item: AllUser) => item.username == data.username,
         );
@@ -70,7 +68,6 @@ const LoginComponent = () => {
           onChange={(e) => {
             setId(e.target.value);
           }}
-          //onKeyup={changeButton}
         />
       </div>
 

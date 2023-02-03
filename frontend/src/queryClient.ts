@@ -20,7 +20,9 @@ export const getClient = (() => {
   };
 })();
 
-const BASE_URL = '';
+const BASE_URL = import.meta.env.DEV //DEV PROD버전 baseURL 나누기
+  ? 'http://localhost:8000/api'
+  : 'http://www.deepblue3.shop:8000/api';
 
 export const restFetcher = async ({
   method,

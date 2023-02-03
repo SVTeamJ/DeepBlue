@@ -24,15 +24,10 @@ export async function post_storge(resultData: result, user: User) {
     fish_url: resultData.image_url,
     fish_id: resultData.model,
   };
-  await axios.post(
-    `http://www.deepblue3.shop:8000/api/history/${user.id}`,
-    body,
-  );
+  await axios.post(`${BASE_URL}history/${user.id}`, body);
 }
 
 export async function get_storage(user: User): Promise<resultType[]> {
-  const res = await axios.get(
-    `http://www.deepblue3.shop:8000/api/history/${user.id}`,
-  );
+  const res = await axios.get(`${BASE_URL}/history/${user.id}`);
   return res.data;
 }

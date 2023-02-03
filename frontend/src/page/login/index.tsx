@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.scss';
 import Is_login_check from './is_login';
 import Whale from '@/assets/whale.png';

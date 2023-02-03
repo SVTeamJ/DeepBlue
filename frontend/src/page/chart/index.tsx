@@ -8,6 +8,7 @@ import inline from '@/assets/inline.png';
 import bar from '@/assets/var.png';
 import { useQuery } from '@tanstack/react-query';
 import { restFetcher } from '@/queryClient';
+import { debounce } from 'debounce';
 type chartType = 'line' | 'area' | 'bar' | 'radar' | undefined;
 
 const ChartPage = () => {
@@ -20,7 +21,7 @@ const ChartPage = () => {
   const { data } = useQuery<any>(['CHAT'], async () => {
     return restFetcher({
       method: 'GET',
-      path: 'http://www.deepblue3.shop:8000/api/charts/',
+      path: '/charts/',
     });
   });
 
@@ -52,12 +53,11 @@ const ChartPage = () => {
       height: window.innerHeight,
     });
   };
-
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', debounce(handleResize, 1000));
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', debounce(handleResize, 1000));
     };
   }, [windowSize]);
 
