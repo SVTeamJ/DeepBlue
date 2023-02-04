@@ -1,5 +1,4 @@
 # DeepBlue
-## [English Version](English/README.md)
 
 
 <img width="100%" height="100%" alt="SA" src="https://user-images.githubusercontent.com/78102507/214868926-ae019641-764a-4e78-a77e-bbed9702f62b.jpg">
@@ -11,11 +10,11 @@
 
 ## Introduction
 
-**아직도 궁금한 물고기를 검색하시나요?**
+**Are you still searching for fish images?**
+DeepBlue finds the fish you are looking for with your image!
 
-DeepBlue는 검색하지않아도 사진 한장으로 여러분이 원하는 물고기 정보를  찾아줍니다!
+Upload the photos to find about your fish! 😆
 
-여러분이 궁금해하는 깊은 바닷속 정체모를 생물의 사진을 올려보세요! 😆
 
 <br/>
 
