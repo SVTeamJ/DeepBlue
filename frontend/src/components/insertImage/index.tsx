@@ -25,9 +25,10 @@ const InsertImage = () => {
   );
 
   //이미지 클릭시 file선택창이 나오게하는 함수
-  const openFile = () => {
+
+  const openFile = useCallback(() => {
     imageRef.current?.click();
-  };
+  }, []);
 
   const sendImage = () => {
     if (!imagefile) {
@@ -48,13 +49,16 @@ const InsertImage = () => {
   };
 
   //이미지를 올리고 저장해주는 함수
-  const raiseImg = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const file = e.target?.files[0];
-      console.log(file);
-      setImageFile(file);
-    }
-  };
+  const raiseImg = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files) {
+        const file = e.target?.files[0];
+        console.log(file);
+        setImageFile(file);
+      }
+    },
+    [imagefile],
+  );
 
   //파일이 바뀔떄마다 preview데이터를 바꿔주는 훅
   useEffect(() => {

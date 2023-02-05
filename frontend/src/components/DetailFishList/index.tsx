@@ -83,4 +83,4 @@ const DetaiFish = ({
   );
 };
 
-export default DetaiFish;
+export default React.memo(DetaiFish);
