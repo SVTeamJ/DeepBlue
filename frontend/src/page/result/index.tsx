@@ -8,7 +8,7 @@ import { UUid } from '@/atom/atom';
 import { post_storge } from '../../../api/api';
 
 interface RouterState {
-  data: result2;
+  data: fishInform;
 }
 
 export interface aiResult extends ResultData {
@@ -16,7 +16,7 @@ export interface aiResult extends ResultData {
   fish_type: string;
 }
 
-interface result2 extends ResultData {
+interface fishInform extends ResultData {
   image_url: string;
 }
 

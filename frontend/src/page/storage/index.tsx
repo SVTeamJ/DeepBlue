@@ -1,17 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 import { Navigate } from 'react-router-dom';
 import DetailFishList from '@/components/DetailFishList';
 import Nav from '@/components/nav';
 import { useRecoilValue } from 'recoil';
 import { UUid } from '@/atom/atom';
-import { get_storage, result, resultType2 } from 'api/api';
+import { get_storage } from 'api/api';
+import { modalData } from '@/type/detail';
 
 const Storage = () => {
   const user = useRecoilValue(UUid);
-  const [modal, setModal] = useState(false); //
-  const [currentModalInform, setCurrentModalInform] = useState<any>({
+  const [modal, setModal] = useState(false);
+  const [currentModalInform, setCurrentModalInform] = useState<modalData>({
     classification: '',
     closed_season: '',
     description: '',
@@ -40,7 +41,7 @@ const Storage = () => {
     );
   }
 
-  const showDetailFish = (item: any) => {
+  const showDetailFish = (item: modalData) => {
     setCurrentModalInform(() => item); //curretnModalInform을 item으로 변경
     setModal(true); //Modal을 true로 변경
   };
@@ -61,7 +62,7 @@ const Storage = () => {
       </div>
       <div onClick={gotoTop} className="fishList_gotoMain"></div>
       <div className="fishList_view-grid">
-        {res?.map((item, index) => {
+        {res?.map((item: any, index) => {
           return (
             <div
               key={index}

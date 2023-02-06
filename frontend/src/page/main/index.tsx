@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './index.scss';
 import Nav from '@/components/nav';
 import InsertImage from '@/components/insertImage';
@@ -6,15 +6,8 @@ import shark from '@/assets/shark.jpg';
 import crucian from '@/assets/crucian.jpg';
 import turtle from '@/assets/turtle.jpg';
 import jellyfish from '@/assets/jellyfish.jpg';
-import { useRecoilValue } from 'recoil';
-import { User } from '@/components/signup';
-import { UUid } from '@/atom/atom';
 
 const Main = () => {
-  const userInform = useRecoilValue<User>(UUid);
-  useEffect(() => {
-    console.log(userInform);
-  }, []);
   return (
     <div>
       <div className="main_background">

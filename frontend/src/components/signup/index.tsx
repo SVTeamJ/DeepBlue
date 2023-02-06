@@ -1,9 +1,8 @@
-import { UUid } from '@/atom/atom';
 import { restFetcher } from '@/queryClient';
 import { useMutation } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import './index.scss';
-//유저생성
+
 export interface User extends createUser {
   id: string;
   is_active?: boolean;
@@ -22,13 +21,7 @@ const SignUpComponents = () => {
   const [pw, setPw] = useState('');
   const [checkPw, setCheckPw] = useState('');
 
-  const [button, setButton] = useState(true);
-
-  function changeButton() {
-    id.includes('@') && pw.length >= 5 ? setButton(false) : setButton(true);
-  }
-
-  const { mutate, isLoading } = useMutation((newUser: createUser) => {
+  const { mutate } = useMutation((newUser: createUser) => {
     return restFetcher({
       method: 'POST',
       path: '/users/signup',
@@ -36,6 +29,7 @@ const SignUpComponents = () => {
     });
   });
 
+  //유저 생성
   const createUser = () => {
     const newUser = {
       name: userName,
@@ -44,7 +38,7 @@ const SignUpComponents = () => {
       password_check: checkPw,
     };
     mutate(newUser, {
-      onSuccess: (data) => {
+      onSuccess: () => {
         alert('회원가입 완료!');
       },
       onError: () => {
@@ -66,7 +60,6 @@ const SignUpComponents = () => {
           onChange={(e) => {
             setUserName(e.target.value);
           }}
-          onKeyUp={changeButton}
         />
       </div>
       <div className="user_input">
@@ -79,7 +72,6 @@ const SignUpComponents = () => {
           onChange={(e) => {
             setId(e.target.value);
           }}
-          //onKeyup={changeButton}
         />
       </div>
       <div className="user_input">
@@ -93,7 +85,6 @@ const SignUpComponents = () => {
           onChange={(e) => {
             setPw(e.target.value);
           }}
-          onKeyUp={changeButton}
         />
       </div>
       <div className="user_input">
@@ -107,7 +98,6 @@ const SignUpComponents = () => {
           onChange={(e) => {
             setCheckPw(e.target.value);
           }}
-          onKeyUp={changeButton}
         />
       </div>
       <button onClick={createUser} className="signup_page_button">

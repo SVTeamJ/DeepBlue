@@ -1,6 +1,4 @@
-import Nav from '@/components/nav';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Loading from '../loading';
 import download from '@/assets/download.png';
 import './index.scss';
 import { useDropzone } from 'react-dropzone';
@@ -8,21 +6,20 @@ import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { restFetcher } from '@/queryClient';
 import Loading2 from '../loading2';
+
 const InsertImage = () => {
   const navigate = useNavigate();
   const imageRef = useRef<HTMLInputElement>(null);
   const [imagefile, setImageFile] = useState<File>();
   const [preview, setPreview] = useState<string>('');
 
-  const { mutate, isLoading, isSuccess, isError } = useMutation(
-    (formData: FormData) => {
-      return restFetcher({
-        method: 'POST',
-        path: 'http://www.deepblue3.shop:8000/api/ai',
-        body: formData,
-      });
-    },
-  );
+  const { mutate, isLoading } = useMutation((formData: FormData) => {
+    return restFetcher({
+      method: 'POST',
+      path: '/ai',
+      body: formData,
+    });
+  });
 
   //이미지 클릭시 file선택창이 나오게하는 함수
 
